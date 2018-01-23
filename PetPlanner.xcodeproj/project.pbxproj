@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E7370618E403D340CB45C60 /* Pods_PetPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F17A2546A94CD8AA98F2C9 /* Pods_PetPlanner.framework */; };
+		F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11B55CB2016BF9200E5F708 /* Constants.swift */; };
+		F11B55CE2016C14B00E5F708 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F11B55CD2016C14B00E5F708 /* GoogleService-Info.plist */; };
 		F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1771F2A20101B860060AB76 /* AppDelegate.swift */; };
-		F1771F2D20101B860060AB76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1771F2C20101B860060AB76 /* ViewController.swift */; };
+		F1771F2D20101B860060AB76 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1771F2C20101B860060AB76 /* LoginVC.swift */; };
 		F1771F3020101B860060AB76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1771F2E20101B860060AB76 /* Main.storyboard */; };
 		F1771F3220101B860060AB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1771F3120101B860060AB76 /* Assets.xcassets */; };
 		F1771F3520101B860060AB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1771F3320101B860060AB76 /* LaunchScreen.storyboard */; };
+		F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBD7C92010211E00CC1874 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F694CCBF7399E136C711470 /* Pods-PetPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanner/Pods-PetPlanner.debug.xcconfig"; sourceTree = "<group>"; };
+		A2F17A2546A94CD8AA98F2C9 /* Pods_PetPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C76881DACA0E78229F95F44C /* Pods-PetPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanner/Pods-PetPlanner.release.xcconfig"; sourceTree = "<group>"; };
+		F11B55CB2016BF9200E5F708 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F11B55CD2016C14B00E5F708 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1771F2720101B860060AB76 /* PetPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1771F2A20101B860060AB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1771F2C20101B860060AB76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F1771F2C20101B860060AB76 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F1771F2F20101B860060AB76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1771F3120101B860060AB76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1771F3420101B860060AB76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1771F3620101B860060AB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1FBD7C92010211E00CC1874 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7370618E403D340CB45C60 /* Pods_PetPlanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE2BFFB805216CAC4154041B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F694CCBF7399E136C711470 /* Pods-PetPlanner.debug.xcconfig */,
+				C76881DACA0E78229F95F44C /* Pods-PetPlanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F11B55CA2016BF8000E5F708 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F11B55CB2016BF9200E5F708 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		F1771F1E20101B860060AB76 = {
 			isa = PBXGroup;
 			children = (
 				F1771F2920101B860060AB76 /* PetPlanner */,
 				F1771F2820101B860060AB76 /* Products */,
+				DE2BFFB805216CAC4154041B /* Pods */,
+				F48FBAD5EB145DE34FD96B9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +84,49 @@
 		F1771F2920101B860060AB76 /* PetPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				F11B55CA2016BF8000E5F708 /* Utilities */,
 				F1771F2A20101B860060AB76 /* AppDelegate.swift */,
-				F1771F2C20101B860060AB76 /* ViewController.swift */,
+				F1FBD7CB2010215E00CC1874 /* Model */,
+				F1FBD7CC2010216500CC1874 /* View */,
+				F1FBD7CD2010216D00CC1874 /* Controller */,
 				F1771F2E20101B860060AB76 /* Main.storyboard */,
 				F1771F3120101B860060AB76 /* Assets.xcassets */,
 				F1771F3320101B860060AB76 /* LaunchScreen.storyboard */,
+				F11B55CD2016C14B00E5F708 /* GoogleService-Info.plist */,
 				F1771F3620101B860060AB76 /* Info.plist */,
 			);
 			path = PetPlanner;
+			sourceTree = "<group>";
+		};
+		F1FBD7CB2010215E00CC1874 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1FBD7CC2010216500CC1874 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1FBD7CD2010216D00CC1874 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F1771F2C20101B860060AB76 /* LoginVC.swift */,
+				F1FBD7C92010211E00CC1874 /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F48FBAD5EB145DE34FD96B9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2F17A2546A94CD8AA98F2C9 /* Pods_PetPlanner.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1771F3920101B860060AB76 /* Build configuration list for PBXNativeTarget "PetPlanner" */;
 			buildPhases = (
+				54FC851873D48E838C68AC31 /* [CP] Check Pods Manifest.lock */,
 				F1771F2320101B860060AB76 /* Sources */,
 				F1771F2420101B860060AB76 /* Frameworks */,
 				F1771F2520101B860060AB76 /* Resources */,
+				C1323B30C041A4D1186A6EF9 /* [CP] Embed Pods Frameworks */,
+				295421B72292F27EF8280F11 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1771F3520101B860060AB76 /* LaunchScreen.storyboard in Resources */,
+				F11B55CE2016C14B00E5F708 /* GoogleService-Info.plist in Resources */,
 				F1771F3220101B860060AB76 /* Assets.xcassets in Resources */,
 				F1771F3020101B860060AB76 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +200,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		295421B72292F27EF8280F11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetPlanner/Pods-PetPlanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54FC851873D48E838C68AC31 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetPlanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1323B30C041A4D1186A6EF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PetPlanner/Pods-PetPlanner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PetPlanner/Pods-PetPlanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F1771F2320101B860060AB76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1771F2D20101B860060AB76 /* ViewController.swift in Sources */,
+				F1771F2D20101B860060AB76 /* LoginVC.swift in Sources */,
+				F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */,
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
+				F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +405,7 @@
 		};
 		F1771F3A20101B860060AB76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F694CCBF7399E136C711470 /* Pods-PetPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +421,7 @@
 		};
 		F1771F3B20101B860060AB76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C76881DACA0E78229F95F44C /* Pods-PetPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
