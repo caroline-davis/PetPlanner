@@ -10,6 +10,14 @@
 		4E7370618E403D340CB45C60 /* Pods_PetPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F17A2546A94CD8AA98F2C9 /* Pods_PetPlanner.framework */; };
 		F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11B55CB2016BF9200E5F708 /* Constants.swift */; };
 		F11B55CE2016C14B00E5F708 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F11B55CD2016C14B00E5F708 /* GoogleService-Info.plist */; };
+		F142DA60203675BD00569FAA /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */; };
+		F142DA61203675BD00569FAA /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */; };
+		F142DA62203675BD00569FAA /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5E203675BD00569FAA /* SourceSansPro-Regular.ttf */; };
+		F142DA63203675BD00569FAA /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5F203675BD00569FAA /* SourceSansPro-Bold.ttf */; };
+		F142DA652036760B00569FAA /* SourceSerifPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA642036760B00569FAA /* SourceSerifPro-Regular.ttf */; };
+		F142DA672036877300569FAA /* CurvedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA662036877300569FAA /* CurvedBtn.swift */; };
+		F142DA692036978A00569FAA /* SquareTxtFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA682036978A00569FAA /* SquareTxtFld.swift */; };
+		F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA6A20369B2C00569FAA /* SquareBtn.swift */; };
 		F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1771F2A20101B860060AB76 /* AppDelegate.swift */; };
 		F1771F2D20101B860060AB76 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1771F2C20101B860060AB76 /* LoginVC.swift */; };
 		F1771F3020101B860060AB76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1771F2E20101B860060AB76 /* Main.storyboard */; };
@@ -24,6 +32,14 @@
 		C76881DACA0E78229F95F44C /* Pods-PetPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanner/Pods-PetPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		F11B55CB2016BF9200E5F708 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F11B55CD2016C14B00E5F708 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		F142DA5E203675BD00569FAA /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		F142DA5F203675BD00569FAA /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		F142DA642036760B00569FAA /* SourceSerifPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSerifPro-Regular.ttf"; sourceTree = "<group>"; };
+		F142DA662036877300569FAA /* CurvedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedBtn.swift; sourceTree = "<group>"; };
+		F142DA682036978A00569FAA /* SquareTxtFld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTxtFld.swift; sourceTree = "<group>"; };
+		F142DA6A20369B2C00569FAA /* SquareBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBtn.swift; sourceTree = "<group>"; };
 		F1771F2720101B860060AB76 /* PetPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1771F2A20101B860060AB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1771F2C20101B860060AB76 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -63,6 +79,18 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		F142DA5B203675AD00569FAA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */,
+				F142DA5F203675BD00569FAA /* SourceSansPro-Bold.ttf */,
+				F142DA5E203675BD00569FAA /* SourceSansPro-Regular.ttf */,
+				F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */,
+				F142DA642036760B00569FAA /* SourceSerifPro-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F1771F1E20101B860060AB76 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +119,7 @@
 				F1FBD7CD2010216D00CC1874 /* Controller */,
 				F1771F2E20101B860060AB76 /* Main.storyboard */,
 				F1771F3120101B860060AB76 /* Assets.xcassets */,
+				F142DA5B203675AD00569FAA /* Fonts */,
 				F1771F3320101B860060AB76 /* LaunchScreen.storyboard */,
 				F11B55CD2016C14B00E5F708 /* GoogleService-Info.plist */,
 				F1771F3620101B860060AB76 /* Info.plist */,
@@ -108,6 +137,9 @@
 		F1FBD7CC2010216500CC1874 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F142DA662036877300569FAA /* CurvedBtn.swift */,
+				F142DA6A20369B2C00569FAA /* SquareBtn.swift */,
+				F142DA682036978A00569FAA /* SquareTxtFld.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,8 +225,13 @@
 			files = (
 				F1771F3520101B860060AB76 /* LaunchScreen.storyboard in Resources */,
 				F11B55CE2016C14B00E5F708 /* GoogleService-Info.plist in Resources */,
+				F142DA60203675BD00569FAA /* SourceSansPro-SemiBold.ttf in Resources */,
+				F142DA62203675BD00569FAA /* SourceSansPro-Regular.ttf in Resources */,
 				F1771F3220101B860060AB76 /* Assets.xcassets in Resources */,
+				F142DA61203675BD00569FAA /* SourceSansPro-Black.ttf in Resources */,
+				F142DA652036760B00569FAA /* SourceSerifPro-Regular.ttf in Resources */,
 				F1771F3020101B860060AB76 /* Main.storyboard in Resources */,
+				F142DA63203675BD00569FAA /* SourceSansPro-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F142DA692036978A00569FAA /* SquareTxtFld.swift in Sources */,
+				F142DA672036877300569FAA /* CurvedBtn.swift in Sources */,
 				F1771F2D20101B860060AB76 /* LoginVC.swift in Sources */,
 				F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */,
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
+				F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */,
 				F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
