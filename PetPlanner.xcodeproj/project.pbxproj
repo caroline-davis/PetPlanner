@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E7370618E403D340CB45C60 /* Pods_PetPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F17A2546A94CD8AA98F2C9 /* Pods_PetPlanner.framework */; };
 		F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11B55CB2016BF9200E5F708 /* Constants.swift */; };
-		F11B55CE2016C14B00E5F708 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F11B55CD2016C14B00E5F708 /* GoogleService-Info.plist */; };
+		F140C184203A5AC70085B70E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F140C183203A5AC70085B70E /* GoogleService-Info.plist */; };
 		F142DA60203675BD00569FAA /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */; };
 		F142DA61203675BD00569FAA /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */; };
 		F142DA62203675BD00569FAA /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5E203675BD00569FAA /* SourceSansPro-Regular.ttf */; };
@@ -23,6 +23,7 @@
 		F1771F3020101B860060AB76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1771F2E20101B860060AB76 /* Main.storyboard */; };
 		F1771F3220101B860060AB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1771F3120101B860060AB76 /* Assets.xcassets */; };
 		F1771F3520101B860060AB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1771F3320101B860060AB76 /* LaunchScreen.storyboard */; };
+		F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C795482036A4BE0059E803 /* CircularBtn.swift */; };
 		F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBD7C92010211E00CC1874 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +32,7 @@
 		A2F17A2546A94CD8AA98F2C9 /* Pods_PetPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76881DACA0E78229F95F44C /* Pods-PetPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanner/Pods-PetPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		F11B55CB2016BF9200E5F708 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F11B55CD2016C14B00E5F708 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F140C183203A5AC70085B70E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
 		F142DA5E203675BD00569FAA /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		F1771F3120101B860060AB76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1771F3420101B860060AB76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1771F3620101B860060AB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1C795482036A4BE0059E803 /* CircularBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBtn.swift; sourceTree = "<group>"; };
 		F1FBD7C92010211E00CC1874 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +123,7 @@
 				F1771F3120101B860060AB76 /* Assets.xcassets */,
 				F142DA5B203675AD00569FAA /* Fonts */,
 				F1771F3320101B860060AB76 /* LaunchScreen.storyboard */,
-				F11B55CD2016C14B00E5F708 /* GoogleService-Info.plist */,
+				F140C183203A5AC70085B70E /* GoogleService-Info.plist */,
 				F1771F3620101B860060AB76 /* Info.plist */,
 			);
 			path = PetPlanner;
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				F142DA662036877300569FAA /* CurvedBtn.swift */,
+				F1C795482036A4BE0059E803 /* CircularBtn.swift */,
 				F142DA6A20369B2C00569FAA /* SquareBtn.swift */,
 				F142DA682036978A00569FAA /* SquareTxtFld.swift */,
 			);
@@ -224,8 +227,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1771F3520101B860060AB76 /* LaunchScreen.storyboard in Resources */,
-				F11B55CE2016C14B00E5F708 /* GoogleService-Info.plist in Resources */,
 				F142DA60203675BD00569FAA /* SourceSansPro-SemiBold.ttf in Resources */,
+				F140C184203A5AC70085B70E /* GoogleService-Info.plist in Resources */,
 				F142DA62203675BD00569FAA /* SourceSansPro-Regular.ttf in Resources */,
 				F1771F3220101B860060AB76 /* Assets.xcassets in Resources */,
 				F142DA61203675BD00569FAA /* SourceSansPro-Black.ttf in Resources */,
@@ -309,6 +312,7 @@
 				F1771F2D20101B860060AB76 /* LoginVC.swift in Sources */,
 				F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */,
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
+				F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */,
 				F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */,
 				F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */,
 			);
