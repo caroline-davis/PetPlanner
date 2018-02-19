@@ -18,6 +18,7 @@
 		F142DA672036877300569FAA /* CurvedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA662036877300569FAA /* CurvedBtn.swift */; };
 		F142DA692036978A00569FAA /* SquareTxtFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA682036978A00569FAA /* SquareTxtFld.swift */; };
 		F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA6A20369B2C00569FAA /* SquareBtn.swift */; };
+		F14EA3AD203A8DCA0017B682 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EA3AC203A8DCA0017B682 /* Convenience.swift */; };
 		F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1771F2A20101B860060AB76 /* AppDelegate.swift */; };
 		F1771F2D20101B860060AB76 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1771F2C20101B860060AB76 /* LoginVC.swift */; };
 		F1771F3020101B860060AB76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1771F2E20101B860060AB76 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		F142DA662036877300569FAA /* CurvedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedBtn.swift; sourceTree = "<group>"; };
 		F142DA682036978A00569FAA /* SquareTxtFld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTxtFld.swift; sourceTree = "<group>"; };
 		F142DA6A20369B2C00569FAA /* SquareBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBtn.swift; sourceTree = "<group>"; };
+		F14EA3AC203A8DCA0017B682 /* Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
 		F1771F2720101B860060AB76 /* PetPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1771F2A20101B860060AB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1771F2C20101B860060AB76 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				F11B55CB2016BF9200E5F708 /* Constants.swift */,
+				F14EA3AC203A8DCA0017B682 /* Convenience.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
 				F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */,
 				F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */,
+				F14EA3AD203A8DCA0017B682 /* Convenience.swift in Sources */,
 				F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +458,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UNXUT4D3C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PetPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinedavis.PetPlanner;
@@ -470,6 +478,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UNXUT4D3C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PetPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinedavis.PetPlanner;
