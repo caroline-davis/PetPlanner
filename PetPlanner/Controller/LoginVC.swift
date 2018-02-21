@@ -32,12 +32,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         // if user has already logged in before and are reopening the app
         if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
             
-            //TO DO: perform the segue straight to home screen and skip login
-            let vc = self.storyboard?.instantiateViewController(withIdentifier:"HomeVC") as! HomeVC
-            self.present(vc, animated: false, completion: nil)
+            // Perform the segue straight to home screen and skip login
+            let controller = storyboard?.instantiateViewController(withIdentifier:"NavController") as! UINavigationController
+            self.present(controller, animated: false, completion: nil)
+            
+
         }
     }
-    
+        
     @IBAction func signInWithFacebook(_ sender: UIButton) {
         // TO DO: add facebook pod and sign in with facebook
 //        let loginManager = LoginManager()
@@ -117,8 +119,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         func completeSignIn(user: UserInfo) {
             
-            let keychainResult = KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
-            //  TO DO: Perfom segue to go to the home screen
+            // let keychainResult =
+            _ = KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+            
+            //  Perfom segue to go to the home screen
+            let controller = self.storyboard?.instantiateViewController(withIdentifier:"NavController") as! UINavigationController
+            self.present(controller, animated: false, completion: nil)
+            
             
         }
         
