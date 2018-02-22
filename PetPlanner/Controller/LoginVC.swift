@@ -128,9 +128,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             
         }
     
-    @IBAction func sendResetPassword(_ sender: UIButton) {
+    @IBAction func goToForgotPasswordVC(_ sender: UIButton) {
         
-    //    DataService.ds.forgotPassword()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier:"ForgotPasswordVC") as! ForgotPasswordVC
+        self.present(vc, animated: true, completion: nil)
     
     }
         

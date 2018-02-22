@@ -10,6 +10,7 @@
 		4E7370618E403D340CB45C60 /* Pods_PetPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F17A2546A94CD8AA98F2C9 /* Pods_PetPlanner.framework */; };
 		F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11B55CB2016BF9200E5F708 /* Constants.swift */; };
 		F128E146203D36B600444DEE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F128E145203D36B600444DEE /* DataService.swift */; };
+		F128E148203E818F00444DEE /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F128E147203E818F00444DEE /* ForgotPasswordVC.swift */; };
 		F140C184203A5AC70085B70E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F140C183203A5AC70085B70E /* GoogleService-Info.plist */; };
 		F142DA60203675BD00569FAA /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */; };
 		F142DA61203675BD00569FAA /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */; };
@@ -35,6 +36,7 @@
 		C76881DACA0E78229F95F44C /* Pods-PetPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetPlanner/Pods-PetPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		F11B55CB2016BF9200E5F708 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F128E145203D36B600444DEE /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		F128E147203E818F00444DEE /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		F140C183203A5AC70085B70E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				F1771F2C20101B860060AB76 /* LoginVC.swift */,
 				F1FBD7C92010211E00CC1874 /* HomeVC.swift */,
+				F128E147203E818F00444DEE /* ForgotPasswordVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				F142DA692036978A00569FAA /* SquareTxtFld.swift in Sources */,
 				F142DA672036877300569FAA /* CurvedBtn.swift in Sources */,
 				F1771F2D20101B860060AB76 /* LoginVC.swift in Sources */,
+				F128E148203E818F00444DEE /* ForgotPasswordVC.swift in Sources */,
 				F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */,
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
 				F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */,

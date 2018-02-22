@@ -13,6 +13,9 @@
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
         </array>
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
         <array key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
         </array>
@@ -30,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ShT-Cb-TmG">
-                                <rect key="frame" x="35" y="178" width="305" height="431"/>
+                                <rect key="frame" x="35" y="178" width="305" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zK-UP-Kqi" customClass="CircularBtn" customModule="PetPlanner" customModuleProvider="target">
@@ -43,16 +46,19 @@
                                             <action selector="signInWithFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QzK-gi-dzZ"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SEE-Af-t3b">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SEE-Af-t3b">
                                         <rect key="frame" x="142" y="193" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLF-IY-zEJ">
-                                        <rect key="frame" x="162" y="401" width="135" height="30"/>
+                                        <rect key="frame" x="198" y="405" width="89" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Forgot Password?"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
+                                        <state key="normal" title="Forgot Password?">
+                                            <color key="titleColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
-                                            <action selector="sendResetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iKo-ej-tX3"/>
+                                            <action selector="goToForgotPasswordVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BLV-cs-DqH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -120,7 +126,78 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175.19999999999999" y="-179.46026986506749"/>
+            <point key="canvasLocation" x="-255.19999999999999" y="-179.46026986506749"/>
+        </scene>
+        <!--Forgot PasswordVC-->
+        <scene sceneID="UwT-uK-Hfk">
+            <objects>
+                <viewController storyboardIdentifier="ForgotPasswordVC" id="C9f-2o-lbu" customClass="ForgotPasswordVC" customModule="PetPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mRR-0D-myy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awI-Wy-DNm">
+                                <rect key="frame" x="40" y="95" width="294" height="389"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter your registered email address and we will send you a link to reset your password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grz-Ki-h94">
+                                        <rect key="frame" x="23" y="88" width="247" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
+                                        <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="88p-dw-eFr" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="174" width="269" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAl-Yc-JpK" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="230" width="269" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
+                                        <state key="normal" title="Reset Password">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetPasswordClicked:" destination="C9f-2o-lbu" eventType="touchUpInside" id="8ju-Ap-0zq"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zA-PU-jhu">
+                                        <rect key="frame" x="32" y="37" width="229" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="29"/>
+                                        <color key="textColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8V-yq-0Lc">
+                                        <rect key="frame" x="96" y="318" width="92" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="14"/>
+                                        <state key="normal" title="Back to Login">
+                                            <color key="titleColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backToLoginVC:" destination="C9f-2o-lbu" eventType="touchUpInside" id="CdQ-B7-vgB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="O7C-85-OhO"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="88p-dw-eFr" id="fAe-YI-k5M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVk-aU-7aR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255.19999999999999" y="517.6911544227886"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="iBt-7e-8Jj">
@@ -161,7 +238,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBf-lK-xpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="-179"/>
+            <point key="canvasLocation" x="450" y="-179"/>
         </scene>
     </scenes>
     <resources>
