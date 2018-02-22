@@ -25,6 +25,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 
         emailField.delegate = self
         passwordField.delegate = self
+        activityIndicator.isHidden = true
       
     }
 
@@ -66,8 +67,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 //    }
     
     
-    @IBAction func signInWithEmail(_ sender: UIButton) {
+    @IBAction func signInWithEmailClicked(_ sender: UIButton) {
         
+        self.activityIndicator.isHidden = false
          self.activityIndicator.startAnimating()
         
         if emailField.text != "" && passwordField.text != "" {
@@ -80,6 +82,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     
                     if (error != nil) {
                              self.alerts(message: "\(error!.localizedDescription)")
+                            self.activityIndicator.isHidden = true
                              self.activityIndicator.stopAnimating()
                     } else {
                         
@@ -101,6 +104,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             }
         } else {
             self.alerts(message: "Please type something in the login fields")
+                activityIndicator.isHidden = true
                activityIndicator.stopAnimating()
         }
         
@@ -131,7 +135,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBAction func goToForgotPasswordVC(_ sender: UIButton) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier:"ForgotPasswordVC") as! ForgotPasswordVC
-        self.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: false, completion: nil)
     
     }
         

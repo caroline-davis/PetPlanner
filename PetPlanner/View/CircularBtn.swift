@@ -23,6 +23,7 @@ class CircularBtn: UIButton {
         // makes the button 100% round
         layer.cornerRadius = self.frame.width / 2
         layer.borderWidth = 2
+        layer.borderColor = WHITE_COLOR.cgColor
     }
 
 }

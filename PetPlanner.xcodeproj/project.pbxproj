@@ -11,6 +11,7 @@
 		F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11B55CB2016BF9200E5F708 /* Constants.swift */; };
 		F128E146203D36B600444DEE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F128E145203D36B600444DEE /* DataService.swift */; };
 		F128E148203E818F00444DEE /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F128E147203E818F00444DEE /* ForgotPasswordVC.swift */; };
+		F128E14A203E8F5400444DEE /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F128E149203E8F5400444DEE /* CurvedView.swift */; };
 		F140C184203A5AC70085B70E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F140C183203A5AC70085B70E /* GoogleService-Info.plist */; };
 		F142DA60203675BD00569FAA /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */; };
 		F142DA61203675BD00569FAA /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */; };
@@ -37,6 +38,7 @@
 		F11B55CB2016BF9200E5F708 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F128E145203D36B600444DEE /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		F128E147203E818F00444DEE /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		F128E149203E8F5400444DEE /* CurvedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
 		F140C183203A5AC70085B70E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				F1C795482036A4BE0059E803 /* CircularBtn.swift */,
 				F142DA6A20369B2C00569FAA /* SquareBtn.swift */,
 				F142DA682036978A00569FAA /* SquareTxtFld.swift */,
+				F128E149203E8F5400444DEE /* CurvedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */,
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
 				F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */,
+				F128E14A203E8F5400444DEE /* CurvedView.swift in Sources */,
 				F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */,
 				F14EA3AD203A8DCA0017B682 /* Convenience.swift in Sources */,
 				F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */,

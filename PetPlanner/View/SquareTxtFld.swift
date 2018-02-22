@@ -11,7 +11,7 @@ import UIKit
 class SquareTxtFld: UITextField {
 
     override func awakeFromNib() {
-        
+        super.awakeFromNib()
       
         //layer.cornerRadius = 30
         layer.shadowColor = BLACK_COLOR.cgColor

@@ -12,14 +12,14 @@ import SwiftKeychainWrapper
 
 class HomeVC: UIViewController {
 
-    @IBOutlet weak var logOutBtn: UIBarButtonItem!
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-        @IBAction func logoutAction(_ sender: AnyObject) {
+        @IBAction func logoutClicked(_ sender: AnyObject) {
             DataService.ds.logout(uid: KEY_UID)
             
             print("CAROL:ITS LOGGED OUT")

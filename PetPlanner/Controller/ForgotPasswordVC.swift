@@ -22,7 +22,7 @@ class ForgotPasswordVC: UIViewController {
     }
     
 
-    @IBAction func backToLoginVC(_ sender: Any) {
+    @IBAction func goToLoginVC(_ sender: Any) {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         self.present(vc, animated: false, completion: nil)
@@ -31,3 +31,8 @@ class ForgotPasswordVC: UIViewController {
     
 
 }
+
+//if an IBAction on a button - blablaCLicked
+//if an IBAction segue goToSetSegueVC
+//if an IBOutlet textfield blablaField
+//if an IBOutlet button blablaButton
