@@ -27,19 +27,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         passwordField.delegate = self
       
     }
-    override func viewDidAppear(_ animated: Bool) {
-        
-        // if user has already logged in before and are reopening the app
-        if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
-            
-            // Perform the segue straight to home screen and skip login
-            let controller = storyboard?.instantiateViewController(withIdentifier:"NavController") as! UINavigationController
-            self.present(controller, animated: false, completion: nil)
-            
 
-        }
-    }
-        
+    
     @IBAction func signInWithFacebook(_ sender: UIButton) {
         // TO DO: add facebook pod and sign in with facebook
 //        let loginManager = LoginManager()
@@ -138,6 +127,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             }
             
         }
+    
+    @IBAction func sendResetPassword(_ sender: UIButton) {
+        
+    //    DataService.ds.forgotPassword()
+    
+    }
         
     
 

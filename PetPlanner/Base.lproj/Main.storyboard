@@ -47,6 +47,14 @@
                                         <rect key="frame" x="142" y="193" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLF-IY-zEJ">
+                                        <rect key="frame" x="162" y="401" width="135" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Forgot Password?"/>
+                                        <connections>
+                                            <action selector="sendResetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iKo-ej-tX3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -112,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="-179"/>
+            <point key="canvasLocation" x="-175.19999999999999" y="-179.46026986506749"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="iBt-7e-8Jj">
@@ -127,7 +135,7 @@
                     <navigationItem key="navigationItem" id="aJS-Nt-cs0">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="EPM-ae-xQm">
                             <connections>
-                                <action selector="logOut:" destination="h4d-f6-qwl" id="U6a-Ur-9HP"/>
+                                <action selector="logoutAction:" destination="h4d-f6-qwl" id="dTp-UO-wgU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

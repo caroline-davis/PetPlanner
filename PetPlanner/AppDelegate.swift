@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftKeychainWrapper
 
 
 @UIApplicationMain
@@ -20,6 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
           FirebaseApp.configure()
+        
+        // Perform the segue straight to home screen and skip login if user already signed in
+        // This eliminates the flash of the login screen
+        if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = mainStoryboard.instantiateViewController(withIdentifier:"NavController") as! UINavigationController
+            self.window!.rootViewController = controller
+            
+        }
         
         
         return true

@@ -13,6 +13,7 @@ import SwiftKeychainWrapper
 class DataService {
     
     static let ds = DataService()
+    var firebaseAuth = Auth.auth()
     
     func logout(uid: String) {
         
@@ -20,7 +21,6 @@ class DataService {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("CAROL: ID removed from keychain \(keychainResult)")
         
-        let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
@@ -28,6 +28,16 @@ class DataService {
         }
     }
     
+    func forgotPassword(email: String) {
+        
+   
+            firebaseAuth.sendPasswordReset(withEmail: email) { error in
+                // todo callback for error
+                // form with email address.... send button. if email is incorrect it would show error, if not it would say check email
+        }
+        
+    }
     
-    
+
+
 }
