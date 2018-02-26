@@ -9,10 +9,22 @@
 import UIKit
 
 class PetCell: UITableViewCell {
-
+    
+    @IBOutlet weak var img: CircularImgView!
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var species: UILabel!
+    @IBOutlet weak var dob: UILabel!
+    @IBOutlet weak var sex: UILabel!
+    @IBOutlet weak var id: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+  
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,3 +34,4 @@ class PetCell: UITableViewCell {
     }
 
 }
+

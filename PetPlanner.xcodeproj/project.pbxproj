@@ -31,6 +31,8 @@
 		F1778ED5203FED3A002C75FC /* ImgAndTxtBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1778ED4203FED3A002C75FC /* ImgAndTxtBtn.swift */; };
 		F1778ED7203FF547002C75FC /* ViewPetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1778ED6203FF547002C75FC /* ViewPetsVC.swift */; };
 		F1778ED9203FF566002C75FC /* CreatePetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1778ED8203FF566002C75FC /* CreatePetVC.swift */; };
+		F199C2EC2043975200092E9B /* CircularImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2EB2043975200092E9B /* CircularImgView.swift */; };
+		F199C2EE2043D13C00092E9B /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2ED2043D13C00092E9B /* Pet.swift */; };
 		F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C795482036A4BE0059E803 /* CircularBtn.swift */; };
 		F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBD7C92010211E00CC1874 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		F1778ED4203FED3A002C75FC /* ImgAndTxtBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgAndTxtBtn.swift; sourceTree = "<group>"; };
 		F1778ED6203FF547002C75FC /* ViewPetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPetsVC.swift; sourceTree = "<group>"; };
 		F1778ED8203FF566002C75FC /* CreatePetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetVC.swift; sourceTree = "<group>"; };
+		F199C2EB2043975200092E9B /* CircularImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImgView.swift; sourceTree = "<group>"; };
+		F199C2ED2043D13C00092E9B /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		F1C795482036A4BE0059E803 /* CircularBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBtn.swift; sourceTree = "<group>"; };
 		F1FBD7C92010211E00CC1874 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +154,7 @@
 		F1FBD7CB2010215E00CC1874 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F199C2ED2043D13C00092E9B /* Pet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 				F1778ED4203FED3A002C75FC /* ImgAndTxtBtn.swift */,
 				F1C795482036A4BE0059E803 /* CircularBtn.swift */,
 				F142DA6A20369B2C00569FAA /* SquareBtn.swift */,
+				F199C2EB2043975200092E9B /* CircularImgView.swift */,
 				F142DA682036978A00569FAA /* SquareTxtFld.swift */,
 				F128E149203E8F5400444DEE /* CurvedView.swift */,
 				F1778ED2203FA1FC002C75FC /* PetCell.swift */,
@@ -334,11 +340,13 @@
 				F1778ED7203FF547002C75FC /* ViewPetsVC.swift in Sources */,
 				F142DA692036978A00569FAA /* SquareTxtFld.swift in Sources */,
 				F1778ED9203FF566002C75FC /* CreatePetVC.swift in Sources */,
+				F199C2EE2043D13C00092E9B /* Pet.swift in Sources */,
 				F142DA672036877300569FAA /* CurvedBtn.swift in Sources */,
 				F1778ED3203FA1FC002C75FC /* PetCell.swift in Sources */,
 				F1771F2D20101B860060AB76 /* LoginVC.swift in Sources */,
 				F128E148203E818F00444DEE /* ForgotPasswordVC.swift in Sources */,
 				F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */,
+				F199C2EC2043975200092E9B /* CircularImgView.swift in Sources */,
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
 				F1778ED5203FED3A002C75FC /* ImgAndTxtBtn.swift in Sources */,
 				F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */,
