@@ -10,10 +10,16 @@ import Foundation
 import Firebase
 import SwiftKeychainWrapper
 
+
 class DataService {
     
     static let ds = DataService()
     var firebaseAuth = Auth.auth()
+    
+    // this contains the URL of the root of the database and storagebase(this is taken from GoogleService.plist file)
+    let DB_BASE = Database.database().reference()
+    let STORAGE_BASE = Storage.storage().reference()
+    
     
     func logout(uid: String) {
         

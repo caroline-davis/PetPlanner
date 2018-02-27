@@ -29,8 +29,16 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath) as? PetCell {
-          //  let partyRock = partyRocks[indexPath.row]
-         //   cell.updateUI(partyRock: partyRock)
+            let dictionary = self.tableViewData[indexPath.row]
+         
+            cell.title?.text = dictionary["petTitle"] as! String?
+            cell.dob?.text = dictionary["petDob"] as! String?
+            cell.species?.text = dictionary["petSpecies"] as! String?
+            cell.sex?.text = dictionary["petSex"] as! String?
+            cell.idTag?.text = dictionary["petIdTag"] as! String?
+         //   cell.img?.text = dictionary["petImageUrl"] as! String?
+            
+            //   cell.updateUI(partyRock: partyRock)
             
             return cell
         } else {

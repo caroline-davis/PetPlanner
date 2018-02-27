@@ -16,8 +16,7 @@ class PetCell: UITableViewCell {
     @IBOutlet weak var species: UILabel!
     @IBOutlet weak var dob: UILabel!
     @IBOutlet weak var sex: UILabel!
-    @IBOutlet weak var id: UILabel!
-    
+    @IBOutlet weak var idTag: UILabel!
     
     
     override func awakeFromNib() {
