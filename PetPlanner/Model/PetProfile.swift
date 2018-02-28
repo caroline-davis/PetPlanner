@@ -18,39 +18,33 @@ class PetProfile {
     private var _sex: String!
     private var _idTag: String!
     
-    private var _profileKey: String!
+    private var _petId: String!
     private var _profileRef: DatabaseReference!
     
    
     var profileImage: String {
         return _profileImage
     }
-    
     var name: String {
         return _name
     }
-    
     var dob: String {
         return _dob
     }
-    
     var species: String {
         return _species
     }
-    
     var sex: String {
         return _sex
     }
-    
     var idTag: String {
         return _idTag
     }
-    
-    var profileKey: String {
-        return _profileKey
+    var petId: String {
+        return _petId
     }
     
-    init(imageURL: String, petName: String, petDob: String, petSpecies: String, petSex: String, petIdTag: String) {
+    init(profileImage: String, petName: String, petDob: String, petSpecies: String, petSex: String, petIdTag: String) {
         self._profileImage = profileImage
         self._name = name
         self._dob = dob
@@ -59,8 +53,8 @@ class PetProfile {
         self._idTag = idTag
     }
     
-    init(profileKey: String, profileData: Dictionary <String, AnyObject>) {
-        self._profileKey = profileKey
+    init(petId: String, profileData: Dictionary <String, AnyObject>) {
+        self._petId = petId
         
         if let profileImage = profileData["profileImage"] as? String {
             self._profileImage = profileImage
@@ -77,10 +71,10 @@ class PetProfile {
         if let sex = profileData["sex"] as? String {
             self._sex = sex
         }
-        if let idTag = profileData["tag"] as? String {
+        if let idTag = profileData["idTag"] as? String {
             self._idTag = idTag
         }
-        _profileRef = DataService.ds.DB_BASE.child("pets").child(_profileKey)
+        _profileRef = DataService.ds.DB_BASE.child("pets").child(_petId)
     }
 }
 
