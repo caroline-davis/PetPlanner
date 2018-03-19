@@ -13,7 +13,8 @@ import SwiftKeychainWrapper
 
 
 let KEY_UID = "uid"
-var CURRENT_USER = KeychainWrapper.standard.string(forKey: KEY_UID)!
+var USER_ID = KeychainWrapper.standard.string(forKey: KEY_UID)!
+
 
 var ref: DatabaseReference!
 

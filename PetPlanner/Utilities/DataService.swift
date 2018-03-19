@@ -44,6 +44,43 @@ class DataService {
         
     }
     
+    func generateId() -> String {
+        let key = DB_BASE.childByAutoId().key
+        return key
+    }
+    
+    func createPet(
+        dob: String,
+        idTag: String,
+        name: String,
+        profileImage: String,
+        sex: String,
+        species: String,
+        completion: @escaping (String?, _ petId: String)->()) {
+        
+        let petId = generateId()
+        
+        DB_BASE.child("pets").child(petId).setValue([
+            "dob": dob,
+            "idTag": idTag,
+            "name": name,
+            "petId": petId,
+            "profileImage": profileImage,
+            "sex": sex,
+            "species": species,
+            "userId": USER_ID
+        ]) { (error, result) in
+         
+            if error != nil {
+                completion("\(error?.localizedDescription.capitalized ?? "Broken")", petId)
+            } else {
+                completion(nil, petId)
+            }
+
+        }
+
+    }
+    
 
 
 }

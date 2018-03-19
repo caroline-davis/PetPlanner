@@ -34,6 +34,7 @@
 		F194B4F620452F0A0072D293 /* PetHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F520452F0A0072D293 /* PetHealth.swift */; };
 		F194B4F820452F170072D293 /* PetFavs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F720452F170072D293 /* PetFavs.swift */; };
 		F194B4FA20452F2D0072D293 /* PetEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F920452F2D0072D293 /* PetEvents.swift */; };
+		F1958A60205F5309000161A6 /* PetProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1958A5F205F5309000161A6 /* PetProfileVC.swift */; };
 		F199C2EC2043975200092E9B /* CircularImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2EB2043975200092E9B /* CircularImgView.swift */; };
 		F199C2EE2043D13C00092E9B /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2ED2043D13C00092E9B /* PetProfile.swift */; };
 		F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C795482036A4BE0059E803 /* CircularBtn.swift */; };
@@ -72,6 +73,7 @@
 		F194B4F520452F0A0072D293 /* PetHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetHealth.swift; sourceTree = "<group>"; };
 		F194B4F720452F170072D293 /* PetFavs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFavs.swift; sourceTree = "<group>"; };
 		F194B4F920452F2D0072D293 /* PetEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEvents.swift; sourceTree = "<group>"; };
+		F1958A5F205F5309000161A6 /* PetProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileVC.swift; sourceTree = "<group>"; };
 		F199C2EB2043975200092E9B /* CircularImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImgView.swift; sourceTree = "<group>"; };
 		F199C2ED2043D13C00092E9B /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
 		F1C795482036A4BE0059E803 /* CircularBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBtn.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				F1771F2C20101B860060AB76 /* LoginVC.swift */,
+				F1958A5F205F5309000161A6 /* PetProfileVC.swift */,
 				F128E147203E818F00444DEE /* ForgotPasswordVC.swift */,
 				F1FBD7C92010211E00CC1874 /* HomeVC.swift */,
 				F1778ED8203FF566002C75FC /* CreatePetVC.swift */,
@@ -352,6 +355,7 @@
 				F199C2EE2043D13C00092E9B /* PetProfile.swift in Sources */,
 				F194B4F620452F0A0072D293 /* PetHealth.swift in Sources */,
 				F142DA672036877300569FAA /* CurvedBtn.swift in Sources */,
+				F1958A60205F5309000161A6 /* PetProfileVC.swift in Sources */,
 				F1778ED3203FA1FC002C75FC /* PetCell.swift in Sources */,
 				F1771F2D20101B860060AB76 /* LoginVC.swift in Sources */,
 				F128E148203E818F00444DEE /* ForgotPasswordVC.swift in Sources */,
