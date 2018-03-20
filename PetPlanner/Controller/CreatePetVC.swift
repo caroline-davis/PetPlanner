@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CreatePetVC: UIViewController, UITextFieldDelegate {
+class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var dobField: UITextField!
@@ -18,6 +18,14 @@ class CreatePetVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var idTagField: UITextField!
     
     @IBOutlet weak var save: UIButton!
+    
+    @IBOutlet weak var profilePic: CircularImgView!
+    
+    var profileImage: String!
+    var petId: String!
+    
+    var imagePicker: UIImagePickerController!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +36,58 @@ class CreatePetVC: UIViewController, UITextFieldDelegate {
         sexField.delegate = self
         idTagField.delegate = self
         
+        imagePicker = UIImagePickerController()
+        // makes it so the user can move the image to the square they want it cropped at
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        
     }
+    
+    @IBAction func addProfilePic(_ sender: AnyObject) {
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    // standard func for profile pic
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            profilePic.image = image
+            
+            // uploading of the image and compressing it
+            if let imageData = UIImageJPEGRepresentation(image, 0.2) {
+                
+                // the unique id
+                let imageId = NSUUID().uuidString
+                
+                // safety to tell code what type of file the image is
+                let metaData = StorageMetadata()
+                metaData.contentType = "image/jpeg"
+                
+                DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
+                    if error != nil {
+                        print("CAROL: Unable to upload image to firebase storage")
+                    } else {
+                        print("CAROL: Successfully uploaded image to firebase storage")
+                        let downloadURL = metaData?.downloadURL()?.absoluteString
+                        if let url = downloadURL {
+                            self.profileImage = url
+                        }
+                    }
+                }
+                }
+        } else {
+            print("CAROL: A valid image wasnt selected")
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+     }
+
 
 
     @IBAction func saveClicked() {
+        // TODO: Determine if this pet exists or not already
+        // so that when we come back to edit we don't create a new pet
+        // set petId on segue
+        
         guard case let name = nameField.text, name != "" else {
             self.alerts(message: "Please provide your pet's name")
             return
@@ -42,7 +98,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate {
         let species = speciesField.text
         let sex = sexField.text
         
-        let profileImage = "fake image"
+
         
         DataService.ds.createPet(
             dob: dob!,
@@ -64,7 +120,8 @@ class CreatePetVC: UIViewController, UITextFieldDelegate {
     func goToPetProfileVC(petId: String) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PetProfileVC") as! PetProfileVC
         vc.petId = petId
-        self.present(vc, animated: false, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: false)
+      //  self.present(vc, animated: false, completion: nil)
     }
 
 

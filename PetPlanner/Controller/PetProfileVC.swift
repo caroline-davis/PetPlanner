@@ -11,11 +11,17 @@ import UIKit
 class PetProfileVC: UIViewController {
     
     var petId: String!
+    var pet: PetProfile!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DataService.ds.getPet(petId: petId) { (petProfile) in
+            self.pet = petProfile
+        }
+        
     }
 
 

@@ -44,7 +44,7 @@ class PetProfile {
         return _petId
     }
     
-    init(profileImage: String, petName: String, petDob: String, petSpecies: String, petSex: String, petIdTag: String) {
+    init(profileImage: String, name: String, dob: String, species: String,sex: String, idTag: String) {
         self._profileImage = profileImage
         self._name = name
         self._dob = dob

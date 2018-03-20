@@ -81,6 +81,25 @@ class DataService {
 
     }
     
+    
+    func getPet(petId: String, completion: @escaping (PetProfile?)->()) {
+        
+        DB_BASE.child("pets").child(petId).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? Dictionary <String, AnyObject>
+            if value != nil {
+                let pet = PetProfile(petId: petId, profileData: value!)
+                print(pet)
+                completion(pet)
+            } else {
+                completion(nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
+    
 
 
 }
