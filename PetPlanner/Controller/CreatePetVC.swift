@@ -5,7 +5,7 @@
 //  Created by Caroline Davis on 23/2/18.
 //  Copyright © 2018 Caroline Davis. All rights reserved.
 //
-
+import AVFoundation
 import UIKit
 import Firebase
 
@@ -19,7 +19,9 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     
     @IBOutlet weak var save: UIButton!
     
+
     @IBOutlet weak var profilePic: CircularImgView!
+
     
     var profileImage: String!
     var petId: String!
@@ -49,7 +51,10 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     }
     
     // standard func for profile pic
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+     
+        
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             profilePic.image = image
             
@@ -82,7 +87,6 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
      }
 
 
-
     @IBAction func saveClicked() {
         // TODO: Determine if this pet exists or not already
         // so that when we come back to edit we don't create a new pet
@@ -92,19 +96,27 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
             self.alerts(message: "Please provide your pet's name")
             return
         }
+    
         
         let dob = dobField.text
         let idTag = idTagField.text
         let species = speciesField.text
         let sex = sexField.text
         
+        let image: String
+        
+        if self.profileImage == nil {
+            image = DEFAULT_PROFLE_IMAGE
+        } else {
+            image = self.profileImage
+        }
 
         
         DataService.ds.createPet(
             dob: dob!,
             idTag: idTag!,
             name: name!,
-            profileImage: profileImage,
+            profileImage: image,
             sex: sex!,
             species: species!,
             completion: { (error, petId) in
@@ -123,6 +135,5 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         self.navigationController?.pushViewController(vc, animated: false)
       //  self.present(vc, animated: false, completion: nil)
     }
-
-
+    
 }

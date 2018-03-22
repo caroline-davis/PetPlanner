@@ -489,32 +489,18 @@
                                         <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="027-VS-RXT" customClass="CircularImgView" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="45" y="28" width="218" height="116"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ProfilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="027-VS-RXT" customClass="CircularImgView" customModule="PetPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="94" y="14" width="133" height="134"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFf-ia-tMK">
-                                        <rect key="frame" x="96" y="94" width="115" height="30"/>
+                                        <rect key="frame" x="216" y="106" width="67" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Add Profile Pic">
+                                        <state key="normal" title="Edit Icon">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="addProfilePic:" destination="J1b-AZ-lAT" eventType="touchUpInside" id="5g7-WH-VS0"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z20-Lu-Yin" customClass="CircularImgView" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="47" y="28" width="218" height="116"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1v-cX-6Mx">
-                                        <rect key="frame" x="98" y="94" width="115" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Add Profile Pic">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addProfilePic:" destination="J1b-AZ-lAT" eventType="touchUpInside" id="Pj5-Bm-Z5X"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -528,7 +514,7 @@
                         <outlet property="dobField" destination="gLe-m2-ys0" id="qRw-Fg-K7Z"/>
                         <outlet property="idTagField" destination="Ay7-am-fa5" id="6af-ds-LJB"/>
                         <outlet property="nameField" destination="TYc-L5-9SZ" id="cc2-Pb-8pz"/>
-                        <outlet property="profilePic" destination="Z20-Lu-Yin" id="Oiz-Rx-NAs"/>
+                        <outlet property="profilePic" destination="027-VS-RXT" id="Ko7-rZ-6UX"/>
                         <outlet property="save" destination="xaW-sx-TAS" id="5wU-oG-Mdq"/>
                         <outlet property="sexField" destination="B4F-kf-Ib6" id="oR1-Gr-EWP"/>
                         <outlet property="speciesField" destination="Dun-jG-s5r" id="da7-gq-GLy"/>
@@ -622,6 +608,7 @@
         <image name="AddPetButton" width="130" height="130"/>
         <image name="Logo" width="509" height="241"/>
         <image name="LogoAlt" width="509" height="241"/>
+        <image name="ProfilePicture" width="362" height="362"/>
         <image name="ViewPetsButton" width="130" height="130"/>
     </resources>
 </document>

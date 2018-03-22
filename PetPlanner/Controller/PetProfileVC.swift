@@ -15,6 +15,7 @@ class PetProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //  _ = navigationController?.popToRootViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

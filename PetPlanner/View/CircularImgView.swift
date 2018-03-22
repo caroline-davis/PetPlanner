@@ -14,8 +14,8 @@ class CircularImgView: UIImageView {
         super.awakeFromNib()
 
             layer.cornerRadius = self.frame.width / 2
-            layer.borderWidth = 2
-            layer.borderColor = WHITE_COLOR.cgColor
+            layer.borderWidth = 5
+            layer.borderColor = BLUE_COLOR.cgColor
             layer.masksToBounds = true
         
     }
