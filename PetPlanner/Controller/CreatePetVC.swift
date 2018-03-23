@@ -47,13 +47,10 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     
     @IBAction func addProfilePic(_ sender: AnyObject) {
         present(imagePicker, animated: true, completion: nil)
-        
     }
     
     // standard func for profile pic
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-     
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             profilePic.image = image
@@ -103,20 +100,16 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         let species = speciesField.text
         let sex = sexField.text
         
-        let image: String
-        
-        if self.profileImage == nil {
-            image = DEFAULT_PROFLE_IMAGE
-        } else {
-            image = self.profileImage
-        }
+
+        // had to set default img in firebase to get the string for this section
+       let image = self.profileImage != nil ? self.profileImage : DEFAULT_PROFLE_IMAGE
 
         
         DataService.ds.createPet(
             dob: dob!,
             idTag: idTag!,
             name: name!,
-            profileImage: image,
+            profileImage: image!,
             sex: sex!,
             species: species!,
             completion: { (error, petId) in
