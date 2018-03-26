@@ -12,12 +12,20 @@ class CircularImgView: UIImageView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-            layer.cornerRadius = self.frame.width / 2
-            layer.borderWidth = 5
-            layer.borderColor = BLUE_COLOR.cgColor
-            layer.masksToBounds = true
         
+            colourSwap()
+            layer.cornerRadius = self.frame.width / 2
+            layer.borderWidth = 6
+            layer.masksToBounds = true
+
+    }
+    
+    func colourSwap() {
+        if (self.viewWithTag(1) != nil) {
+            layer.borderColor = WHITE_COLOR.cgColor
+        } else {
+            layer.borderColor = BLUE_COLOR.cgColor
+        }
     }
 
 }

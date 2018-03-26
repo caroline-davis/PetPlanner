@@ -67,7 +67,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                 
                 DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
                     if error != nil {
-                        print("CAROL: Unable to upload image to firebase storage")
+                        print("CAROL: Unable to upload image to firebase storage", error)
                     } else {
                         print("CAROL: Successfully uploaded image to firebase storage")
                         let downloadURL = metaData?.downloadURL()?.absoluteString

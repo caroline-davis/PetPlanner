@@ -14,8 +14,7 @@ class ImgAndTxtBtn: UIButton {
         super.awakeFromNib()
         
         imageView?.contentMode = .scaleAspectFit
-       
-      
+    
         layer.cornerRadius = 4
         layer.shadowColor = BLACK_COLOR.cgColor
         layer.shadowOpacity = 0.5
