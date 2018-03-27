@@ -40,6 +40,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         // makes it so the user can move the image to the square they want it cropped at
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
+   
         
     }
     
@@ -49,6 +50,9 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     
     // standard func for profile pic
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        save.isUserInteractionEnabled = false
+        print("CAROL: button disabled")
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             profilePic.image = image
@@ -66,19 +70,25 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                 DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
                     if error != nil {
                         print("CAROL: Unable to upload image to firebase storage", error!)
+                        self.save.isUserInteractionEnabled = true
+                        print("CAROL: button enabled - it didnt work")
                     } else {
                         print("CAROL: Successfully uploaded image to firebase storage")
                         let downloadURL = metaData?.downloadURL()?.absoluteString
                         if let url = downloadURL {
                             self.profileImage = url
+                            self.save.isUserInteractionEnabled = true
+                            print("CAROL: button enabled - it worked")
                         }
                     }
                 }
             }
         } else {
             print("CAROL: A valid image wasnt selected")
+            self.save.isUserInteractionEnabled = true
         }
         imagePicker.dismiss(animated: true, completion: nil)
+        
     }
     
     
