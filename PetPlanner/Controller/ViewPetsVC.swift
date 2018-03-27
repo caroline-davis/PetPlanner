@@ -9,10 +9,10 @@
 import UIKit
 
 class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
-     var tableViewData = [[String: Any]]()
+    var tableViewData = [[String: Any]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,18 +25,18 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return tableViewData.count
     }
     
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath) as? PetCell {
             let dictionary = self.tableViewData[indexPath.row]
-         
+            
             cell.title?.text = dictionary["petTitle"] as! String?
             cell.dob?.text = dictionary["petDob"] as! String?
             cell.species?.text = dictionary["petSpecies"] as! String?
             cell.sex?.text = dictionary["petSex"] as! String?
             cell.idTag?.text = dictionary["petIdTag"] as! String?
-         //   cell.img?.text = dictionary["petImageUrl"] as! String?
+            //   cell.img?.text = dictionary["petImageUrl"] as! String?
             
             //   cell.updateUI(partyRock: partyRock)
             
@@ -49,7 +49,6 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("hi")
     }
+      
     
-
-
 }

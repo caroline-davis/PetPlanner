@@ -14,14 +14,14 @@ class ForgotPasswordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     @IBAction func resetPasswordClicked(_ sender: Any) {
         DataService.ds.forgotPassword(email: "hello")
     }
     
-
+    
     @IBAction func goToLoginVC(_ sender: Any) {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
@@ -29,7 +29,7 @@ class ForgotPasswordVC: UIViewController {
         
     }
     
-
+    
 }
 
 //if an IBAction on a button - blablaCLicked

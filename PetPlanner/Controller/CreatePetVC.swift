@@ -8,9 +8,10 @@
 import AVFoundation
 import UIKit
 import Firebase
+import SDWebImage
 
 class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var dobField: UITextField!
     @IBOutlet weak var speciesField: UITextField!
@@ -18,10 +19,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     @IBOutlet weak var idTagField: UITextField!
     
     @IBOutlet weak var save: UIButton!
-    
-
     @IBOutlet weak var profilePic: CircularImgView!
-
     
     var profileImage: String!
     var petId: String!
@@ -31,7 +29,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         nameField.delegate = self
         dobField.delegate = self
         speciesField.delegate = self
@@ -67,7 +65,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                 
                 DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
                     if error != nil {
-                        print("CAROL: Unable to upload image to firebase storage", error)
+                        print("CAROL: Unable to upload image to firebase storage", error!)
                     } else {
                         print("CAROL: Successfully uploaded image to firebase storage")
                         let downloadURL = metaData?.downloadURL()?.absoluteString
@@ -76,14 +74,14 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                         }
                     }
                 }
-                }
+            }
         } else {
             print("CAROL: A valid image wasnt selected")
         }
         imagePicker.dismiss(animated: true, completion: nil)
-     }
-
-
+    }
+    
+    
     @IBAction func saveClicked() {
         // TODO: Determine if this pet exists or not already
         // so that when we come back to edit we don't create a new pet
@@ -93,17 +91,17 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
             self.alerts(message: "Please provide your pet's name")
             return
         }
-    
+        
         
         let dob = dobField.text
         let idTag = idTagField.text
         let species = speciesField.text
         let sex = sexField.text
         
-
+        
         // had to set default img in firebase to get the string for this section
-       let image = self.profileImage != nil ? self.profileImage : DEFAULT_PROFLE_IMAGE
-
+        let image = self.profileImage != nil ? self.profileImage : DEFAULT_PROFLE_IMAGE
+        
         
         DataService.ds.createPet(
             dob: dob!,
@@ -113,20 +111,20 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
             sex: sex!,
             species: species!,
             completion: { (error, petId) in
-        
+                
                 if error != nil {
                     self.alerts(message: error!)
                 } else {
                     self.goToPetProfileVC(petId: petId)
                 }
-            })
+        })
     }
     
     func goToPetProfileVC(petId: String) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PetProfileVC") as! PetProfileVC
         vc.petId = petId
         self.navigationController?.pushViewController(vc, animated: false)
-      //  self.present(vc, animated: false, completion: nil)
+        //  self.present(vc, animated: false, completion: nil)
     }
     
 }

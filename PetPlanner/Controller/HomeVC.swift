@@ -11,7 +11,7 @@ import Firebase
 import SwiftKeychainWrapper
 
 class HomeVC: UIViewController {
-
+    
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,21 +23,21 @@ class HomeVC: UIViewController {
     
     
     
-        @IBAction func logoutClicked(_ sender: AnyObject) {
-            DataService.ds.logout(uid: KEY_UID)
-            
-            print("CAROL:ITS LOGGED OUT")
-            
-          //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            
-            self.present(vc, animated: false, completion: nil)
-
+    @IBAction func logoutClicked(_ sender: AnyObject) {
+        DataService.ds.logout(uid: KEY_UID)
+        
+        print("CAROL:ITS LOGGED OUT")
+        
+        //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        
+        self.present(vc, animated: false, completion: nil)
+        
     }
     
-
     
-
+    
+    
 }
 
 
