@@ -503,6 +503,10 @@
                                             <action selector="addProfilePic:" destination="J1b-AZ-lAT" eventType="touchUpInside" id="5g7-WH-VS0"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="YQL-8S-53m">
+                                        <rect key="frame" x="147" y="527" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.76145237684249878" green="0.49369072914123535" blue="0.7788202166557312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -511,6 +515,7 @@
                         <viewLayoutGuide key="safeArea" id="1uZ-zv-Gu1"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="YQL-8S-53m" id="qVg-r9-ktP"/>
                         <outlet property="dobField" destination="gLe-m2-ys0" id="qRw-Fg-K7Z"/>
                         <outlet property="idTagField" destination="Ay7-am-fa5" id="6af-ds-LJB"/>
                         <outlet property="nameField" destination="TYc-L5-9SZ" id="cc2-Pb-8pz"/>
