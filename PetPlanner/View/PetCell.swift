@@ -22,11 +22,24 @@ class PetCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        layer.cornerRadius = 15
+        layer.masksToBounds = true
+        
+        name.textColor = WHITE_COLOR
+        species.textColor = WHITE_COLOR
+        dob.textColor = WHITE_COLOR
+        sex.textColor = WHITE_COLOR
+        idTag.textColor = WHITE_COLOR
+        
        
     }
+    
+
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
 
     }
 
