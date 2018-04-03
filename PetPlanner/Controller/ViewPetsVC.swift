@@ -65,11 +65,11 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.sex?.text = "SEX: \(pet.sex.capitalized)"
             cell.idTag?.text = "I.D: \(pet.idTag.capitalized)"
             
-            cell.deleteCell.tag = indexPath.row
-            cell.deleteCell.addTarget(self, action: #selector(deletePet), for: .touchUpInside)
+            cell.tag = indexPath.row
+        //    cell.deleteCell.addTarget(self, action: #selector(deletePet), for: .touchUpInside)
             
-            cell.editCell.tag = indexPath.row
-            cell.editCell.addTarget(self, action: #selector(editPet), for: .touchUpInside)
+            cell.tag = indexPath.row
+         //   cell.editCell.addTarget(self, action: #selector(editPet), for: .touchUpInside)
             
             cell.profilePic?.sd_setImage(with: URL(string: pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload])
             
@@ -82,36 +82,62 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("hi")
-//
-//        // add in the edit + delete swipey
-//        // if edit go to create pet screen + update info in firebase
-//        // if delete add a pop 'are you sure' then if they click yes then update info in firebase
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-   // button1.addTarget(self, action: "buttonClicked:", for: .touchUpInside)
-   // button2.addTarget(self, action: "buttonClicked:", for: .touchUpInside)
-
-    
-    @objc func deletePet(sender: UIButton) {
-        print(sender.tag)
-        // this is the number of the pet in the array we wish to delete
-        print("hello \(tableViewData.count)")
-        let pet = self.tableViewData[sender.tag]
+        let pet = self.tableViewData[indexPath.row]
         let petId = pet.petId
         
-        // removes from the ui
-        tableViewData.remove(at: sender.tag)
-        self.tableView.reloadData()
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PetProfileVC") as! PetProfileVC
+        vc.petId = petId
+        self.navigationController?.pushViewController(vc, animated: false)
+
+    }
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+ 
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        // removes the data from firebase
-        DataService.ds.DB_BASE.child("pets").child(petId).removeValue()
-    
+        let pet = self.tableViewData[indexPath.row]
+        let petId = pet.petId
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            // delete item at indexPath
+            print("delete tapped")
+            
+            self.tableViewData.remove(at: indexPath.row)
+            self.tableView.reloadData()
+            
+            // removes the data from firebase
+             DataService.ds.DB_BASE.child("pets").child(petId).removeValue()
+            
+        }
+        delete.backgroundColor = .red
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            print("edit tapped")
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreatePetVC") as! CreatePetVC
+            vc.petId = petId
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+        
+        edit.backgroundColor = .orange
+        
+        return [delete, edit]
     }
+
     
-    @objc func editPet(sender: UIButton) {
-    }
+    
+    
+   // @objc func editPet(sender: UIButton) {
+   // }
+    
 
  
 }
+
+

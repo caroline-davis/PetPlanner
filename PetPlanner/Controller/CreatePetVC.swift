@@ -153,3 +153,6 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     }
     
 }
+
+// if the user wants to edit the pet - need to update and save in firebase like that - will overide the old data
+// self.ref.child("users").child(user.uid).setValue(["username": username])
