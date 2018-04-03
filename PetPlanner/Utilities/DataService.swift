@@ -124,12 +124,21 @@ class DataService {
             completion(pets)
             } else {
                 print("no pets")
+                  
             }
         })
-        
     
     }
     
+//    func editPet(petId: String) {
+//
+//        DB_BASE.child("pets").child(petId).updateChildValues(["name": petProfile.name, "dob": petProfile.dob, "idTag": petProfile.idTag, "sex": petProfile.sex, "species": petProfile.species])
+//    }
+    
+    func editPet(petId: String, dob: String, name: String, idTag: String, sex: String, species: String) {
+        
+        DB_BASE.child("pets").child(petId).updateChildValues(["name": name, "dob": dob, "idTag": idTag, "sex": sex, "species": species])
+    }
 
 
 }

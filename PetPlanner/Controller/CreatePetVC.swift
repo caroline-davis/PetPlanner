@@ -24,6 +24,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var profileImage: String!
     var petId: String!
+    var pet: PetProfile!
     
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
@@ -44,6 +45,32 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
    
         activityIndicator.isHidden = true
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // if the user clicks edit on the viewpets page - this will open the screen with that same petId for the user to edit
+        
+        if petId != nil {
+            DataService.ds.getPet(petId: petId) { (petProfile) in
+                self.pet = petProfile
+                
+                // gets image from firebase using sdwebimage
+                self.profilePic.sd_setImage(with: URL(string: self.pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
+                    
+                })
+                
+                DispatchQueue.main.async {
+                    self.nameField.text = self.pet.name
+                    self.dobField.text = self.pet.dob
+                    self.speciesField.text = self.pet.species
+                    self.sexField.text = self.pet.sex
+                    self.idTagField.text = self.pet.idTag
+                    
+                }
+                
+            }
+        }
     }
     
     @IBAction func addProfilePic(_ sender: AnyObject) {
@@ -110,7 +137,6 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     @IBAction func saveClicked() {
         // TODO: Determine if this pet exists or not already
         // so that when we come back to edit we don't create a new pet
-        // set petId on segue
         
         guard case let name = nameField.text, name != "" else {
             self.alerts(message: "Please provide your pet's name")
@@ -127,6 +153,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         // had to set default img in firebase to get the string for this section
         let image = self.profileImage != nil ? self.profileImage : DEFAULT_PROFLE_IMAGE
         
+        if petId == nil {
         
         DataService.ds.createPet(
             dob: dob!,
@@ -143,7 +170,17 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                     self.goToPetProfileVC(petId: petId)
                 }
         })
+        } else {
+            // if edit is clicked, the values update and save on firebase
+            DataService.ds.editPet(petId: petId, dob: dob!, name: name!, idTag: idTag!, sex: sex!, species: species!)
+            
+            // TO DO: update the profile image if it has been changed
+     
+        }
+        
     }
+    
+  
     
     func goToPetProfileVC(petId: String) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PetProfileVC") as! PetProfileVC
@@ -154,5 +191,3 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     
 }
 
-// if the user wants to edit the pet - need to update and save in firebase like that - will overide the old data
-// self.ref.child("users").child(user.uid).setValue(["username": username])

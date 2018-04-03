@@ -13,6 +13,7 @@ import SDWebImage
 class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
 
     
@@ -27,14 +28,18 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    //    activityIndicator.isHidden = false
+     //   activityIndicator.startAnimating()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.tableView.rowHeight = 105
+        self.tableView.rowHeight = 100
         
        // tableView.rowHeight = UITableViewAutomaticDimension
         
     }
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,8 +47,8 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         DataService.ds.getAllPets { (pets) in
             self.tableViewData = pets
             self.tableView.reloadData()
+            
         }
-        
         
     }
     
@@ -131,12 +136,6 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     
-    
-    
-   // @objc func editPet(sender: UIButton) {
-   // }
-    
-
  
 }
 
