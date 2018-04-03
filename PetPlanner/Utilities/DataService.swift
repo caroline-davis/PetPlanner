@@ -102,24 +102,35 @@ class DataService {
     
     
     func getAllPets(completion: @escaping (Array<PetProfile>)->()) {
+        
          DB_BASE.child("pets").queryOrdered(byChild: "userId").queryEqual(toValue: USER_ID).observeSingleEvent(of: .value, with: { (snapshot) in
     
+           
             let dict = snapshot.value as? Dictionary <String, AnyObject>
             
             // To get JSON data as array to loop through - it removes the keys from outer layer of dict
+            
+            if dict != nil {
+            
             let values = Array(dict!.values)
         
             // .map calls a function for each item in array
             let pets = values.map({ (item) -> PetProfile in
                 let petId = item["petId"] as! String
                 return PetProfile(petId: petId, profileData: item as! Dictionary<String, AnyObject>)
+                
             })
             
             completion(pets)
+            } else {
+                print("no pets")
+            }
         })
         
+    
     }
     
 
 
 }
+

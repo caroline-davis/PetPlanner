@@ -18,6 +18,8 @@ class PetCell: UITableViewCell {
     @IBOutlet weak var sex: UILabel!
     @IBOutlet weak var idTag: UILabel!
     
+    @IBOutlet weak var editCell: UIButton!
+    @IBOutlet weak var deleteCell: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,13 +37,15 @@ class PetCell: UITableViewCell {
     }
     
 
-    
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
 
     }
+    
+
 
 }
 
