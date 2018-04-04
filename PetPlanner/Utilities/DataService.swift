@@ -135,9 +135,9 @@ class DataService {
 //        DB_BASE.child("pets").child(petId).updateChildValues(["name": petProfile.name, "dob": petProfile.dob, "idTag": petProfile.idTag, "sex": petProfile.sex, "species": petProfile.species])
 //    }
     
-    func editPet(petId: String, dob: String, name: String, idTag: String, sex: String, species: String) {
+    func editPet(petId: String, dob: String, name: String, idTag: String, sex: String, species: String, profileImage: String) {
         
-        DB_BASE.child("pets").child(petId).updateChildValues(["name": name, "dob": dob, "idTag": idTag, "sex": sex, "species": species])
+        DB_BASE.child("pets").child(petId).updateChildValues(["name": name, "dob": dob, "idTag": idTag, "sex": sex, "species": species, "profileImage": profileImage])
     }
 
 

@@ -28,7 +28,7 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    //    activityIndicator.isHidden = false
+        activityIndicator.isHidden = true
      //   activityIndicator.startAnimating()
         
         tableView.delegate = self
@@ -53,7 +53,7 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
          
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableViewData.count 
     }
@@ -71,15 +71,8 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.idTag?.text = "I.D: \(pet.idTag.capitalized)"
             
             cell.tag = indexPath.row
-        //    cell.deleteCell.addTarget(self, action: #selector(deletePet), for: .touchUpInside)
-            
-            cell.tag = indexPath.row
-         //   cell.editCell.addTarget(self, action: #selector(editPet), for: .touchUpInside)
             
             cell.profilePic?.sd_setImage(with: URL(string: pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload])
-            
- 
-          //  cell.updateUI(petCell: petCell)
             
             return cell
         } else {

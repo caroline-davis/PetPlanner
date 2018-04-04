@@ -45,12 +45,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
    
         activityIndicator.isHidden = true
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
         // if the user clicks edit on the viewpets page - this will open the screen with that same petId for the user to edit
-        
         if petId != nil {
             DataService.ds.getPet(petId: petId) { (petProfile) in
                 self.pet = petProfile
@@ -71,7 +66,9 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                 
             }
         }
+        
     }
+    
     
     @IBAction func addProfilePic(_ sender: AnyObject) {
         present(imagePicker, animated: true, completion: nil)
@@ -129,9 +126,12 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
             self.activityIndicator.stopAnimating()
             self.save.titleLabel?.isHidden = false
         }
+        
         imagePicker.dismiss(animated: true, completion: nil)
         
     }
+    
+    
     
     
     @IBAction func saveClicked() {
@@ -172,16 +172,11 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         })
         } else {
             // if edit is clicked, the values update and save on firebase
-            DataService.ds.editPet(petId: petId, dob: dob!, name: name!, idTag: idTag!, sex: sex!, species: species!)
-            
-            // TO DO: update the profile image if it has been changed
-     
+            DataService.ds.editPet(petId: petId, dob: dob!, name: name!, idTag: idTag!, sex: sex!, species: species!, profileImage: profileImage)
         }
-        
     }
     
   
-    
     func goToPetProfileVC(petId: String) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PetProfileVC") as! PetProfileVC
         vc.petId = petId
