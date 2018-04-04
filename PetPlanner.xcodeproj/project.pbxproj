@@ -36,6 +36,9 @@
 		F194B4F820452F170072D293 /* PetFavs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F720452F170072D293 /* PetFavs.swift */; };
 		F194B4FA20452F2D0072D293 /* PetEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F920452F2D0072D293 /* PetEvents.swift */; };
 		F1958A60205F5309000161A6 /* PetProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1958A5F205F5309000161A6 /* PetProfileVC.swift */; };
+		F19798112074716000FF86EF /* TakePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19798102074716000FF86EF /* TakePhotoVC.swift */; };
+		F19798132074718400FF86EF /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19798122074718400FF86EF /* GalleryVC.swift */; };
+		F19798152074719800FF86EF /* ViewPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19798142074719800FF86EF /* ViewPhotoVC.swift */; };
 		F199C2EC2043975200092E9B /* CircularImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2EB2043975200092E9B /* CircularImgView.swift */; };
 		F199C2EE2043D13C00092E9B /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2ED2043D13C00092E9B /* PetProfile.swift */; };
 		F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C795482036A4BE0059E803 /* CircularBtn.swift */; };
@@ -76,6 +79,9 @@
 		F194B4F720452F170072D293 /* PetFavs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFavs.swift; sourceTree = "<group>"; };
 		F194B4F920452F2D0072D293 /* PetEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEvents.swift; sourceTree = "<group>"; };
 		F1958A5F205F5309000161A6 /* PetProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileVC.swift; sourceTree = "<group>"; };
+		F19798102074716000FF86EF /* TakePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoVC.swift; sourceTree = "<group>"; };
+		F19798122074718400FF86EF /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
+		F19798142074719800FF86EF /* ViewPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoVC.swift; sourceTree = "<group>"; };
 		F199C2EB2043975200092E9B /* CircularImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImgView.swift; sourceTree = "<group>"; };
 		F199C2ED2043D13C00092E9B /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
 		F1C795482036A4BE0059E803 /* CircularBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBtn.swift; sourceTree = "<group>"; };
@@ -193,10 +199,13 @@
 			children = (
 				F1771F2C20101B860060AB76 /* LoginVC.swift */,
 				F128E147203E818F00444DEE /* ForgotPasswordVC.swift */,
-				F1778ED8203FF566002C75FC /* CreatePetVC.swift */,
-				F1958A5F205F5309000161A6 /* PetProfileVC.swift */,
 				F1FBD7C92010211E00CC1874 /* HomeVC.swift */,
 				F1778ED6203FF547002C75FC /* ViewPetsVC.swift */,
+				F1778ED8203FF566002C75FC /* CreatePetVC.swift */,
+				F1958A5F205F5309000161A6 /* PetProfileVC.swift */,
+				F19798102074716000FF86EF /* TakePhotoVC.swift */,
+				F19798122074718400FF86EF /* GalleryVC.swift */,
+				F19798142074719800FF86EF /* ViewPhotoVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -355,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1778ED7203FF547002C75FC /* ViewPetsVC.swift in Sources */,
+				F19798132074718400FF86EF /* GalleryVC.swift in Sources */,
 				F142DA692036978A00569FAA /* SquareTxtFld.swift in Sources */,
 				F1778ED9203FF566002C75FC /* CreatePetVC.swift in Sources */,
 				F199C2EE2043D13C00092E9B /* PetProfile.swift in Sources */,
@@ -373,7 +383,9 @@
 				F128E14A203E8F5400444DEE /* CurvedView.swift in Sources */,
 				F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */,
 				F161C9322068AE6900E27455 /* CurvedLbl.swift in Sources */,
+				F19798152074719800FF86EF /* ViewPhotoVC.swift in Sources */,
 				F14EA3AD203A8DCA0017B682 /* Convenience.swift in Sources */,
+				F19798112074716000FF86EF /* TakePhotoVC.swift in Sources */,
 				F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */,
 				F128E146203D36B600444DEE /* DataService.swift in Sources */,
 				F194B4FA20452F2D0072D293 /* PetEvents.swift in Sources */,

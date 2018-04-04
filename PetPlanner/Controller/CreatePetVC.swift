@@ -55,6 +55,8 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                     
                 })
                 
+                self.profileImage = self.pet.profileImage
+                
                 DispatchQueue.main.async {
                     self.nameField.text = self.pet.name
                     self.dobField.text = self.pet.dob
@@ -172,7 +174,8 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         })
         } else {
             // if edit is clicked, the values update and save on firebase
-            DataService.ds.editPet(petId: petId, dob: dob!, name: name!, idTag: idTag!, sex: sex!, species: species!, profileImage: profileImage)
+            DataService.ds.editPet(petId: petId, dob: dob!, name: name!, idTag: idTag!, sex: sex!, species: species!, profileImage: image!)
+            self.goToPetProfileVC(petId: petId)
         }
     }
     
