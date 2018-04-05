@@ -552,7 +552,7 @@
         <!--Vet MapVC-->
         <scene sceneID="nTt-9V-Dgk">
             <objects>
-                <viewController id="DNW-CQ-kKL" customClass="VetMapVC" sceneMemberID="viewController">
+                <viewController id="DNW-CQ-kKL" customClass="VetMapVC" customModule="PetPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Ur-95-ykH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -565,6 +565,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Q6R-vH-Y1E"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="dgj-AZ-svx" id="I8w-he-H19"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdM-Ua-7yY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
