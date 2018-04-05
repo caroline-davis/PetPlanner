@@ -22,14 +22,7 @@ class GalleryVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   // Get profile picture and put it in as first gallery photo
+    // When user takes a photo inside the app with the camera... get that photo into firebase and then download it here and it will be in the gallery.
 
 }

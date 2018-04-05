@@ -139,6 +139,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
     }
     
+    // when enter is pressed keyboard is dismissed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     
     
 }

@@ -187,5 +187,11 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         //  self.present(vc, animated: false, completion: nil)
     }
     
+    // when enter is pressed keyboard is dismissed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
 

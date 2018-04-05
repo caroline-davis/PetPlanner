@@ -32,6 +32,7 @@
 		F1778ED5203FED3A002C75FC /* ImgAndTxtBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1778ED4203FED3A002C75FC /* ImgAndTxtBtn.swift */; };
 		F1778ED7203FF547002C75FC /* ViewPetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1778ED6203FF547002C75FC /* ViewPetsVC.swift */; };
 		F1778ED9203FF566002C75FC /* CreatePetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1778ED8203FF566002C75FC /* CreatePetVC.swift */; };
+		F18355482075D336005F47D8 /* HealthInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18355472075D336005F47D8 /* HealthInfoVC.swift */; };
 		F194B4F620452F0A0072D293 /* PetHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F520452F0A0072D293 /* PetHealth.swift */; };
 		F194B4F820452F170072D293 /* PetFavs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F720452F170072D293 /* PetFavs.swift */; };
 		F194B4FA20452F2D0072D293 /* PetEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F920452F2D0072D293 /* PetEvents.swift */; };
@@ -42,6 +43,7 @@
 		F199C2EC2043975200092E9B /* CircularImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2EB2043975200092E9B /* CircularImgView.swift */; };
 		F199C2EE2043D13C00092E9B /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2ED2043D13C00092E9B /* PetProfile.swift */; };
 		F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C795482036A4BE0059E803 /* CircularBtn.swift */; };
+		F1EDE5402075E5BD009C978D /* VetMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EDE53F2075E5BD009C978D /* VetMapVC.swift */; };
 		F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBD7C92010211E00CC1874 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,7 @@
 		F1778ED4203FED3A002C75FC /* ImgAndTxtBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgAndTxtBtn.swift; sourceTree = "<group>"; };
 		F1778ED6203FF547002C75FC /* ViewPetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPetsVC.swift; sourceTree = "<group>"; };
 		F1778ED8203FF566002C75FC /* CreatePetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetVC.swift; sourceTree = "<group>"; };
+		F18355472075D336005F47D8 /* HealthInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInfoVC.swift; sourceTree = "<group>"; };
 		F194B4F520452F0A0072D293 /* PetHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetHealth.swift; sourceTree = "<group>"; };
 		F194B4F720452F170072D293 /* PetFavs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFavs.swift; sourceTree = "<group>"; };
 		F194B4F920452F2D0072D293 /* PetEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEvents.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		F199C2EB2043975200092E9B /* CircularImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImgView.swift; sourceTree = "<group>"; };
 		F199C2ED2043D13C00092E9B /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
 		F1C795482036A4BE0059E803 /* CircularBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBtn.swift; sourceTree = "<group>"; };
+		F1EDE53F2075E5BD009C978D /* VetMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetMapVC.swift; sourceTree = "<group>"; };
 		F1FBD7C92010211E00CC1874 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,7 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				F1771F2C20101B860060AB76 /* LoginVC.swift */,
+				F18355472075D336005F47D8 /* HealthInfoVC.swift */,
 				F128E147203E818F00444DEE /* ForgotPasswordVC.swift */,
+				F1EDE53F2075E5BD009C978D /* VetMapVC.swift */,
 				F1FBD7C92010211E00CC1874 /* HomeVC.swift */,
 				F1778ED6203FF547002C75FC /* ViewPetsVC.swift */,
 				F1778ED8203FF566002C75FC /* CreatePetVC.swift */,
@@ -376,6 +382,7 @@
 				F128E148203E818F00444DEE /* ForgotPasswordVC.swift in Sources */,
 				F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */,
 				F199C2EC2043975200092E9B /* CircularImgView.swift in Sources */,
+				F18355482075D336005F47D8 /* HealthInfoVC.swift in Sources */,
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
 				F1778ED5203FED3A002C75FC /* ImgAndTxtBtn.swift in Sources */,
 				F194B4F820452F170072D293 /* PetFavs.swift in Sources */,
@@ -389,6 +396,7 @@
 				F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */,
 				F128E146203D36B600444DEE /* DataService.swift in Sources */,
 				F194B4FA20452F2D0072D293 /* PetEvents.swift in Sources */,
+				F1EDE5402075E5BD009C978D /* VetMapVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +541,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PetPlanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinedavis.PetPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,6 +562,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PetPlanner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinedavis.PetPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
