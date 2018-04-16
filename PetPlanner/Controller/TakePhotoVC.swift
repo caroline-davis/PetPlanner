@@ -24,6 +24,8 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
 
     }
     
+
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         imagePickerController.dismiss(animated: true, completion: nil)

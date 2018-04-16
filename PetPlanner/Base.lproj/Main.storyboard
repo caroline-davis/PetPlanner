@@ -520,8 +520,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ProfilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="SzB-sL-JNa" customClass="CircularImgView" customModule="PetPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="123" y="8" width="69" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfA-7X-6Lj" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="522" width="263" height="30"/>
+                                        <rect key="frame" x="23" y="225" width="263" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
@@ -532,11 +537,6 @@
                                             <segue destination="DNW-CQ-kKL" kind="show" identifier="ToVetMapVC" id="y8M-xq-R7o"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ProfilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="SzB-sL-JNa" customClass="CircularImgView" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="123" y="8" width="69" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.7614523768" green="0.4936907291" blue="0.77882021670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -560,13 +560,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dgj-AZ-svx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DNW-CQ-kKL" id="xGw-Wy-nLQ"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Q6R-vH-Y1E"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="dgj-AZ-svx" id="I8w-he-H19"/>
+                        <outlet property="mapView" destination="dgj-AZ-svx" id="0yg-bU-T2u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdM-Ua-7yY" userLabel="First Responder" sceneMemberID="firstResponder"/>
