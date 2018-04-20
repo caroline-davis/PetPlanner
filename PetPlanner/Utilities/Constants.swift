@@ -15,6 +15,7 @@ import SwiftKeychainWrapper
 let KEY_UID = "uid"
 var USER_ID = KeychainWrapper.standard.string(forKey: KEY_UID)!
 let DEFAULT_PROFLE_IMAGE = "https://firebasestorage.googleapis.com/v0/b/petplanner252.appspot.com/o/pets%2Fprofile-picture.png?alt=media"
+var CURRENT_PET_ID: String!
 
 
 var ref: DatabaseReference!

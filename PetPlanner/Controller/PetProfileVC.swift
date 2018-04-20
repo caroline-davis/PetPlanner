@@ -28,6 +28,7 @@ class PetProfileVC: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         //  _ = navigationController?.popToRootViewController(animated: true)
+        CURRENT_PET_ID = petId
         
     }
     
@@ -55,6 +56,9 @@ class PetProfileVC: UIViewController  {
         }
         
     }
+    
+    
+
     
     
 }

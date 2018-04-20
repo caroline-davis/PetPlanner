@@ -134,8 +134,6 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     }
     
     
-    
-    
     @IBAction func saveClicked() {
         // TODO: Determine if this pet exists or not already
         // so that when we come back to edit we don't create a new pet
@@ -145,12 +143,10 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
             return
         }
         
-        
         let dob = dobField.text
         let idTag = idTagField.text
         let species = speciesField.text
         let sex = sexField.text
-        
         
         // had to set default img in firebase to get the string for this section
         let image = self.profileImage != nil ? self.profileImage : DEFAULT_PROFLE_IMAGE
@@ -178,7 +174,6 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
             self.goToPetProfileVC(petId: petId)
         }
     }
-    
   
     func goToPetProfileVC(petId: String) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PetProfileVC") as! PetProfileVC

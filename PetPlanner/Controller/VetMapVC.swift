@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 
-
 class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
@@ -94,7 +93,7 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
         if annotation is MKUserLocation {
-            //return nil so map view draws "blue dot" for standard user location
+            // return nil so map shoes blue dot for user location
             return nil
         }
         let reuseId = "pin"
@@ -102,11 +101,13 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
         pinView?.pinTintColor = UIColor.red
         pinView?.canShowCallout = true
+        
         let smallSquare = CGSize(width: 30, height: 30)
         let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
         button.setBackgroundImage(UIImage(named: "ViewPetsButton"), for: .normal)
         button.addTarget(self, action: #selector(getDirections), for: .touchUpInside)
         pinView?.leftCalloutAccessoryView = button
+        
         return pinView
     }
     

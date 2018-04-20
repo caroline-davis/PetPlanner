@@ -130,10 +130,7 @@ class DataService {
     
     }
     
-//    func editPet(petId: String) {
-//
-//        DB_BASE.child("pets").child(petId).updateChildValues(["name": petProfile.name, "dob": petProfile.dob, "idTag": petProfile.idTag, "sex": petProfile.sex, "species": petProfile.species])
-//    }
+
     
     func editPet(petId: String, dob: String, name: String, idTag: String, sex: String, species: String, profileImage: String) {
         
