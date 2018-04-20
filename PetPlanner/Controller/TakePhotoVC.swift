@@ -28,10 +28,12 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+       
+        photo.isHidden = true
         DispatchQueue.main.async {
             self.parent?.present(self.imagePickerController, animated: true, completion: nil)
         }
+        
     }
     
    
