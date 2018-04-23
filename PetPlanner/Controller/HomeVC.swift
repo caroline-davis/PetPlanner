@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
     
     
     
-    @IBAction func logoutClicked(_ sender: AnyObject) {
+    @IBAction func logout(_ sender: AnyObject) {
         DataService.ds.logout(uid: KEY_UID)
         
         print("CAROL:ITS LOGGED OUT")

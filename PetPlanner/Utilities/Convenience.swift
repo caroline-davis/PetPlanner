@@ -16,7 +16,20 @@ func alerts(message: String) {
     self.present(alert, animated: true, completion: nil)
     
     }
+
 }
 
 
+func saveBtnEnabled(save: UIButton, activityIndicator: UIActivityIndicatorView) {
+    save.isUserInteractionEnabled = true
+    activityIndicator.isHidden = true
+    activityIndicator.stopAnimating()
+    save.titleLabel?.isHidden = false
+}
 
+func saveBtnDisabled(save: UIButton, activityIndicator: UIActivityIndicatorView) {
+    save.isUserInteractionEnabled = false
+    save.titleLabel?.isHidden = true
+    activityIndicator.isHidden = false
+    activityIndicator.startAnimating()
+}

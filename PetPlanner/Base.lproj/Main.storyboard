@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Anj-yI-H9m">
-                                <rect key="frame" x="67" y="27" width="240" height="128"/>
+                                <rect key="frame" x="66" y="27" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ShT-Cb-TmG" customClass="CurvedView" customModule="PetPlanner" customModuleProvider="target">
@@ -65,7 +65,7 @@
                                         </segments>
                                         <color key="tintColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="emailSegmentClicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="Sek-Ji-vtH"/>
+                                            <action selector="emailSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="OhC-lT-gdJ"/>
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-T6-X5M" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
@@ -77,7 +77,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="signInWithEmailClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tZM-Kv-DZQ"/>
+                                            <action selector="signInWithEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aPH-jT-TrO"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jke-xi-1wA" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
@@ -139,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ezI-TW-t5i">
-                                <rect key="frame" x="67" y="40" width="240" height="128"/>
+                                <rect key="frame" x="66" y="40" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awI-Wy-DNm" customClass="CurvedView" customModule="PetPlanner" customModuleProvider="target">
@@ -154,14 +154,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="88p-dw-eFr" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="174" width="269" height="30"/>
+                                        <rect key="frame" x="7" y="174" width="269" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAl-Yc-JpK" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="230" width="269" height="30"/>
+                                        <rect key="frame" x="7" y="230" width="269" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
@@ -169,7 +169,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="resetPasswordClicked:" destination="C9f-2o-lbu" eventType="touchUpInside" id="8ju-Ap-0zq"/>
+                                            <action selector="resetPassword:" destination="C9f-2o-lbu" eventType="touchUpInside" id="fvp-Mt-Pvw"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zA-PU-jhu">
@@ -222,7 +222,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flq-Pq-muI" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="196" y="489" width="113" height="30"/>
+                                        <rect key="frame" x="195" y="489" width="113" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
@@ -234,7 +234,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All your pets in one place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pae-TI-I2a">
-                                        <rect key="frame" x="77" y="173" width="186" height="22"/>
+                                        <rect key="frame" x="76" y="173" width="186" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -279,7 +279,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="EPM-ae-xQm">
                             <color key="tintColor" red="0.14117647059999999" green="0.1333333333" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="logoutClicked:" destination="h4d-f6-qwl" id="hle-ud-3RF"/>
+                                <action selector="logout:" destination="h4d-f6-qwl" id="nXo-s8-ywQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -322,7 +322,7 @@
                                                             <color key="backgroundColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhS-Ca-cgM">
-                                                            <rect key="frame" x="109" y="7" width="216" height="21"/>
+                                                            <rect key="frame" x="108" y="7" width="216" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="18"/>
                                                             <nil key="textColor"/>
@@ -415,106 +415,106 @@
                                 <rect key="frame" x="30" y="80" width="315" height="567"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*petname* 's Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE5-js-nX5">
-                                        <rect key="frame" x="23" y="78" width="267" height="38"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE5-js-nX5">
+                                        <rect key="frame" x="22" y="78" width="267" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="27"/>
                                         <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9X-wR-Vgb">
-                                        <rect key="frame" x="27" y="120" width="189" height="25"/>
+                                        <rect key="frame" x="27" y="117" width="189" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="13"/>
                                         <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UUb-Cp-EO2" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="141" width="265" height="30"/>
+                                        <rect key="frame" x="25" y="138" width="265" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFw-fZ-szJ">
-                                        <rect key="frame" x="27" y="177" width="66" height="21"/>
+                                        <rect key="frame" x="27" y="169" width="66" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="13"/>
                                         <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UiF-xR-LUT" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="197" width="265" height="30"/>
+                                        <rect key="frame" x="25" y="189" width="265" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vaccinations:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGW-NO-6H2">
-                                        <rect key="frame" x="27" y="234" width="76" height="21"/>
+                                        <rect key="frame" x="26" y="222" width="76" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="13"/>
                                         <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmD-V5-VpS" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="255" width="265" height="30"/>
+                                        <rect key="frame" x="25" y="240" width="265" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allergies:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HX0-mj-h2s">
-                                        <rect key="frame" x="26" y="290" width="102" height="21"/>
+                                        <rect key="frame" x="26" y="274" width="102" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="13"/>
                                         <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cii-24-5bv" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="310" width="265" height="30"/>
+                                        <rect key="frame" x="25" y="295" width="265" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYc-No-TsL">
-                                        <rect key="frame" x="27" y="348" width="102" height="21"/>
+                                        <rect key="frame" x="26" y="330" width="102" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="13"/>
                                         <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TP9-oT-kHU" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="368" width="265" height="30"/>
+                                        <rect key="frame" x="25" y="349" width="265" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spayed/Neutered:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXl-u0-5tm">
-                                        <rect key="frame" x="27" y="406" width="153" height="21"/>
+                                        <rect key="frame" x="27" y="386" width="153" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="13"/>
                                         <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99J-Bu-XNo" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="427" width="265" height="30"/>
+                                        <rect key="frame" x="25" y="407" width="265" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vet:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1l-il-4QM">
-                                        <rect key="frame" x="27" y="463" width="102" height="21"/>
+                                        <rect key="frame" x="26" y="441" width="102" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="13"/>
                                         <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5Y-ld-us9" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="482" width="265" height="30"/>
+                                        <rect key="frame" x="25" y="460" width="265" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -525,12 +525,23 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfA-7X-6Lj" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="23" y="225" width="263" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPC-lr-je4" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="85" y="515" width="145" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
-                                        <state key="normal" title="Find a Vet Nearby">
+                                        <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="17"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveHealth:" destination="9nm-ez-Pzf" eventType="touchUpInside" id="YJd-to-WSA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfA-7X-6Lj" customClass="CircularBtn" customModule="PetPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="253" y="493" width="85" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="-3"/>
+                                        <state key="normal" image="ViewPetsButton">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -544,6 +555,17 @@
                         <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="bmg-5M-1VI"/>
                     </view>
+                    <connections>
+                        <outlet property="allergiesField" destination="cii-24-5bv" id="QSq-we-Pcf"/>
+                        <outlet property="breedField" destination="UUb-Cp-EO2" id="mHt-tR-pmc"/>
+                        <outlet property="medicationsField" destination="TP9-oT-kHU" id="7Da-6J-cNS"/>
+                        <outlet property="name" destination="FE5-js-nX5" id="dfI-cg-nRx"/>
+                        <outlet property="save" destination="wPC-lr-je4" id="2wi-dl-BQK"/>
+                        <outlet property="spayedOrNeuteredField" destination="99J-Bu-XNo" id="ALR-Do-raf"/>
+                        <outlet property="vaccinationsField" destination="vmD-V5-VpS" id="vhi-Xk-msF"/>
+                        <outlet property="vetField" destination="t5Y-ld-us9" id="gPm-qd-xQG"/>
+                        <outlet property="weightField" destination="UiF-xR-LUT" id="nlV-iG-3GQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F33-k2-FYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -590,7 +612,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7MP-G1-eb5">
-                                <rect key="frame" x="29" y="80" width="315" height="567"/>
+                                <rect key="frame" x="28" y="80" width="315" height="567"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYc-L5-9SZ" customClass="SquareTxtFld" customModule="PetPlanner" customModuleProvider="target">
@@ -671,7 +693,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ProfilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="027-VS-RXT" customClass="CircularImgView" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="94" y="14" width="133" height="133"/>
+                                        <rect key="frame" x="95" y="14" width="133" height="133"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
@@ -690,7 +712,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaW-sx-TAS" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="90" y="205" width="140" height="30"/>
+                                        <rect key="frame" x="91" y="205" width="140" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
@@ -698,7 +720,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="saveClicked" destination="J1b-AZ-lAT" eventType="touchUpInside" id="pGQ-cw-a0C"/>
+                                            <action selector="saveProfile" destination="J1b-AZ-lAT" eventType="touchUpInside" id="x8B-38-Khl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -736,7 +758,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4c-1f-dQ9">
-                                        <rect key="frame" x="67" y="224" width="240" height="37"/>
+                                        <rect key="frame" x="66" y="224" width="240" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="30"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -755,7 +777,7 @@
                                 <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfQ-TE-89D" customClass="CurvedLbl" customModule="PetPlanner" customModuleProvider="target">
-                                <rect key="frame" x="60" y="346" width="254" height="28"/>
+                                <rect key="frame" x="59" y="346" width="254" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="20"/>

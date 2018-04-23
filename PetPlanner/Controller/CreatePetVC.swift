@@ -79,11 +79,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     // standard func for profile pic
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        save.isUserInteractionEnabled = false
-        save.titleLabel?.isHidden = true
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
-        
+        saveBtnDisabled(save: self.save, activityIndicator: self.activityIndicator)
         print("CAROL: button disabled")
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -102,20 +98,15 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                 DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
                     if error != nil {
                         print("CAROL: Unable to upload image to firebase storage", error!)
-                        self.save.isUserInteractionEnabled = true
-                        self.activityIndicator.isHidden = true
-                        self.activityIndicator.stopAnimating()
-                        self.save.titleLabel?.isHidden = false
+                        
+                        saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
                         print("CAROL: button enabled - it didnt work")
                     } else {
                         print("CAROL: Successfully uploaded image to firebase storage")
                         let downloadURL = metaData?.downloadURL()?.absoluteString
                         if let url = downloadURL {
                             self.profileImage = url
-                            self.save.isUserInteractionEnabled = true
-                            self.activityIndicator.isHidden = true
-                            self.activityIndicator.stopAnimating()
-                            self.save.titleLabel?.isHidden = false
+                            saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
                             print("CAROL: button enabled - it worked")
                         }
                     }
@@ -123,18 +114,14 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
             }
         } else {
             print("CAROL: A valid image wasnt selected")
-            self.save.isUserInteractionEnabled = true
-            self.activityIndicator.isHidden = true
-            self.activityIndicator.stopAnimating()
-            self.save.titleLabel?.isHidden = false
+            saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
         }
-        
         imagePicker.dismiss(animated: true, completion: nil)
-        
     }
     
     
-    @IBAction func saveClicked() {
+    
+    @IBAction func saveProfile() {
         // TODO: Determine if this pet exists or not already
         // so that when we come back to edit we don't create a new pet
         

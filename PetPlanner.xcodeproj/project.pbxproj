@@ -202,13 +202,13 @@
 			isa = PBXGroup;
 			children = (
 				F1771F2C20101B860060AB76 /* LoginVC.swift */,
-				F18355472075D336005F47D8 /* HealthInfoVC.swift */,
 				F128E147203E818F00444DEE /* ForgotPasswordVC.swift */,
-				F1EDE53F2075E5BD009C978D /* VetMapVC.swift */,
 				F1FBD7C92010211E00CC1874 /* HomeVC.swift */,
 				F1778ED6203FF547002C75FC /* ViewPetsVC.swift */,
 				F1778ED8203FF566002C75FC /* CreatePetVC.swift */,
 				F1958A5F205F5309000161A6 /* PetProfileVC.swift */,
+				F18355472075D336005F47D8 /* HealthInfoVC.swift */,
+				F1EDE53F2075E5BD009C978D /* VetMapVC.swift */,
 				F19798102074716000FF86EF /* TakePhotoVC.swift */,
 				F19798122074718400FF86EF /* GalleryVC.swift */,
 				F19798142074719800FF86EF /* ViewPhotoVC.swift */,
@@ -541,7 +541,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PetPlanner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinedavis.PetPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -562,7 +562,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PetPlanner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinedavis.PetPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";

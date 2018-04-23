@@ -67,7 +67,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     //    }
     
     
-    @IBAction func signInWithEmailClicked(_ sender: UIButton) {
+    @IBAction func signInWithEmail(_ sender: UIButton) {
         
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
@@ -123,7 +123,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func emailSegmentClicked(_ sender: AnyObject) {
+    @IBAction func emailSegment(_ sender: AnyObject) {
         if(toggleSignIn.selectedSegmentIndex == 0) {
             alreadySignedUp = true
         } else if (toggleSignIn.selectedSegmentIndex == 1) {

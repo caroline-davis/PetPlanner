@@ -15,7 +15,6 @@ class PetFavs {
     private var _drink: String!
     private var _vaccinations: String!
     private var _sleepingNook: String!
-    private var _friend: String!
     private var _activity: String!
     private var _hidingSpot: String!
     private var _feastingTime: String!
@@ -36,9 +35,6 @@ class PetFavs {
     }
     var sleepingNook: String {
         return _sleepingNook
-    }
-    var friend: String {
-        return _friend
     }
     var activity: String {
         return _activity
@@ -63,7 +59,6 @@ class PetFavs {
         self._food = food
         self._drink = drink
         self._sleepingNook = sleepingNook
-        self._friend = friend
         self._activity = activity
         self._hidingSpot = hidingSpot
         self._feastingTime = feastingTime
@@ -83,9 +78,6 @@ class PetFavs {
         }
         if let sleepingNook = favsData["sleepingNook"] as? String {
             self._sleepingNook = sleepingNook
-        }
-        if let friend = favsData["friend"] as? String {
-            self._friend = friend
         }
         if let activity = favsData["activity"] as? String {
             self._activity = activity

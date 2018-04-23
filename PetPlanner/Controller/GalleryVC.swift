@@ -14,11 +14,6 @@ class GalleryVC: UIViewController {
         super.viewDidLoad()
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
    // Get profile picture and put it in as first gallery photo

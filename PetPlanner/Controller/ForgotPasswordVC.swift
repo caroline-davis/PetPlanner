@@ -17,7 +17,7 @@ class ForgotPasswordVC: UIViewController {
         
     }
     
-    @IBAction func resetPasswordClicked(_ sender: Any) {
+    @IBAction func resetPassword(_ sender: Any) {
         DataService.ds.forgotPassword(email: "hello")
     }
     
@@ -32,7 +32,4 @@ class ForgotPasswordVC: UIViewController {
     
 }
 
-//if an IBAction on a button - blablaCLicked
-//if an IBAction segue goToSetSegueVC
-//if an IBOutlet textfield blablaField
-//if an IBOutlet button blablaButton
+
