@@ -128,7 +128,7 @@ class DataService {
     
     }
     
-
+// Add the completition handler for firebase like the edithealth one
     func editPet(petId: String, dob: String, name: String, idTag: String, sex: String, species: String, profileImage: String) {
         
         DB_BASE.child("pets").child(petId).updateChildValues(["name": name, "dob": dob, "idTag": idTag, "sex": sex, "species": species, "profileImage": profileImage])
@@ -177,9 +177,18 @@ class DataService {
     }
     
     
-    func editHealth(petId: String, breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String) {
+    func editHealth(petId: String, breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String, completion: @escaping (String?)->()) {
         
         DB_BASE.child("health").child(CURRENT_PET_ID).updateChildValues(["breed": breed, "weight": weight, "vaccinations": vaccinations, "allergies": allergies, "medications": medications, "spayedOrNeutered": spayedOrNeutered, "vet": vet])
+        { (error, result) in
+            
+            if error != nil {
+                completion("\(error?.localizedDescription.capitalized ?? "Broken")")
+            } else {
+                completion(nil)
+            }
+            
+        }
     }
 
 

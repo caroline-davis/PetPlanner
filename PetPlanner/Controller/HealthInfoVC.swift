@@ -38,7 +38,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         spayedOrNeuteredField.delegate = self
         vetField.delegate = self
         
-     //   activityIndicator.isHidden = true
+        activityIndicator.isHidden = true
         
         
     }
@@ -76,30 +76,44 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
     
        @IBAction func saveHealth(_ sender: Any) {
         
-        let breed = breedField.text
-        let weight = weightField.text
-        let vaccinations = vaccinationsField.text
-        let allergies = allergiesField.text
-        let medications = medicationsField.text
-        let spayedOrNeutered = spayedOrNeuteredField.text
-        let vet = vetField.text
+        saveBtnDisabled(save: save, activityIndicator: activityIndicator)
+    
+        let breed = breedField.text?.capitalized
+        let weight = weightField.text?.capitalized
+        let vaccinations = vaccinationsField.text?.capitalized
+        let allergies = allergiesField.text?.capitalized
+        let medications = medicationsField.text?.capitalized
+        let spayedOrNeutered = spayedOrNeuteredField.text?.capitalized
+        let vet = vetField.text?.capitalized
+        
+        
 
         // if there is no info yet...
         if self.health == nil {
             DataService.ds.createHealth(petId: CURRENT_PET_ID, userId: USER_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, completion: { (error) in
                 if error != nil {
                     self.alerts(message: error!)
+                    
                 } else {
                     print("it worked")
                 }
+                saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
                 })
+            
         } else {
-            DataService.ds.editHealth(petId: CURRENT_PET_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!)
-            }
+            DataService.ds.editHealth(petId: CURRENT_PET_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, completion:{ (error) in
+                if error != nil {
+                    self.alerts(message: error!)
+                } else {
+                    print("it worked")
+                }
+                saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
+            })
+        }
+        
     }
         
     
-
     
     // when enter is pressed keyboard is dismissed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
