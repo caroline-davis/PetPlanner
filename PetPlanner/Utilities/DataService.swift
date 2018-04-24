@@ -134,6 +134,24 @@ class DataService {
         DB_BASE.child("pets").child(petId).updateChildValues(["name": name, "dob": dob, "idTag": idTag, "sex": sex, "species": species, "profileImage": profileImage])
     }
     
+    func getHealth(petId: String, completion: @escaping (PetHealth?)->()) {
+        
+        DB_BASE.child("health").child(CURRENT_PET_ID).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? Dictionary <String, AnyObject>
+            if value != nil {
+                let health = PetHealth(petId: CURRENT_PET_ID, healthData: value!)
+                print(health)
+                completion(health)
+            } else {
+                completion(nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
+    
     func createHealth(petId: String, userId: String, breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String, completion: @escaping (String?)->()) {
         
         DB_BASE.child("health").child(CURRENT_PET_ID).setValue([
@@ -141,7 +159,7 @@ class DataService {
             "userId": USER_ID,
             "breed": breed,
             "weight": weight,
-            "vaccincations": vaccinations,
+            "vaccinations": vaccinations,
             "allergies": allergies,
             "medications": medications,
             "spayedOrNeutered": spayedOrNeutered,

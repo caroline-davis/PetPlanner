@@ -16,6 +16,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var save: CurvedBtn!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var breedField: SquareTxtFld!
     @IBOutlet weak var weightField: SquareTxtFld!
@@ -37,18 +38,43 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         spayedOrNeuteredField.delegate = self
         vetField.delegate = self
         
+     //   activityIndicator.isHidden = true
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
+        DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in
+            self.pet = petProfile
+        
+            DataService.ds.getHealth(petId: CURRENT_PET_ID) { (petHealth) in
+                self.health = petHealth
+                
+                if petHealth != nil {
+                    DispatchQueue.main.async {
+                        self.breedField.text = self.health.breed
+                        self.weightField.text = self.health.weight
+                        self.vaccinationsField.text = self.health.vaccinations
+                        self.allergiesField.text = self.health.allergies
+                        self.medicationsField.text = self.health.medications
+                        self.spayedOrNeuteredField.text = self.health.spayedOrNeutered
+                        self.vetField.text = self.health.vet
+                    }
+                }
+          
+     
         DispatchQueue.main.async {
             self.name.text = "\(self.pet.name.capitalized)'s Health"
+            
+                }
+            }
         }
     }
     
     
-    @IBAction func saveHealth(_ sender: Any) {
+       @IBAction func saveHealth(_ sender: Any) {
         
         let breed = breedField.text
         let weight = weightField.text
@@ -57,18 +83,29 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         let medications = medicationsField.text
         let spayedOrNeutered = spayedOrNeuteredField.text
         let vet = vetField.text
+
+        // if there is no info yet...
+        if self.health == nil {
+            DataService.ds.createHealth(petId: CURRENT_PET_ID, userId: USER_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, completion: { (error) in
+                if error != nil {
+                    self.alerts(message: error!)
+                } else {
+                    print("it worked")
+                }
+                })
+        } else {
+            DataService.ds.editHealth(petId: CURRENT_PET_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!)
+            }
+    }
         
     
-        
-    }
+
     
     // when enter is pressed keyboard is dismissed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
-
 
 
 
