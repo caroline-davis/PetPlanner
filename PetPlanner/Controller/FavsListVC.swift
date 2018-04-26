@@ -46,16 +46,82 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
-        
+        // to get the pet name to appear
+        DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in
+            self.pet = petProfile
+            
+            // to get the pet favs data to appear
+            DataService.ds.getFavs(petId: CURRENT_PET_ID) { (petFavs) in
+                self.favs = petFavs
+                
+                if petFavs != nil {
+                    DispatchQueue.main.async {
+                        self.foodField.text = self.favs.food
+                        self.drinkField.text = self.favs.drink
+                        self.toyField.text = self.favs.toy
+                        self.sleepingNookField.text = self.favs.sleepingNook
+                        self.activityField.text = self.favs.activity
+                        self.hidingSpotField.text = self.favs.hidingSpot
+                        self.feastingTimeField.text = self.favs.feastingTime
+                        self.otherField.text = self.favs.other
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    self.name.text = "\(self.pet.name.capitalized)'s Favourites"
+                    
+                }
+            }
+        }
     }
     
     
     
     @IBAction func saveFavs(_ sender: Any) {
+        saveBtnDisabled(save: save, activityIndicator: activityIndicator)
+        
+        let food = foodField.text?.capitalized
+        let drink = drinkField.text?.capitalized
+        let toy = toyField.text?.capitalized
+        let sleepingNook = sleepingNookField.text?.capitalized
+        let activity = activityField.text?.capitalized
+        let hidingSpot = hidingSpotField.text?.capitalized
+        let feastingTime = feastingTimeField.text?.capitalized
+        let other = otherField.text?.capitalized
+        
+        
+        
+        // if there is no info yet...
+        if self.favs == nil {
+            DataService.ds.createFavs(petId: CURRENT_PET_ID, userId: USER_ID, food: food!, drink: drink!, toy: toy!, sleepingNook: sleepingNook!, activity: activity!, hidingSpot: hidingSpot!, feastingTime: feastingTime!, other: other!, completion: { (error) in
+                if error != nil {
+                    self.alerts(message: error!)
+                    
+                } else {
+                    print("it worked")
+                }
+                saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
+            })
+        } else {
+            DataService.ds.editFavs(petId: CURRENT_PET_ID, food: food!, drink: drink!, toy: toy!, sleepingNook: sleepingNook!, activity: activity!, hidingSpot: hidingSpot!, feastingTime: feastingTime!, other: other!, completion:{ (error) in
+                if error != nil {
+                    self.alerts(message: error!)
+                } else {
+                    print("it worked")
+                }
+                saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
+            })
+        }
         
         
     }
     
   
+    // when enter is pressed keyboard is dismissed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
 
 }
