@@ -33,6 +33,7 @@
 		F1778ED7203FF547002C75FC /* ViewPetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1778ED6203FF547002C75FC /* ViewPetsVC.swift */; };
 		F1778ED9203FF566002C75FC /* CreatePetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1778ED8203FF566002C75FC /* CreatePetVC.swift */; };
 		F18355482075D336005F47D8 /* HealthInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18355472075D336005F47D8 /* HealthInfoVC.swift */; };
+		F18AAAFF2091700D001894F0 /* FavsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18AAAFE2091700D001894F0 /* FavsListVC.swift */; };
 		F194B4F620452F0A0072D293 /* PetHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F520452F0A0072D293 /* PetHealth.swift */; };
 		F194B4F820452F170072D293 /* PetFavs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F720452F170072D293 /* PetFavs.swift */; };
 		F194B4FA20452F2D0072D293 /* PetEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194B4F920452F2D0072D293 /* PetEvents.swift */; };
@@ -78,6 +79,7 @@
 		F1778ED6203FF547002C75FC /* ViewPetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPetsVC.swift; sourceTree = "<group>"; };
 		F1778ED8203FF566002C75FC /* CreatePetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetVC.swift; sourceTree = "<group>"; };
 		F18355472075D336005F47D8 /* HealthInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInfoVC.swift; sourceTree = "<group>"; };
+		F18AAAFE2091700D001894F0 /* FavsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsListVC.swift; sourceTree = "<group>"; };
 		F194B4F520452F0A0072D293 /* PetHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetHealth.swift; sourceTree = "<group>"; };
 		F194B4F720452F170072D293 /* PetFavs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFavs.swift; sourceTree = "<group>"; };
 		F194B4F920452F2D0072D293 /* PetEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEvents.swift; sourceTree = "<group>"; };
@@ -207,11 +209,12 @@
 				F1778ED6203FF547002C75FC /* ViewPetsVC.swift */,
 				F1778ED8203FF566002C75FC /* CreatePetVC.swift */,
 				F1958A5F205F5309000161A6 /* PetProfileVC.swift */,
-				F18355472075D336005F47D8 /* HealthInfoVC.swift */,
-				F1EDE53F2075E5BD009C978D /* VetMapVC.swift */,
 				F19798102074716000FF86EF /* TakePhotoVC.swift */,
 				F19798122074718400FF86EF /* GalleryVC.swift */,
 				F19798142074719800FF86EF /* ViewPhotoVC.swift */,
+				F18355472075D336005F47D8 /* HealthInfoVC.swift */,
+				F1EDE53F2075E5BD009C978D /* VetMapVC.swift */,
+				F18AAAFE2091700D001894F0 /* FavsListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				F19798152074719800FF86EF /* ViewPhotoVC.swift in Sources */,
 				F14EA3AD203A8DCA0017B682 /* Convenience.swift in Sources */,
 				F19798112074716000FF86EF /* TakePhotoVC.swift in Sources */,
+				F18AAAFF2091700D001894F0 /* FavsListVC.swift in Sources */,
 				F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */,
 				F128E146203D36B600444DEE /* DataService.swift in Sources */,
 				F194B4FA20452F2D0072D293 /* PetEvents.swift in Sources */,

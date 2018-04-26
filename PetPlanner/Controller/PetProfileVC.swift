@@ -52,18 +52,20 @@ class PetProfileVC: UIViewController  {
                 self.name.text = self.pet.name.capitalized
                 self.dob.text = self.pet.dob
             }
-
         }
-        
     }
     
    
     @IBAction func toHealthInfoVC(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "HealthInfoVC") as! HealthInfoVC
-        self.navigationController?.pushViewController(vc, animated: false)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
- 
     
+    @IBAction func toFavsListVC(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FavsListVC") as! FavsListVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+  
     
 }

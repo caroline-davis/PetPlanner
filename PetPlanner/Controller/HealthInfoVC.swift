@@ -39,8 +39,6 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         vetField.delegate = self
         
         activityIndicator.isHidden = true
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,7 +97,6 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
                 }
                 saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
                 })
-            
         } else {
             DataService.ds.editHealth(petId: CURRENT_PET_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, completion:{ (error) in
                 if error != nil {
