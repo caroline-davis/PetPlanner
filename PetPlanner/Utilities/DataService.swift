@@ -134,6 +134,7 @@ class DataService {
         DB_BASE.child("pets").child(petId).updateChildValues(["name": name, "dob": dob, "idTag": idTag, "sex": sex, "species": species, "profileImage": profileImage])
     }
     
+    // HEALTH
     func getHealth(petId: String, completion: @escaping (PetHealth?)->()) {
         
         DB_BASE.child("health").child(CURRENT_PET_ID).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -171,9 +172,7 @@ class DataService {
             } else {
                 completion(nil)
             }
-            
         }
-        
     }
     
     
@@ -187,10 +186,67 @@ class DataService {
             } else {
                 completion(nil)
             }
+        }
+    }
+    
+    // FAVS
+    
+    func getFavs(petId: String, completion: @escaping (PetFavs?)->()) {
+        
+        DB_BASE.child("favs").child(CURRENT_PET_ID).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? Dictionary <String, AnyObject>
+            if value != nil {
+                let favs = PetFavs(petId: CURRENT_PET_ID, favsData: value!)
+                print(favs)
+                completion(favs)
+            } else {
+                completion(nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    func createFavs(petId: String, userId: String, food: String, drink: String, toy: String, sleepingNook: String, activity: String, hidingSpot: String, feastingTime: String, other: String, completion: @escaping (String?)->()) {
+        
+        DB_BASE.child("favs").child(CURRENT_PET_ID).setValue([
+            "petId": CURRENT_PET_ID,
+            "userId": USER_ID,
+            "food": food,
+            "drink": drink,
+            "toy": toy,
+            "sleepingNook": sleepingNook,
+            "activity": activity,
+            "hidingSpot": hidingSpot,
+            "feastingTime": feastingTime,
+            "other": other
+        ]) { (error, result) in
+            
+            if error != nil {
+                completion("\(error?.localizedDescription.capitalized ?? "Broken")")
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    func editFavs(petId: String, food: String, drink: String, toy: String, sleepingNook: String, activity: String, hidingSpot: String, feastingTime: String, other: String, completion: @escaping (String?)->()) {
+        
+        DB_BASE.child("favs").child(CURRENT_PET_ID).updateChildValues(["food": food, "drink": drink, "toy": toy, "sleepingNook": sleepingNook, "activity": activity, "hidingSpot": hidingSpot, "feastingTime": feastingTime, "other": other])
+        { (error, result) in
+            
+            if error != nil {
+                completion("\(error?.localizedDescription.capitalized ?? "Broken")")
+            } else {
+                completion(nil)
+            }
             
         }
     }
 
+    
 
 }
 

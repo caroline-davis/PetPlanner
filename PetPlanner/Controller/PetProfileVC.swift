@@ -33,6 +33,7 @@ class PetProfileVC: UIViewController  {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         
         DispatchQueue.main.async {
             self.activityIndicator.isHidden = false

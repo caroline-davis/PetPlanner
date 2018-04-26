@@ -43,6 +43,7 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         
         DataService.ds.getAllPets { (pets) in
             self.tableViewData = pets

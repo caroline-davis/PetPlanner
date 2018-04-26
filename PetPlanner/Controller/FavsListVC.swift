@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
-class FavsListVC: UIViewController {
-
+class FavsListVC: UIViewController, UITextFieldDelegate {
     
+    var pet: PetProfile!
+    var favs: PetFavs!
+
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var save: CurvedBtn!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var foodField: SquareTxtFld!
     @IBOutlet weak var drinkField: SquareTxtFld!
@@ -19,26 +25,35 @@ class FavsListVC: UIViewController {
     @IBOutlet weak var activityField: SquareTxtFld!
     @IBOutlet weak var hidingSpotField: SquareTxtFld!
     @IBOutlet weak var feastingTimeField: SquareTxtFld!
-    @IBOutlet weak var OtherField: SquareTxtFld!
+    @IBOutlet weak var otherField: SquareTxtFld!
     
-    
-    @IBOutlet weak var save: CurvedBtn!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        foodField.delegate = self
+        drinkField.delegate = self
+        toyField.delegate = self
+        sleepingNookField.delegate = self
+        activityField.delegate = self
+        hidingSpotField.delegate = self
+        feastingTimeField.delegate = self
+        otherField.delegate = self
 
-       
+       activityIndicator.isHidden = true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
+        
     }
     
     
     
     @IBAction func saveFavs(_ sender: Any) {
+        
+        
     }
     
   
