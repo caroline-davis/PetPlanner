@@ -153,7 +153,7 @@ class DataService {
         
     }
     
-    func createHealth(petId: String, userId: String, breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String, completion: @escaping (String?)->()) {
+    func createHealth(petId: String, userId: String, breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String, lastVetVisit: String, completion: @escaping (String?)->()) {
         
         DB_BASE.child("health").child(CURRENT_PET_ID).setValue([
             "petId": CURRENT_PET_ID,
@@ -164,7 +164,8 @@ class DataService {
             "allergies": allergies,
             "medications": medications,
             "spayedOrNeutered": spayedOrNeutered,
-            "vet": vet
+            "vet": vet,
+            "lastVetVisit": lastVetVisit
         ]) { (error, result) in
             
             if error != nil {
@@ -176,9 +177,9 @@ class DataService {
     }
     
     
-    func editHealth(petId: String, breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String, completion: @escaping (String?)->()) {
+    func editHealth(petId: String, breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String, lastVetVisit: String, completion: @escaping (String?)->()) {
         
-        DB_BASE.child("health").child(CURRENT_PET_ID).updateChildValues(["breed": breed, "weight": weight, "vaccinations": vaccinations, "allergies": allergies, "medications": medications, "spayedOrNeutered": spayedOrNeutered, "vet": vet])
+        DB_BASE.child("health").child(CURRENT_PET_ID).updateChildValues(["breed": breed, "weight": weight, "vaccinations": vaccinations, "allergies": allergies, "medications": medications, "spayedOrNeutered": spayedOrNeutered, "vet": vet, "lastVetVisit": lastVetVisit])
         { (error, result) in
             
             if error != nil {

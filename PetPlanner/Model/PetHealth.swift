@@ -18,6 +18,7 @@ class PetHealth {
     private var _medications: String!
     private var _spayedOrNeutered: String!
     private var _vet: String!
+    private var _lastVetVisit: String!
     
     private var _petId: String!
     private var _healthRef: DatabaseReference!
@@ -43,12 +44,15 @@ class PetHealth {
     var vet: String {
         return _vet
     }
+    var lastVetVisit: String {
+        return _lastVetVisit
+    }
     var petId: String {
         return _petId
     }
 
     
-    init (breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String) {
+    init (breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String, lastVetVisit: String) {
         self._breed = breed
         self._weight = weight
         self._vaccinations = vaccinations
@@ -56,6 +60,7 @@ class PetHealth {
         self._medications = medications
         self._spayedOrNeutered = spayedOrNeutered
         self._vet = vet
+        self._lastVetVisit = lastVetVisit
         }
 
     
@@ -82,6 +87,9 @@ class PetHealth {
         }
         if let vet = healthData["vet"] as? String {
             self._vet = vet
+        }
+        if let lastVetVisit = healthData["lastVetVisit"] as? String {
+            self._lastVetVisit = lastVetVisit
         }
         _healthRef = DataService.ds.DB_BASE.child("health").child(_petId)
         }
