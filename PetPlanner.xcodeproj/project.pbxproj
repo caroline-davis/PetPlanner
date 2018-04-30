@@ -21,6 +21,7 @@
 		F142DA672036877300569FAA /* CurvedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA662036877300569FAA /* CurvedBtn.swift */; };
 		F142DA692036978A00569FAA /* SquareTxtFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA682036978A00569FAA /* SquareTxtFld.swift */; };
 		F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA6A20369B2C00569FAA /* SquareBtn.swift */; };
+		F14D23322096D6800014B1D6 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D23312096D6800014B1D6 /* PhotoCell.swift */; };
 		F14EA3AD203A8DCA0017B682 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14EA3AC203A8DCA0017B682 /* Convenience.swift */; };
 		F161C9322068AE6900E27455 /* CurvedLbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161C9312068AE6900E27455 /* CurvedLbl.swift */; };
 		F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1771F2A20101B860060AB76 /* AppDelegate.swift */; };
@@ -65,6 +66,7 @@
 		F142DA662036877300569FAA /* CurvedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedBtn.swift; sourceTree = "<group>"; };
 		F142DA682036978A00569FAA /* SquareTxtFld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTxtFld.swift; sourceTree = "<group>"; };
 		F142DA6A20369B2C00569FAA /* SquareBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBtn.swift; sourceTree = "<group>"; };
+		F14D23312096D6800014B1D6 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F14EA3AC203A8DCA0017B682 /* Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
 		F161C9312068AE6900E27455 /* CurvedLbl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedLbl.swift; sourceTree = "<group>"; };
 		F1771F2720101B860060AB76 /* PetPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 				F142DA682036978A00569FAA /* SquareTxtFld.swift */,
 				F128E149203E8F5400444DEE /* CurvedView.swift */,
 				F1778ED2203FA1FC002C75FC /* PetCell.swift */,
+				F14D23312096D6800014B1D6 /* PhotoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				F18355482075D336005F47D8 /* HealthInfoVC.swift in Sources */,
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
 				F1778ED5203FED3A002C75FC /* ImgAndTxtBtn.swift in Sources */,
+				F14D23322096D6800014B1D6 /* PhotoCell.swift in Sources */,
 				F194B4F820452F170072D293 /* PetFavs.swift in Sources */,
 				F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */,
 				F128E14A203E8F5400444DEE /* CurvedView.swift in Sources */,
