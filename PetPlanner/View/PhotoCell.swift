@@ -20,4 +20,9 @@ class PhotoCell: UICollectionViewCell {
         
         
     }
+    
+    func configure(petImage: PetImage) {
+            self.photo.sd_setImage(with: URL(string: petImage.photo), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
+            })
+    }
 }

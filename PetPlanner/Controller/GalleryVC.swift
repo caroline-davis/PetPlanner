@@ -12,23 +12,28 @@ import SDWebImage
 class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
    
     
+    var collectionViewData = [PetImage]()
+
+    
     @IBOutlet weak var collection: UICollectionView!
     
-    var collectionViewData = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collection.delegate = self
         collection.dataSource = self
-
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         
-        self.collection.reloadData()
+        DataService.ds.getPhotos(petId: CURRENT_PET_ID) { (petImage) in
+            self.collectionViewData = petImage
+            self.collection.reloadData()
+            
+        }
+        
     }
+        
+    
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionViewData.count
@@ -38,13 +43,16 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCell {
-            let petPhoto = self.collectionViewData[indexPath.row]
+            let pet = self.collectionViewData[indexPath.row]
+            
+            cell.configure(petImage: pet)
             
             return cell
         } else {
             return UICollectionViewCell()
         }
     }
+
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -58,8 +66,5 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     
-
-   // Get profile picture and put it in as first gallery photo
-    // When user takes a photo inside the app with the camera... get that photo into firebase and then download it here and it will be in the gallery.
 
 }

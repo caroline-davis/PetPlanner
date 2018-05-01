@@ -98,6 +98,27 @@ class DataService {
         
     }
     
+    func getPhotos(petId: String, completion: @escaping (Array<PetImage>)-> ()) {
+        
+        DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
+        let photoDict = snapshot.value as? Dictionary <String, AnyObject>
+           
+            if photoDict != nil {
+                let values = Array(photoDict!.values)
+                let photos = values.map({ (item) -> PetImage in
+                let petId = item["petId"] as! String
+                    return PetImage(petId: petId, imageData: item as! Dictionary<String, AnyObject>)
+                })
+                
+                completion(photos)
+            } else {
+                print("no photos")
+                
+            }
+        })
+        
+    }
+    
     
     func getAllPets(completion: @escaping (Array<PetProfile>)->()) {
         
