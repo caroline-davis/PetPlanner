@@ -63,9 +63,11 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let pet = self.collectionViewData[indexPath.row]
          let photo = pet.photo
+         let imageId = pet.imageId
         // get the photoId and save it so we can open it in the next window
         let vc = storyboard?.instantiateViewController(withIdentifier: "ViewPhotoVC") as! ViewPhotoVC
         vc.petPhoto = photo
+        vc.imageId = imageId
         self.navigationController?.pushViewController(vc, animated: false)
 
         

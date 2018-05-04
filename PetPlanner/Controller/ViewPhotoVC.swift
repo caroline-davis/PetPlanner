@@ -17,15 +17,9 @@ class ViewPhotoVC: UIViewController {
     @IBOutlet weak var send: UIBarButtonItem!
     @IBOutlet weak var delete: UIBarButtonItem!
     
-    
     var petPhoto: String!
-
+    var imageId: String!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -49,7 +43,28 @@ class ViewPhotoVC: UIViewController {
 
 
     @IBAction func deleteImage(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to delete this photo?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            self.photo.isHidden = true
+          
+            // goes back to the gallery view controller
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true)
+            
+            DataService.ds.DB_BASE.child("photos").child(self.imageId).removeValue()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Cancelled")
+        }))
+        
+        present(alert, animated: true, completion: nil)
+       
+        
     }
     
+   
 
 }
