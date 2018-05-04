@@ -12,6 +12,7 @@ import UIKit
 class PhotoCell: UICollectionViewCell {
     
     @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,8 +22,16 @@ class PhotoCell: UICollectionViewCell {
         
     }
     
+    // To Do : Add placeholder image
+    
     func configure(petImage: PetImage) {
-            self.photo.sd_setImage(with: URL(string: petImage.photo), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+        
+            self.photo.sd_setImage(with: URL(string: petImage.photo), placeholderImage: nil, options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
+                
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
             })
     }
 }

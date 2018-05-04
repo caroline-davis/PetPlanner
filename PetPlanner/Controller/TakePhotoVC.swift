@@ -78,5 +78,7 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         tabBarController?.selectedIndex = 0
     }
     
+
+    
 }
 
