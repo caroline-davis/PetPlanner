@@ -13,8 +13,6 @@ import SDWebImage
 class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
 
     
     var tableViewData = [PetProfile]()
@@ -28,13 +26,11 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.isHidden = true
-     //   activityIndicator.startAnimating()
-        
         tableView.delegate = self
         tableView.dataSource = self
         
         self.tableView.rowHeight = 100
+        
         
        // tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -48,8 +44,8 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         DataService.ds.getAllPets { (pets) in
             self.tableViewData = pets
             self.tableView.reloadData()
-            
         }
+
         
     }
     
@@ -64,17 +60,10 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath) as? PetCell {
             let pet = self.tableViewData[indexPath.row]
-            
-            cell.name?.text = pet.name.capitalized
-            cell.dob?.text = "D.O.B: \(pet.dob.capitalized)"
-            cell.species?.text = "SPECIES: \(pet.species.capitalized)"
-            cell.sex?.text = "SEX: \(pet.sex.capitalized)"
-            cell.idTag?.text = "I.D: \(pet.idTag.capitalized)"
-            
             cell.tag = indexPath.row
             
-            cell.profilePic?.sd_setImage(with: URL(string: pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload])
-            
+            cell.configure(pet: pet)
+
             return cell
         } else {
             return UITableViewCell()

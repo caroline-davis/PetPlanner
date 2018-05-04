@@ -21,6 +21,8 @@ class PetCell: UITableViewCell {
     @IBOutlet weak var editCell: UIButton!
     @IBOutlet weak var deleteCell: UIButton!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -35,14 +37,24 @@ class PetCell: UITableViewCell {
     
 
 
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func configure(pet: PetProfile) {
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
         
-
+        self.name?.text = pet.name.capitalized
+        self.dob?.text = "D.O.B: \(pet.dob.capitalized)"
+        self.species?.text = "SPECIES: \(pet.species.capitalized)"
+        self.sex?.text = "SEX: \(pet.sex.capitalized)"
+        self.idTag?.text = "I.D: \(pet.idTag.capitalized)"
+        
+        self.profilePic.sd_setImage(with: URL(string: pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
+            
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
+        })
     }
     
 
-
+    
 }
 

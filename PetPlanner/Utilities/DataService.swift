@@ -119,7 +119,7 @@ class DataService {
         
     }
     
-    
+  
     func getAllPets(completion: @escaping (Array<PetProfile>)->()) {
         
          DB_BASE.child("pets").queryOrdered(byChild: "userId").queryEqual(toValue: USER_ID).observeSingleEvent(of: .value, with: { (snapshot) in

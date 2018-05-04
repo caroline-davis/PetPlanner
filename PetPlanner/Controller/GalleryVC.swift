@@ -24,6 +24,11 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         collection.delegate = self
         collection.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
         DataService.ds.getPhotos(petId: CURRENT_PET_ID) { (petImage) in
             self.collectionViewData = petImage
             self.collection.reloadData()
