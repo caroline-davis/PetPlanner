@@ -13,6 +13,7 @@ class PetImage {
     
     private var _imageId: String!
     private var _photo: String!
+    private var _thumb: String!
     private var _userId: String!
     
     private var _petId: String!
@@ -26,6 +27,10 @@ class PetImage {
         return _photo
     }
     
+    var thumb: String {
+        return _thumb
+    }
+    
     var userId: String {
         return _userId
     }
@@ -34,9 +39,10 @@ class PetImage {
         return _petId
     }
     
-    init(imageId: String, photo: String, userId: String) {
+    init(imageId: String, photo: String, thumb: String, userId: String) {
         self._imageId = imageId
         self._photo = photo
+        self._thumb = thumb
         self._userId = userId
     
     }
@@ -50,6 +56,9 @@ class PetImage {
         }
         if let photo = imageData["photo"] as? String {
             self._photo = photo
+        }
+        if let thumb = imageData["thumb"] as? String {
+            self._thumb = thumb
         }
         if let userId = imageData["userId"] as? String {
             self._userId = userId

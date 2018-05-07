@@ -73,7 +73,7 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
     }
     
-    func delete(at indexthPath: [IndexPath]) {
+    func delete(at indexPath: [IndexPath]) {
         
     }
     

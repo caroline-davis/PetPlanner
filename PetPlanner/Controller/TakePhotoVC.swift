@@ -42,30 +42,42 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             photo.image = image
             
-            if let imageData = UIImageJPEGRepresentation(image, 0.2) {
-                
-                // the unique id
-                let imageId = NSUUID().uuidString
-                
-                // set upload path
-                let metaData = StorageMetadata()
-                metaData.contentType = "image/jpg"
-                
-                DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
-                    if let error = error {
-                        print(error.localizedDescription)
-                        return
-                    } else {
-                        //store downloadURL
-                        let downloadURL = metaData?.downloadURL()?.absoluteString
-                        
-                        //store downloadURL at database
-                        DataService.ds.DB_BASE.child("photos").child(imageId).setValue(["photo": downloadURL as Any, "userId": USER_ID, "petId": CURRENT_PET_ID, "imageId": imageId])
-                    }
+            // the unique id
+            let imageId = DataService.ds.generateId()
+            
+            // set metadata
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpg"
+            
+            let imageData = UIImageJPEGRepresentation(image, 0.0)!
+            
+            DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                } else {
+
+                    let downloadURL = metaData?.downloadURL()?.absoluteString
                     
+                    let thumb = image.resizeWithPercent(percentage: 0.1)!
+                    let thumbImageData = UIImageJPEGRepresentation(thumb, 0.0)!
+                    
+                    DataService.ds.STORAGE_BASE.child("pets").child("thumbs").child(imageId).putData(thumbImageData, metadata: metaData) { (metaData, error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                            return
+                        } else {
+                            let thumbDownloadURL = metaData?.downloadURL()?.absoluteString
+                            //store downloadURL at database
+                            DataService.ds.DB_BASE.child("photos").child(imageId).setValue(["photo": downloadURL as Any, "thumb": thumbDownloadURL as Any, "userId": USER_ID, "petId": CURRENT_PET_ID, "imageId": imageId]) {
+                                
+                                print("finished")
+                            }
+                        }
+                        
+                    }
                 }
             }
-            
         }
         dismiss(animated: true, completion: nil)
         // puts the display back to the tab 0 which is gallery to view the pic in the gallery
@@ -78,7 +90,6 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         tabBarController?.selectedIndex = 0
     }
     
-
     
 }
 
