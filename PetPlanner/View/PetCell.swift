@@ -38,6 +38,7 @@ class PetCell: UITableViewCell {
 
 
     func configure(pet: PetProfile) {
+  
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
         
@@ -48,6 +49,7 @@ class PetCell: UITableViewCell {
         self.idTag?.text = "I.D: \(pet.idTag.capitalized)"
         
         self.profilePic.sd_setImage(with: URL(string: pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
+            
             
             self.activityIndicator.isHidden = true
             self.activityIndicator.stopAnimating()

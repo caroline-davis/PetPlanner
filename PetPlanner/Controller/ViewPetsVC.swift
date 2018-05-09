@@ -13,6 +13,7 @@ import SDWebImage
 class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     
     var tableViewData = [PetProfile]()
@@ -40,11 +41,17 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
+       
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
         
         DataService.ds.getAllPets { (pets) in
             self.tableViewData = pets
             self.tableView.reloadData()
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
         }
+        
 
         
     }
@@ -58,9 +65,13 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+       
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath) as? PetCell {
             let pet = self.tableViewData[indexPath.row]
             cell.tag = indexPath.row
+            
+         
             
             cell.configure(pet: pet)
 

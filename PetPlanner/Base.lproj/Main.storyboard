@@ -377,6 +377,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6u9-bS-9S9">
+                                <rect key="frame" x="0.0" y="323" width="375" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOS-PS-rhF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -393,6 +397,7 @@
                         <viewLayoutGuide key="safeArea" id="FvT-9I-UVK"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="6u9-bS-9S9" id="JRS-f8-k7W"/>
                         <outlet property="tableView" destination="wxd-PS-OUz" id="WbY-S4-tmh"/>
                     </connections>
                 </viewController>
