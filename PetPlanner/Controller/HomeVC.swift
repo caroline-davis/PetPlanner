@@ -13,11 +13,15 @@ import SwiftKeychainWrapper
 class HomeVC: UIViewController {
     
     @IBOutlet weak var logoutButton: UIBarButtonItem!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var twitterButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    @IBAction func twitter(_sender: AnyObject) {
+       if let url = NSURL(string: "https://www.twitter.com/cherrytopstudio"){ UIApplication.shared.open(url as URL, options: [:], completionHandler: nil) }
         
     }
     

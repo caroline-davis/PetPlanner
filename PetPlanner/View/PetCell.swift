@@ -32,6 +32,7 @@ class PetCell: UITableViewCell {
         sex.textColor = WHITE_COLOR
         idTag.textColor = WHITE_COLOR
         
+        
        
     }
     
@@ -56,7 +57,11 @@ class PetCell: UITableViewCell {
         })
     }
     
-
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+     //   contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(10, 10, 10, 10))
+    }
     
 }
 

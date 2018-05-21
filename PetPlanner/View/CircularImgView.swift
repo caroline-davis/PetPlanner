@@ -27,5 +27,6 @@ class CircularImgView: UIImageView {
             layer.borderColor = BLUE_COLOR.cgColor
         }
     }
+    
 
 }

@@ -18,7 +18,7 @@ class ForgotPasswordVC: UIViewController {
     }
     
     @IBAction func resetPassword(_ sender: Any) {
-        DataService.ds.forgotPassword(email: "hello")
+       // DataService.ds.forgotPassword(email: "hello", completion: <#(String?) -> ()#>)
     }
     
     

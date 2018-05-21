@@ -34,9 +34,17 @@ class DataService {
         }
     }
     
-    func forgotPassword(email: String) {
+    func forgotPassword(email: String, completion: @escaping (String?)->()) {
         
             firebaseAuth.sendPasswordReset(withEmail: email) { error in
+                
+                if error != nil {
+                    completion("\(error?.localizedDescription.capitalized ?? "Broken")")
+                    // msg is the error on a pop up.
+                } else {
+                    completion("send email")
+                    // msg is the email is sent. check your email
+                }
                 // todo callback for error
                 // form with email address.... send button. if email is incorrect it would show error, if not it would say check email
         }

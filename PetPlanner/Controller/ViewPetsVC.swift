@@ -65,13 +65,11 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath) as? PetCell {
             let pet = self.tableViewData[indexPath.row]
             cell.tag = indexPath.row
             
-         
             
             cell.configure(pet: pet)
 
