@@ -12,6 +12,10 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Database'
 
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+
 
 pod 'SwiftKeychainWrapper', '~> 3.0'
 pod 'SDWebImage', '~> 4.0'

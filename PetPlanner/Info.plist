@@ -55,5 +55,18 @@
 	<string>To create your profile picture</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To find your closest vet</string>
+	<key>FacebookAppID</key>
+	<string>165491580770106</string>
+	<key>FacebookDisplayName</key>
+	<string>PetPlanner</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb165491580770106</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
