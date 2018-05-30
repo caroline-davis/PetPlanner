@@ -55,6 +55,8 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                     
                 })
                 
+    
+                
                 self.profileImage = self.pet.profileImage
                 
                 DispatchQueue.main.async {
@@ -72,55 +74,56 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     }
     
     
-//    @IBAction func addProfilePic(_ sender: AnyObject) {
-//        present(imagePicker, animated: true, completion: nil)
-//    }
-//    
-//    // standard func for profile pic
-//    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        
-//        saveBtnDisabled(save: self.save, activityIndicator: self.activityIndicator)
-//        print("CAROL: button disabled")
-//        
-//        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-//            profilePic.image = image
-//            
-//            // uploading of the image and compressing it
-//            if let imageData = UIImageJPEGRepresentation(image, 0.2) {
-//                
-//                // the unique id
-//                let imageId = NSUUID().uuidString
-//                
-//                // safety to tell code what type of file the image is
-//                let metaData = StorageMetadata()
-//                metaData.contentType = "image/jpeg"
-//            
-//                
-//                
-//                DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
-//                    if error != nil {
-//                        print("CAROL: Unable to upload image to firebase storage", error!)
-//                        
-//                        saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
-//                        print("CAROL: button enabled - it didnt work")
-//                    } else {
-//                        print("CAROL: Successfully uploaded image to firebase storage")
-//                        let downloadURL = metaData?.downloadURL()?.absoluteString
-//                        if let url = downloadURL {
-//                            self.profileImage = url
-//                            saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
-//                            print("CAROL: button enabled - it worked")
-//                        }
-//                    }
-//                }
-//            }
-//        } else {
-//            print("CAROL: A valid image wasnt selected")
-//            saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
-//        }
-//        imagePicker.dismiss(animated: true, completion: nil)
-//    }
-//    
+    @IBAction func addProfilePic(_ sender: AnyObject) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    // standard func for profile pic
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        saveBtnDisabled(save: self.save, activityIndicator: self.activityIndicator)
+        print("CAROL: button disabled")
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            profilePic.image = image
+            
+            // uploading of the image and compressing it
+            if let imageData = UIImageJPEGRepresentation(image, 0.2) {
+                
+                // the unique id
+                let imageId = NSUUID().uuidString
+                
+                // safety to tell code what type of file the image is
+                let metaData = StorageMetadata()
+                metaData.contentType = "image/jpeg"
+            
+                
+                
+                DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
+                    if error != nil {
+                        print("CAROL: Unable to upload image to firebase storage", error!)
+                        
+                        saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
+                        print("CAROL: button enabled - it didnt work")
+                    } else {
+                        print("CAROL: Successfully uploaded image to firebase storage")
+                        let downloadURL = metaData?.downloadURL()?.absoluteString
+                        if let url = downloadURL {
+                            self.profileImage = url
+                            saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
+                            print("CAROL: button enabled - it worked")
+                        }
+                    }
+                }
+            }
+        } else {
+            print("CAROL: A valid image wasnt selected")
+            saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     
     @IBAction func saveProfile() {
