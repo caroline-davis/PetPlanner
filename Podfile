@@ -7,11 +7,10 @@ target 'PetPlanner' do
 
   # Pods for PetPlanner
 
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'Firebase/Storage'
-pod 'Firebase/Database'
-pod 'FirebaseUI/Storage'
+pod 'Firebase/Core', '~> 4.8.1'
+pod 'Firebase/Auth', '~> 4.8.1'
+pod 'Firebase/Storage', '~> 4.8.1'
+pod 'Firebase/Database', '~> 4.8.1'
 
 
 pod 'SwiftKeychainWrapper', '~> 3.0'
