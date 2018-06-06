@@ -128,6 +128,21 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if (indexPath.row % 2 == 0) {
+            cell.backgroundColor = PINK_COLOR
+            print(indexPath.row)
+        } else {
+            cell.backgroundColor = BLUE_COLOR
+            print(indexPath.row)
+        }
+        
+       
+    }
+    
+
+    
  
 }
 

@@ -26,11 +26,20 @@ class PetCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        name.textColor = WHITE_COLOR
-        species.textColor = WHITE_COLOR
-        dob.textColor = WHITE_COLOR
-        sex.textColor = WHITE_COLOR
-        idTag.textColor = WHITE_COLOR
+     //   if self.contentView.backgroundColor == PINK_COLOR {
+            name.textColor = WHITE_COLOR
+            species.textColor = WHITE_COLOR
+            dob.textColor = WHITE_COLOR
+            sex.textColor = WHITE_COLOR
+            idTag.textColor = WHITE_COLOR
+//        } else {
+//            name.textColor = BLUE_COLOR
+//            species.textColor = BLUE_COLOR
+//            dob.textColor = BLUE_COLOR
+//            sex.textColor = BLUE_COLOR
+//            idTag.textColor = BLUE_COLOR
+//        }
+        
         
         
        
@@ -62,6 +71,7 @@ class PetCell: UITableViewCell {
         
      //   contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(10, 10, 10, 10))
     }
+    
     
 }
 

@@ -30,43 +30,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
     }
     
-    
-//    @IBAction func signInWithFacebook(_ sender: UIButton) {
-//        // TO DO: add facebook pod and sign in with facebook
-//                let loginManager = LoginManager()
-//        
-//                loginManager.logIn(readPermissions: [.publicProfile], viewController : self) { loginResult in
-//                    switch loginResult {
-//                    case .failed(let error):
-//                        print(error)
-//                        self.alerts(message: "Sorry we are unable to authenticate you, please try again")
-//                    case .cancelled:
-//                        print("User cancelled login")
-//                        self.alerts(message: "You have cancelled your login")
-//                    case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-//                        print("Carol", "Logged In")
-//                        // User succesfully logged in. Contains granted, declined permissions and access token.
-//                        let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
-//                        self.firebaseAuth(credential)
-//                    }
-//                }
-//    }
-//    
-//    
-//  //   link the fb log in with firebase authentication
-//        func firebaseAuth(_ credential: AuthCredential) {
-//            Auth.auth().signIn(with: credential) { (user, error) in
-//                if (error != nil) {
-//                    print("CAROL: Unable to autheticate with firebase - \(error)")
-//                    self.alerts(message: "Sorry we are unable to authenticate you, please try again")
-//                } else {
-//                    print("Carol: Successfully authenticated with firebase")
-//                    self.completeSignIn(user: user!)
-//    
-//                }
-//            }
-//        }
-//    
+
     
     @IBAction func signInWithEmail(_ sender: UIButton) {
         
@@ -87,7 +51,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         self.activityIndicator.stopAnimating()
                     } else {
                         
-                        self.completeSignIn(user: user! as! UserInfo)
+                        self.completeSignIn(user: user!)
                     }
                 }
                 
@@ -99,7 +63,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         self.alerts(message: "\(error!.localizedDescription)")
                         self.activityIndicator.stopAnimating()
                     } else {
-                        self.completeSignIn(user: user! as! UserInfo)
+                        self.completeSignIn(user: user!)
                     }
                 }
             }

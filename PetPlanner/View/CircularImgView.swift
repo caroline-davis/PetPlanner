@@ -24,7 +24,7 @@ class CircularImgView: UIImageView {
         if (self.viewWithTag(1) != nil) {
             layer.borderColor = WHITE_COLOR.cgColor
         } else {
-            layer.borderColor = BLUE_COLOR.cgColor
+            layer.borderColor = PINK_COLOR.cgColor
         }
     }
     
