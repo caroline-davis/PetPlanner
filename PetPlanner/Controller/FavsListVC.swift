@@ -17,6 +17,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var save: CurvedBtn!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+      @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var foodField: SquareTxtFld!
     @IBOutlet weak var drinkField: SquareTxtFld!
@@ -49,6 +50,8 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
         // to get the pet name to appear
         DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in
             self.pet = petProfile
+            self.loadingActivityIndicator.isHidden = false
+            self.loadingActivityIndicator.startAnimating()
             
             // to get the pet favs data to appear
             DataService.ds.getFavs(petId: CURRENT_PET_ID) { (petFavs) in
@@ -65,6 +68,8 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
                         self.feastingTimeField.text = self.favs.feastingTime
                         self.otherField.text = self.favs.other
                     }
+                    self.loadingActivityIndicator.isHidden = true
+                    self.loadingActivityIndicator.stopAnimating()
                 }
                 
                 DispatchQueue.main.async {

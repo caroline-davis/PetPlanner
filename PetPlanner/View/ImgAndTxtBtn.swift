@@ -25,6 +25,7 @@ class ImgAndTxtBtn: UIButton {
         
       // aligns button to the left instead of centre
         self.contentHorizontalAlignment = .left
+        // have also added insets to the button on storyboard
         
         
     }

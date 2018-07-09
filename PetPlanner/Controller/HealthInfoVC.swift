@@ -17,6 +17,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var save: CurvedBtn!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var breedField: SquareTxtFld!
     @IBOutlet weak var weightField: SquareTxtFld!
@@ -41,6 +42,8 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         lastVetVisitField.delegate = self
         
         activityIndicator.isHidden = true
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +51,9 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         
         DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in
             self.pet = petProfile
+            self.loadingActivityIndicator.isHidden = false
+            self.loadingActivityIndicator.startAnimating()
+            
         
             DataService.ds.getHealth(petId: CURRENT_PET_ID) { (petHealth) in
                 self.health = petHealth
@@ -63,6 +69,8 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
                         self.vetField.text = self.health.vet
                         self.lastVetVisitField.text = self.health.lastVetVisit
                     }
+                    self.loadingActivityIndicator.isHidden = true
+                    self.loadingActivityIndicator.stopAnimating()
                 }
           
      
@@ -72,6 +80,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+        
     }
     
     

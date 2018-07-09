@@ -12,9 +12,16 @@ import MapKit
 class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let locationManager = CLLocationManager()
     var selectedPin:MKPlacemark? = nil
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +69,8 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             for mapItem in response.mapItems {
                 dropPin(placemark: mapItem.placemark)
             }
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
         }
         
         

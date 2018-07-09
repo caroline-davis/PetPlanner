@@ -60,7 +60,7 @@
                                             <segment title="Login"/>
                                             <segment title="Sign Up"/>
                                         </segments>
-                                        <color key="tintColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.71372549019607845" green="0.30980392156862746" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="emailSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="OhC-lT-gdJ"/>
                                         </connections>
@@ -68,7 +68,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-T6-X5M" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
                                         <rect key="frame" x="18" y="357" width="269" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.71372549019607845" green="0.30980392156862746" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,7 +181,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="14"/>
                                         <state key="normal" title="Back to Login">
-                                            <color key="titleColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.71372549019607845" green="0.30980392156862746" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="goToLoginVC:" destination="C9f-2o-lbu" eventType="touchUpInside" id="H3e-da-xOK"/>
@@ -242,9 +242,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.71372549019607845" green="0.30980392156862746" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
-                                        <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                        <state key="normal" title="Add a pet" image="AddPetButton">
+                                        <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Add a pet" image="addButton">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -256,9 +256,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
-                                        <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                        <state key="normal" title="View Pets" image="ViewPetsButton">
+                                        <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="View Pets" image="searchButton">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -303,10 +303,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6u9-bS-9S9">
-                                <rect key="frame" x="0.0" y="323" width="375" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOS-PS-rhF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -350,14 +346,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DOB:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-jm-fEr">
-                                                    <rect key="frame" x="107" y="59" width="95" height="21"/>
+                                                    <rect key="frame" x="237" y="39" width="95" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sex:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WC3-gb-1rp">
-                                                    <rect key="frame" x="246" y="40" width="100" height="21"/>
+                                                    <rect key="frame" x="237" y="59" width="100" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -369,14 +365,14 @@
                                                     <color key="backgroundColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2h-5F-0hu">
-                                                    <rect key="frame" x="246" y="59" width="102" height="21"/>
+                                                    <rect key="frame" x="107" y="59" width="102" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkB-vV-riy">
-                                                    <rect key="frame" x="341" y="10" width="14" height="19"/>
+                                                    <rect key="frame" x="340" y="10" width="14" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="SourceSerifPro-Regular" family="Source Serif Pro" pointSize="15"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -397,6 +393,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6u9-bS-9S9">
+                                <rect key="frame" x="0.0" y="336" width="375" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FvT-9I-UVK"/>
@@ -531,12 +531,13 @@
                                             <action selector="saveHealth:" destination="9nm-ez-Pzf" eventType="touchUpInside" id="12i-SY-BqO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfA-7X-6Lj" customClass="CircularBtn" customModule="PetPlanner" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfA-7X-6Lj">
                                         <rect key="frame" x="252" y="448" width="85" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="-3"/>
-                                        <state key="normal" image="ViewPetsButton">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="12"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="35" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Find a Vet" backgroundImage="vetPinkNoTextButton">
+                                            <color key="titleColor" red="0.70980392156862748" green="0.32941176470588235" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="DNW-CQ-kKL" kind="show" identifier="ToVetMapVC" id="y8M-xq-R7o"/>
@@ -576,6 +577,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sOw-we-c7y">
+                                        <rect key="frame" x="146" y="249" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -588,6 +593,7 @@
                         <outlet property="allergiesField" destination="cii-24-5bv" id="QSq-we-Pcf"/>
                         <outlet property="breedField" destination="UUb-Cp-EO2" id="mHt-tR-pmc"/>
                         <outlet property="lastVetVisitField" destination="oTv-GB-cZ5" id="xHA-gx-3wG"/>
+                        <outlet property="loadingActivityIndicator" destination="sOw-we-c7y" id="jVB-Xb-EeZ"/>
                         <outlet property="medicationsField" destination="TP9-oT-kHU" id="7Da-6J-cNS"/>
                         <outlet property="name" destination="FE5-js-nX5" id="dfI-cg-nRx"/>
                         <outlet property="save" destination="wPC-lr-je4" id="2wi-dl-BQK"/>
@@ -750,6 +756,10 @@
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fdZ-Sa-qNq">
+                                        <rect key="frame" x="145" y="242" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -771,6 +781,7 @@
                         <outlet property="feastingTimeField" destination="Luy-eJ-43g" id="ptw-9C-KvY"/>
                         <outlet property="foodField" destination="pe9-WT-B9V" id="VDi-uu-INn"/>
                         <outlet property="hidingSpotField" destination="rpy-Ns-CqW" id="AA8-Hw-gum"/>
+                        <outlet property="loadingActivityIndicator" destination="fdZ-Sa-qNq" id="zRw-7h-iuz"/>
                         <outlet property="name" destination="vZU-CI-G9a" id="HF5-1D-dmc"/>
                         <outlet property="otherField" destination="4QO-xi-zuM" id="B82-cM-tCk"/>
                         <outlet property="save" destination="6qt-qk-nFz" id="Kru-QW-MaM"/>
@@ -796,6 +807,10 @@
                                     <outlet property="delegate" destination="DNW-CQ-kKL" id="xGw-Wy-nLQ"/>
                                 </connections>
                             </mapView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="STq-HO-JkX">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -807,6 +822,7 @@
                         <viewLayoutGuide key="safeArea" id="Q6R-vH-Y1E"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="STq-HO-JkX" id="blv-ks-XeP"/>
                         <outlet property="mapView" destination="dgj-AZ-svx" id="0yg-bU-T2u"/>
                     </connections>
                 </viewController>
@@ -913,11 +929,10 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFf-ia-tMK">
-                                        <rect key="frame" x="216" y="106" width="67" height="30"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFf-ia-tMK">
+                                        <rect key="frame" x="217" y="111" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="12"/>
-                                        <state key="normal" title="Edit Icon">
+                                        <state key="normal" image="editButton">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -1002,30 +1017,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIz-Uu-495">
-                                <rect key="frame" x="54" y="409" width="100" height="100"/>
+                                <rect key="frame" x="60" y="409" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Camera Highlighted"/>
+                                <state key="normal" image="photoButton"/>
                                 <connections>
                                     <segue destination="8S2-Tx-lID" kind="show" identifier="ToTakePhotoVC" id="pQr-mF-gJm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIB-CX-p76">
-                                <rect key="frame" x="216" y="409" width="100" height="100"/>
+                                <rect key="frame" x="210" y="409" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Calendar"/>
+                                <state key="normal" image="calendarButton"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqU-eT-WAZ">
-                                <rect key="frame" x="54" y="547" width="100" height="100"/>
+                                <rect key="frame" x="59" y="542" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Health"/>
+                                <state key="normal" image="vetButton"/>
                                 <connections>
                                     <action selector="toHealthInfoVC:" destination="1Lz-76-338" eventType="touchUpInside" id="9yP-CZ-hod"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeX-pN-byF">
-                                <rect key="frame" x="216" y="547" width="100" height="100"/>
+                                <rect key="frame" x="211" y="542" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Checklist"/>
+                                <state key="normal" image="checklistButton"/>
                                 <connections>
                                     <action selector="toFavsListVC:" destination="1Lz-76-338" eventType="touchUpInside" id="MWo-iz-Rpi"/>
                                 </connections>
@@ -1063,23 +1078,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbN-fb-aIV">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="4Sg-fV-qI6"/>
+                                </constraints>
                                 <items>
-                                    <barButtonItem title="Send" id="Ubj-16-jnz">
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Skr-e7-ZHw"/>
+                                    <barButtonItem title="Item" image="upload" id="Ubj-16-jnz">
                                         <connections>
                                             <action selector="shareImage:" destination="hHK-5u-Beo" id="hjG-7C-vOv"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WDS-A5-7W4"/>
-                                    <barButtonItem title="Delete" id="xaP-No-Qbl">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="zYq-zK-CMX"/>
+                                    <barButtonItem image="trash" id="xaP-No-Qbl">
                                         <connections>
                                             <action selector="deleteImage:" destination="hHK-5u-Beo" id="Ohe-cX-Mch"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="QOp-s5-oZP"/>
                                 </items>
+                                <color key="tintColor" red="0.71372549019607845" green="0.30980392156862746" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IPL-ZR-jWE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1105,7 +1126,7 @@
             </objects>
             <point key="canvasLocation" x="4924" y="-961.16941529235385"/>
         </scene>
-        <!--Gallery-->
+        <!--GalleryVC-->
         <scene sceneID="5pi-XQ-iVy">
             <objects>
                 <viewController storyboardIdentifier="GalleryVC" id="oRJ-jC-XfR" customClass="GalleryVC" customModule="PetPlanner" customModuleProvider="target" sceneMemberID="viewController">
@@ -1152,7 +1173,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tpp-T4-OnH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gallery" id="DxH-I4-MKx"/>
+                    <tabBarItem key="tabBarItem" title="" image="galleryPinkButton" selectedImage="galleryPinkButton" id="DxH-I4-MKx">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="collection" destination="klR-bh-Ghx" id="OrP-Pg-SgX"/>
                     </connections>
@@ -1161,7 +1184,7 @@
             </objects>
             <point key="canvasLocation" x="4232.8000000000002" y="-961.16941529235385"/>
         </scene>
-        <!--Photo-->
+        <!--Take PhotoVC-->
         <scene sceneID="ICw-Sk-zSf">
             <objects>
                 <viewController storyboardIdentifier="TakePhotoVC" id="EaF-Ym-RkH" customClass="TakePhotoVC" customModule="PetPlanner" customModuleProvider="target" sceneMemberID="viewController">
@@ -1177,7 +1200,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VFo-Ca-Ada"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Photo" id="Pe2-SU-wmx"/>
+                    <tabBarItem key="tabBarItem" title="" image="cameraPinkButton" id="Pe2-SU-wmx">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="photo" destination="Fbs-zi-7md" id="3u7-w2-JcQ"/>
                     </connections>
@@ -1194,6 +1219,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="oRJ-jC-XfR" kind="relationship" relationship="viewControllers" id="sMv-Cb-Yhu"/>
@@ -1222,16 +1248,23 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddPetButton" width="130" height="130"/>
-        <image name="Calendar" width="178" height="178"/>
-        <image name="Camera Highlighted" width="178" height="178"/>
-        <image name="Checklist" width="178" height="178"/>
-        <image name="Health" width="178" height="178"/>
         <image name="Logo" width="509" height="241"/>
         <image name="LogoAlt" width="509" height="241"/>
         <image name="MyPets" width="538" height="155"/>
         <image name="ProfilePicturev2" width="334" height="334"/>
         <image name="TwitterLogo" width="22" height="19"/>
-        <image name="ViewPetsButton" width="130" height="130"/>
+        <image name="addButton" width="70" height="70"/>
+        <image name="calendarButton" width="90" height="90"/>
+        <image name="cameraPinkButton" width="31" height="28"/>
+        <image name="checklistButton" width="90" height="90"/>
+        <image name="editButton" width="38" height="38"/>
+        <image name="galleryPinkButton" width="31" height="28"/>
+        <image name="photoButton" width="90" height="90"/>
+        <image name="searchButton" width="70" height="70"/>
+        <image name="trash" width="22" height="28"/>
+        <image name="upload" width="22" height="28"/>
+        <image name="vetButton" width="90" height="90"/>
+        <image name="vetPinkNoTextButton" width="70" height="71"/>
     </resources>
+    <color key="tintColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
