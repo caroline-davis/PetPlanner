@@ -45,6 +45,9 @@
 		F19798152074719800FF86EF /* ViewPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19798142074719800FF86EF /* ViewPhotoVC.swift */; };
 		F199C2EC2043975200092E9B /* CircularImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2EB2043975200092E9B /* CircularImgView.swift */; };
 		F199C2EE2043D13C00092E9B /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199C2ED2043D13C00092E9B /* PetProfile.swift */; };
+		F1ACAB8020F725580038B4A4 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ACAB7F20F725580038B4A4 /* CreateEventVC.swift */; };
+		F1ACAB8220F7267E0038B4A4 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ACAB8120F7267E0038B4A4 /* EventsVC.swift */; };
+		F1ACAB8420F73B140038B4A4 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ACAB8320F73B140038B4A4 /* EventCell.swift */; };
 		F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C795482036A4BE0059E803 /* CircularBtn.swift */; };
 		F1EDE5402075E5BD009C978D /* VetMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EDE53F2075E5BD009C978D /* VetMapVC.swift */; };
 		F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBD7C92010211E00CC1874 /* HomeVC.swift */; };
@@ -93,6 +96,9 @@
 		F19798142074719800FF86EF /* ViewPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoVC.swift; sourceTree = "<group>"; };
 		F199C2EB2043975200092E9B /* CircularImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImgView.swift; sourceTree = "<group>"; };
 		F199C2ED2043D13C00092E9B /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
+		F1ACAB7F20F725580038B4A4 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
+		F1ACAB8120F7267E0038B4A4 /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
+		F1ACAB8320F73B140038B4A4 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		F1C795482036A4BE0059E803 /* CircularBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBtn.swift; sourceTree = "<group>"; };
 		F1EDE53F2075E5BD009C978D /* VetMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetMapVC.swift; sourceTree = "<group>"; };
 		F1FBD7C92010211E00CC1874 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 				F128E149203E8F5400444DEE /* CurvedView.swift */,
 				F1778ED2203FA1FC002C75FC /* PetCell.swift */,
 				F14D23312096D6800014B1D6 /* PhotoCell.swift */,
+				F1ACAB8320F73B140038B4A4 /* EventCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +225,8 @@
 				F19798102074716000FF86EF /* TakePhotoVC.swift */,
 				F19798122074718400FF86EF /* GalleryVC.swift */,
 				F19798142074719800FF86EF /* ViewPhotoVC.swift */,
+				F1ACAB8120F7267E0038B4A4 /* EventsVC.swift */,
+				F1ACAB7F20F725580038B4A4 /* CreateEventVC.swift */,
 				F18355472075D336005F47D8 /* HealthInfoVC.swift */,
 				F1EDE53F2075E5BD009C978D /* VetMapVC.swift */,
 				F18AAAFE2091700D001894F0 /* FavsListVC.swift */,
@@ -362,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1ACAB8020F725580038B4A4 /* CreateEventVC.swift in Sources */,
 				F1778ED7203FF547002C75FC /* ViewPetsVC.swift in Sources */,
 				F19798132074718400FF86EF /* GalleryVC.swift in Sources */,
 				F17B1E7E209829FD0015657A /* PetImage.swift in Sources */,
@@ -383,6 +393,7 @@
 				F194B4F820452F170072D293 /* PetFavs.swift in Sources */,
 				F1C795492036A4BE0059E803 /* CircularBtn.swift in Sources */,
 				F128E14A203E8F5400444DEE /* CurvedView.swift in Sources */,
+				F1ACAB8420F73B140038B4A4 /* EventCell.swift in Sources */,
 				F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */,
 				F161C9322068AE6900E27455 /* CurvedLbl.swift in Sources */,
 				F19798152074719800FF86EF /* ViewPhotoVC.swift in Sources */,
@@ -390,6 +401,7 @@
 				F19798112074716000FF86EF /* TakePhotoVC.swift in Sources */,
 				F18AAAFF2091700D001894F0 /* FavsListVC.swift in Sources */,
 				F11B55CC2016BF9200E5F708 /* Constants.swift in Sources */,
+				F1ACAB8220F7267E0038B4A4 /* EventsVC.swift in Sources */,
 				F128E146203D36B600444DEE /* DataService.swift in Sources */,
 				F194B4FA20452F2D0072D293 /* PetEvents.swift in Sources */,
 				F1EDE5402075E5BD009C978D /* VetMapVC.swift in Sources */,

@@ -18,6 +18,8 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var selectedPin:MKPlacemark? = nil
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
     }

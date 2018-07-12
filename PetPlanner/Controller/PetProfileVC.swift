@@ -56,6 +56,12 @@ class PetProfileVC: UIViewController  {
         }
     }
     
+    
+    @IBAction func toEventsVC(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventsVC") as! EventsVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
    
     @IBAction func toHealthInfoVC(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "HealthInfoVC") as! HealthInfoVC

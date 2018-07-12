@@ -21,6 +21,11 @@ class ForgotPasswordVC: UIViewController {
        // DataService.ds.forgotPassword(email: "hello", completion: <#(String?) -> ()#>)
     }
     
+   // or //    Auth.auth().sendPasswordReset(withEmail: "email@email") { error in
+    //    // Your code here
+    //    }
+    
+    
     
     @IBAction func goToLoginVC(_ sender: Any) {
         
@@ -29,7 +34,7 @@ class ForgotPasswordVC: UIViewController {
         
     }
     
-    
+
 }
 
 

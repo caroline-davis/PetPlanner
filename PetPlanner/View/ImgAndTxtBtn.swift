@@ -20,9 +20,7 @@ class ImgAndTxtBtn: UIButton {
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 2.0
         layer.shadowOffset = CGSize(width: 0.8, height: 2.0)
-        
-   
-        
+
       // aligns button to the left instead of centre
         self.contentHorizontalAlignment = .left
         // have also added insets to the button on storyboard
@@ -30,6 +28,7 @@ class ImgAndTxtBtn: UIButton {
         
     }
     
+
   
     
    
