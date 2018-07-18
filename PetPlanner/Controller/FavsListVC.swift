@@ -73,7 +73,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
                 }
                 
                 DispatchQueue.main.async {
-                    self.name.text = "\(self.pet.name.capitalized)'s Favorites"
+                    self.name.text = "\(self.pet.name.capitalized)'s Favourites"
                     
                 }
             }

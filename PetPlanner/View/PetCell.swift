@@ -18,30 +18,20 @@ class PetCell: UITableViewCell {
     @IBOutlet weak var sex: UILabel!
     @IBOutlet weak var idTag: UILabel!
     
-    @IBOutlet weak var editCell: UIButton!
-    @IBOutlet weak var deleteCell: UIButton!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-     //   if self.contentView.backgroundColor == PINK_COLOR {
+    
             name.textColor = WHITE_COLOR
             species.textColor = WHITE_COLOR
             dob.textColor = WHITE_COLOR
             sex.textColor = WHITE_COLOR
             idTag.textColor = WHITE_COLOR
-//        } else {
-//            name.textColor = BLUE_COLOR
-//            species.textColor = BLUE_COLOR
-//            dob.textColor = BLUE_COLOR
-//            sex.textColor = BLUE_COLOR
-//            idTag.textColor = BLUE_COLOR
-//        }
-        
-        
-        
+
+
        
     }
     

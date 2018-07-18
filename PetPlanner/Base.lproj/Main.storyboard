@@ -847,7 +847,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="lZK-p0-zvD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier=" EventCell          " rowHeight="80" id="lZK-p0-zvD" customClass="EventCell" customModule="PetPlanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lZK-p0-zvD" id="Dvm-uT-EMa">
@@ -907,6 +907,14 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="alarm" destination="vnz-k5-ZKS" id="Pfg-49-7PA"/>
+                                            <outlet property="eventDate" destination="cuh-0d-cnr" id="red-Mv-OJi"/>
+                                            <outlet property="eventLocation" destination="bVP-8R-6nm" id="hOX-mH-dt7"/>
+                                            <outlet property="eventName" destination="bgT-YC-sJ8" id="ySD-zX-6fu"/>
+                                            <outlet property="eventTime" destination="xsn-4q-sku" id="tzF-ow-sH5"/>
+                                            <outlet property="profilePic" destination="8nF-PT-Fi9" id="9gR-Ov-WAy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
