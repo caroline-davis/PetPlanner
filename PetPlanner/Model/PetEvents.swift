@@ -17,6 +17,7 @@ class PetEvents {
     private var _location: String!
     private var _date: Date!
     private var _userId: String!
+    private var _eventId: String!
 
     
     private var _eventsRef: DatabaseReference!
@@ -36,37 +37,45 @@ class PetEvents {
     var userId: String {
         return _userId
     }
+    var eventId : String {
+        return _eventId
+    }
 
     var eventsRef: DatabaseReference {
         return _eventsRef
     }
     
-    init(petId: String, name: String, location: String, date: Date, userId: String) {
+    init(petId: String, name: String, location: String, date: String, userId: String, eventId: String) {
         self._petId = petId
         self._name = name
         self._location = location
-        self._date = date
+        let formatter = DateFormatter()
+        self._date = formatter.date(from: date)
         self._userId = userId
+        self._eventId = eventId
       
     }
     
     init(petId: String, eventsData: Dictionary <String, AnyObject>)  {
         self._petId = petId
         
-        if let name = eventsData["eventName"] as? String {
+        if let name = eventsData["name"] as? String {
             self._name = name
         }
         if let location = eventsData["location"] as? String {
             self._location = location
         }
-        if let date = eventsData["date"] as? Date {
-            self._date = date
+        if let date = eventsData["date"] as? String {
+            let formatter = DateFormatter()
+            self._date = formatter.date(from: date)
         }
         if let userId = eventsData["userId"] as? String {
             self._userId = userId
- 
         }
-        _eventsRef = DataService.ds.DB_BASE.child("events").child(_petId)
+        if let eventId = eventsData["eventId"] as? String {
+            self._eventId = eventId
+        }
+        _eventsRef = DataService.ds.DB_BASE.child("events").child(_petId).child(eventId)
     }
     
 

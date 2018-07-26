@@ -276,7 +276,88 @@ class DataService {
         }
     }
     
+    func getEvent(petId: String, eventId: String, completion: @escaping (PetEvents?)->()) {
+        
+        DB_BASE.child("events").child(CURRENT_PET_ID).child(eventId).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? Dictionary <String, AnyObject>
+            if value != nil {
+                let event = PetEvents(petId: CURRENT_PET_ID, eventsData: value!)
+                completion(event)
+            } else {
+                completion(nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
     
+    func createEvent(
+        name: String,
+        location: String,
+        date: Date,
+        completion: @escaping (String?, _ petId: String)->()) {
+        
+        let eventId = generateId()
+        
+        
+        DB_BASE.child("events").child(CURRENT_PET_ID).child(eventId).setValue([
+            "petId": CURRENT_PET_ID,
+            "eventId": eventId,
+            "name": name,
+            "location": location,
+            "date": String(date.description),
+            "userId": USER_ID
+        ]) { (error, result) in
+            
+            if error != nil {
+                completion("\(error?.localizedDescription.capitalized ?? "Broken")",  CURRENT_PET_ID)
+            } else {
+                completion(nil, CURRENT_PET_ID)
+            }
+        }
+    }
+    
+    func editEvent(eventId: String, name: String, location: String, date: Date, completion: @escaping (String?)->()) {
+        DB_BASE.child("events").child(CURRENT_PET_ID).child(eventId).updateChildValues([
+            "name": name,
+            "location": location,
+            "date": String(date.description)
+        ])
+        { (error, result) in
+            if error != nil {
+                completion("\(error?.localizedDescription.capitalized ?? "Broken")")
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    func getAllEvents(completion: @escaping (Array<PetEvents>)->()) {
+        
+        DB_BASE.child("events").child(CURRENT_PET_ID).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let dict = snapshot.value as? Dictionary <String, AnyObject>
+            
+            // To get JSON data as array to loop through - it removes the keys from outer layer of dict
+            
+            if dict != nil {
+                let values = Array(dict!.values)
+                
+                // .map calls a function for each item in array
+                let events = values.map({ (item) -> PetEvents in
+                    let petId = item["petId"] as! String
+                    return PetEvents(petId: petId, eventsData: item as! Dictionary<String, AnyObject>)
+                })
+                
+                completion(events)
+            } else {
+                print("no events")
+            }
+        })
+        
+    }
 
     
 

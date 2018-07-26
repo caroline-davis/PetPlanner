@@ -836,7 +836,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier=" EventCell          " rowHeight="80" id="lZK-p0-zvD" customClass="EventCell" customModule="PetPlanner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="80" id="lZK-p0-zvD" customClass="EventCell" customModule="PetPlanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lZK-p0-zvD" id="Dvm-uT-EMa">
@@ -902,7 +902,6 @@
                         <viewLayoutGuide key="safeArea" id="eMq-i0-fr7"/>
                     </view>
                     <connections>
-                        <outlet property="name" destination="Rjv-Hp-tOk" id="xgP-fk-Pgz"/>
                         <outlet property="tableView" destination="ui3-pN-5UA" id="d4J-g1-1rd"/>
                     </connections>
                 </viewController>
@@ -989,6 +988,7 @@
                         <viewLayoutGuide key="safeArea" id="Msw-zj-zGn"/>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="O2C-9G-0rm" id="Agx-eF-lPG"/>
                         <outlet property="location" destination="M3e-HW-hdP" id="LUE-h5-6RP"/>
                         <outlet property="name" destination="Xa1-t2-Zdf" id="z1k-Ea-YHU"/>
                     </connections>

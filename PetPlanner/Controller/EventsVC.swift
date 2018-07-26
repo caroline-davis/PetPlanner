@@ -38,6 +38,11 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(false)
             
+            DataService.ds.getAllEvents { (events) in
+                self.tableViewData = events
+                self.tableView.reloadData()
+            }
+            
         //    self.activityIndicator.isHidden = false
          //   self.activityIndicator.startAnimating()
             
@@ -76,11 +81,10 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
-            let pet = self.tableViewData[indexPath.row]
-            let petId = pet.petId
+            let event = self.tableViewData[indexPath.row]
             
             let vc = storyboard?.instantiateViewController(withIdentifier: "CreateEventVC") as! CreateEventVC
-          //  vc.petId = petId
+            vc.eventId = event.eventId
             self.navigationController?.pushViewController(vc, animated: false)
             
         }
