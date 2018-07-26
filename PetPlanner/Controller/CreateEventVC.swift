@@ -10,13 +10,24 @@ import UIKit
 
 class CreateEventVC: UIViewController {
     
+    @IBOutlet weak var name: SquareTxtFld!
+    @IBOutlet weak var location: SquareTxtFld!
+    
+    var date: Date!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     
     
+    @IBAction func getDateAndTime(_ sender: UIDatePicker) {
+        date = sender.date
+    }
     
+    @IBAction func save(_ sender: Any) {
+        // do firebase function
+    }
     
     
 }

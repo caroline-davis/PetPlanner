@@ -13,7 +13,7 @@ import SDWebImage
 class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  //  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var name: UILabel!
     
@@ -38,15 +38,14 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(false)
             
-            self.activityIndicator.isHidden = false
-            self.activityIndicator.startAnimating()
+        //    self.activityIndicator.isHidden = false
+         //   self.activityIndicator.startAnimating()
             
-            DataService.ds.getAllPets { (pets) in
-                self.tableViewData = pets
+    // do a getpetEVENts data in dataservice and put it here
                 self.tableView.reloadData()
-                self.activityIndicator.isHidden = true
-                self.activityIndicator.stopAnimating()
-            }
+            //    self.activityIndicator.isHidden = true
+            //    self.activityIndicator.stopAnimating()
+            
             
             
             
@@ -67,7 +66,7 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 cell.tag = indexPath.row
                 
                 
-                cell.configure(pet: pet)
+                cell.configure(petEvent: pet)
                 
                 return cell
             } else {
@@ -80,8 +79,8 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let pet = self.tableViewData[indexPath.row]
             let petId = pet.petId
             
-            let vc = storyboard?.instantiateViewController(withIdentifier: "PetProfileVC") as! PetProfileVC
-            vc.petId = petId
+            let vc = storyboard?.instantiateViewController(withIdentifier: "CreateEventVC") as! CreateEventVC
+          //  vc.petId = petId
             self.navigationController?.pushViewController(vc, animated: false)
             
         }
