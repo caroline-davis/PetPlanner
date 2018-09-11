@@ -97,8 +97,8 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
             
-            let pet = self.tableViewData[indexPath.row]
-            let petId = pet.petId
+            let event = self.tableViewData[indexPath.row]
+            let eventId = event.eventId
             
             let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
                 // delete item at indexPath
@@ -108,7 +108,7 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.tableView.reloadData()
                 
                 // removes the data from firebase
-                DataService.ds.DB_BASE.child("pets").child(petId).removeValue()
+                DataService.ds.DB_BASE.child("events").child("eventId").removeValue()
                 
             }
             delete.backgroundColor = .red
@@ -116,8 +116,8 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
                 print("edit tapped")
                 
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreatePetVC") as! CreatePetVC
-                vc.petId = petId
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateEventVC") as! CreateEventVC
+               vc.eventId = event.eventId
                 self.navigationController?.pushViewController(vc, animated: false)
             }
             

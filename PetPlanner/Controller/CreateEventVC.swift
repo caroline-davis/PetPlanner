@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension Date {
+    var localizedDescription: String {
+        return description(with: .current)
+    }
+}
+
 class CreateEventVC: UIViewController {
     
     @IBOutlet weak var name: SquareTxtFld!
@@ -45,6 +51,7 @@ class CreateEventVC: UIViewController {
     
     @IBAction func getDateAndTime(_ sender: UIDatePicker) {
         eventDate = sender.date
+        print(sender.date)
     }
     
     @IBAction func save(_ sender: Any) {

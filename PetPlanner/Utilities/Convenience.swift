@@ -62,7 +62,7 @@ extension UIImage {
 // Convert String to Date
 func convertToDate(originalString: String) -> Date {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +0000"
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
     
     let convertedDate: Date = dateFormatter.date(from: originalString)!
     return convertedDate
@@ -72,7 +72,7 @@ func convertToDate(originalString: String) -> Date {
 /// Convert Date to String
 func convertToString(originalDate: Date) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +0000"
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
     
     let convertedString: String = dateFormatter.string(from: originalDate) // pass Date here
     
