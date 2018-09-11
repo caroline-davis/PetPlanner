@@ -38,11 +38,13 @@ class EventCell: UITableViewCell {
         dateFormatter.dateFormat = "dd-MM-yyyy"
         
         let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm:ssZZZZZ"
+        timeFormatter.dateFormat = "HH:mm:ss"
 
+        let theDate = dateFormatter.string(from: petEvent.eventDate)
+        let theTime = timeFormatter.string(from: petEvent.eventDate)
         
-        self.eventDate?.text = dateFormatter.string(from: petEvent.date)
-        self.eventTime?.text = timeFormatter.string(from: petEvent.date)
+        self.eventDate?.text = theDate
+        self.eventTime?.text = theTime
         self.eventLocation?.text = petEvent.location.capitalized
         
     }

@@ -47,7 +47,7 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
          //   self.activityIndicator.startAnimating()
             
     // do a getpetEVENts data in dataservice and put it here
-                self.tableView.reloadData()
+
             //    self.activityIndicator.isHidden = true
             //    self.activityIndicator.stopAnimating()
             

@@ -14,7 +14,7 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var location: SquareTxtFld!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    var date: Date!
+    var eventDate: Date!
     var petEvent: PetEvents!
     
     // to do: when clicking on tableview with the eventId attached
@@ -32,8 +32,8 @@ class CreateEventVC: UIViewController {
             if petEvent != nil {
                 DispatchQueue.main.async {
                     self.location.text = self.event.location
-                    self.date = self.event.date
-                    self.datePicker.setDate(self.date, animated: true)
+                    self.eventDate = self.event.eventDate
+                    self.datePicker.setDate(self.eventDate, animated: true)
                 }
             }
             
@@ -44,12 +44,12 @@ class CreateEventVC: UIViewController {
     
     
     @IBAction func getDateAndTime(_ sender: UIDatePicker) {
-        date = sender.date
+        eventDate = sender.date
     }
     
     @IBAction func save(_ sender: Any) {
         if self.event == nil {
-            DataService.ds.createEvent(name: name.text!, location: location.text!, date: date!, completion: { (error, petId) in
+            DataService.ds.createEvent(name: name.text!, location: location.text!, eventDate: eventDate!, completion: { (error, petId) in
                 if error != nil {
                     self.alerts(message: error!)
                 } else {
@@ -57,7 +57,7 @@ class CreateEventVC: UIViewController {
                 }
             })
         } else {
-            DataService.ds.editEvent(eventId: self.event.eventId, name: name.text!, location: location.text!, date: date!, completion:{ (error) in
+            DataService.ds.editEvent(eventId: self.event.eventId, name: name.text!, location: location.text!, eventDate: eventDate!, completion:{ (error) in
                 if error != nil {
                     self.alerts(message: error!)
                 } else {

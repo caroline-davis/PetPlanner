@@ -130,7 +130,7 @@ class DataService {
   
     func getAllPets(completion: @escaping (Array<PetProfile>)->()) {
         
-         DB_BASE.child("pets").queryOrdered(byChild: "userId").queryEqual(toValue: USER_ID).observeSingleEvent(of: .value, with: { (snapshot) in
+        DB_BASE.child("pets").queryOrdered(byChild: "userId").queryEqual(toValue: USER_ID).observeSingleEvent(of: .value, with: { (snapshot) in
     
            
             let dict = snapshot.value as? Dictionary <String, AnyObject>
@@ -296,7 +296,7 @@ class DataService {
     func createEvent(
         name: String,
         location: String,
-        date: Date,
+        eventDate: Date,
         completion: @escaping (String?, _ petId: String)->()) {
         
         let eventId = generateId()
@@ -307,7 +307,7 @@ class DataService {
             "eventId": eventId,
             "name": name,
             "location": location,
-            "date": String(date.description),
+            "eventDate": String(eventDate.description),
             "userId": USER_ID
         ]) { (error, result) in
             
@@ -319,11 +319,11 @@ class DataService {
         }
     }
     
-    func editEvent(eventId: String, name: String, location: String, date: Date, completion: @escaping (String?)->()) {
+    func editEvent(eventId: String, name: String, location: String, eventDate: Date, completion: @escaping (String?)->()) {
         DB_BASE.child("events").child(CURRENT_PET_ID).child(eventId).updateChildValues([
             "name": name,
             "location": location,
-            "date": String(date.description)
+            "eventDate": String(eventDate.description)
         ])
         { (error, result) in
             if error != nil {

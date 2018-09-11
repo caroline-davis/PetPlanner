@@ -71,6 +71,8 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
                     self.loadingActivityIndicator.isHidden = true
                     self.loadingActivityIndicator.stopAnimating()
                 }
+                self.loadingActivityIndicator.isHidden = true
+                self.loadingActivityIndicator.stopAnimating()
                 
                 DispatchQueue.main.async {
                     self.name.text = "\(self.pet.name.capitalized)'s Favourites"
