@@ -8,12 +8,6 @@
 
 import UIKit
 
-extension Date {
-    var localizedDescription: String {
-        return description(with: .current)
-    }
-}
-
 class CreateEventVC: UIViewController {
     
     @IBOutlet weak var name: SquareTxtFld!
@@ -34,9 +28,11 @@ class CreateEventVC: UIViewController {
         if eventId != nil {
             DataService.ds.getEvent(petId: CURRENT_PET_ID, eventId: eventId) { (petEvent) in
                 self.event = petEvent
+                print(self.event)
             
             if petEvent != nil {
                 DispatchQueue.main.async {
+                    self.name.text = self.event.name
                     self.location.text = self.event.location
                     self.eventDate = self.event.eventDate
                     self.datePicker.setDate(self.eventDate, animated: true)

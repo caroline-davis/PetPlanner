@@ -26,7 +26,7 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-         self.tableView.rowHeight = 100
+        self.tableView.rowHeight = 100
         
         // tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -108,7 +108,10 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.tableView.reloadData()
                 
                 // removes the data from firebase
-                DataService.ds.DB_BASE.child("events").child("eventId").removeValue()
+                DataService.ds.DB_BASE.child("events").child(CURRENT_PET_ID).child(eventId).removeValue()
+                
+                //  // removes the data from firebase
+                // DataService.ds.DB_BASE.child("pets").child(petId).removeValue()
                 
             }
             delete.backgroundColor = .red
