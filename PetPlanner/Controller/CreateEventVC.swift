@@ -51,6 +51,12 @@ class CreateEventVC: UIViewController {
     }
     
     @IBAction func save(_ sender: Any) {
+        
+        guard case let date = eventDate, date != nil else {
+            self.alerts(message: "Please select a date and time")
+            return
+        }
+        
         if self.event == nil {
             DataService.ds.createEvent(name: name.text!, location: location.text!, eventDate: eventDate!, completion: { (error, petId) in
                 if error != nil {
