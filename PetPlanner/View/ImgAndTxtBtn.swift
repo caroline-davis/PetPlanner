@@ -15,7 +15,6 @@ class ImgAndTxtBtn: UIButton {
         
         imageView?.contentMode = .scaleAspectFit
     
-        layer.cornerRadius = 4
         layer.shadowColor = BLACK_COLOR.cgColor
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 2.0
@@ -25,12 +24,16 @@ class ImgAndTxtBtn: UIButton {
         self.contentHorizontalAlignment = .left
         // have also added insets to the button on storyboard
         
-        
+        cornerCurves()
     }
     
+    func cornerCurves() {
+        if (self.viewWithTag(1) != nil) {
+            layer.cornerRadius = 0
+        } else {
+            layer.cornerRadius = 4
+        }
+    }
 
-  
-    
-   
 
 }

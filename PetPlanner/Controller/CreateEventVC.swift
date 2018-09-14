@@ -56,6 +56,14 @@ class CreateEventVC: UIViewController {
             self.alerts(message: "Please select a date and time")
             return
         }
+        guard case let eventName = name.text, eventName != "" else {
+            self.alerts(message: "Please enter an event name")
+            return
+        }
+        guard case let locationName = location.text, locationName != "" else {
+            self.alerts(message: "Please enter a location")
+            return
+        }
         
         if self.event == nil {
             DataService.ds.createEvent(name: name.text!, location: location.text!, eventDate: eventDate!, completion: { (error, petId) in

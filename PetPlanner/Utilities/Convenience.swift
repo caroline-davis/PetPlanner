@@ -16,7 +16,6 @@ func alerts(message: String) {
     self.present(alert, animated: true, completion: nil)
     
     }
-
 }
 
 func saveBtnEnabled(save: UIButton, activityIndicator: UIActivityIndicatorView) {
@@ -32,6 +31,7 @@ func saveBtnDisabled(save: UIButton, activityIndicator: UIActivityIndicatorView)
     activityIndicator.isHidden = false
     activityIndicator.startAnimating()
 }
+
 
 extension UIImage {
     func resizeWithPercent(percentage: CGFloat) -> UIImage? {
@@ -58,6 +58,7 @@ extension UIImage {
         return result
     }
 }
+
 
 // Convert String to Date
 func convertToDate(originalString: String) -> Date {

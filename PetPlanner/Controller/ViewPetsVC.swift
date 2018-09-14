@@ -33,7 +33,7 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.rowHeight = 100
         
         
-       // tableView.rowHeight = UITableViewAutomaticDimension
+      //  tableView.rowHeight = UITableViewAutomaticDimension
         
     }
     
