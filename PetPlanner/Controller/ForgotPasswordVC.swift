@@ -18,14 +18,18 @@ class ForgotPasswordVC: UIViewController {
     }
     
     @IBAction func resetPassword(_ sender: Any) {
-       // DataService.ds.forgotPassword(email: "hello", completion: <#(String?) -> ()#>)
+        DataService.ds.forgotPassword(email: emailField.text!, completion: { error in
+            print("here")
+            if error != nil {
+                
+                self.alerts(title: "Error", message: "\(error?.localizedDescription.capitalized ?? "Error Occurred")")
+            } else {
+                self.alerts(title: "Success", message: "Please check your email to update your password")
+            }
+            
+        })
     }
-    
-   // or //    Auth.auth().sendPasswordReset(withEmail: "email@email") { error in
-    //    // Your code here
-    //    }
-    
-    
+
     
     @IBAction func goToLoginVC(_ sender: Any) {
         

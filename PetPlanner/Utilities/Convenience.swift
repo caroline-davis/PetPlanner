@@ -10,13 +10,14 @@ import UIKit
 
 extension UIViewController {
     
-func alerts(message: String) {
-    let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+    func alerts(title: String, message: String) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
     self.present(alert, animated: true, completion: nil)
     
     }
 }
+
 
 func saveBtnEnabled(save: UIButton, activityIndicator: UIActivityIndicatorView) {
     save.isUserInteractionEnabled = true

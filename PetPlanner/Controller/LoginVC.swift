@@ -46,7 +46,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 Auth.auth().signIn(withEmail: email!, password: password!) { (user, error) in
                     
                     if (error != nil) {
-                        self.alerts(message: "\(error!.localizedDescription)")
+                        self.alerts(title: "Error", message: "\(error!.localizedDescription)")
                         self.activityIndicator.isHidden = true
                         self.activityIndicator.stopAnimating()
                     } else {
@@ -60,7 +60,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 Auth.auth().createUser(withEmail: email!, password: password!) { (user, error) in
                     
                     if (error != nil) {
-                        self.alerts(message: "\(error!.localizedDescription)")
+                        self.alerts(title: "Error", message: "\(error!.localizedDescription)")
                         self.activityIndicator.stopAnimating()
                     } else {
                         self.completeSignIn(user: user!)
@@ -68,7 +68,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 }
             }
         } else {
-            self.alerts(message: "Please type something in the login fields")
+            self.alerts(title: "Error", message: "Please type something in the login fields")
             activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
         }

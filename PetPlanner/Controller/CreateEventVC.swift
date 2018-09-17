@@ -53,22 +53,22 @@ class CreateEventVC: UIViewController {
     @IBAction func save(_ sender: Any) {
         
         guard case let date = eventDate, date != nil else {
-            self.alerts(message: "Please select a date and time")
+            self.alerts(title: "Error", message: "Please select a date and time")
             return
         }
         guard case let eventName = name.text, eventName != "" else {
-            self.alerts(message: "Please enter an event name")
+            self.alerts(title: "Error", message: "Please enter an event name")
             return
         }
         guard case let locationName = location.text, locationName != "" else {
-            self.alerts(message: "Please enter a location")
+            self.alerts(title: "Error", message: "Please enter a location")
             return
         }
         
         if self.event == nil {
             DataService.ds.createEvent(name: name.text!, location: location.text!, eventDate: eventDate!, completion: { (error, petId) in
                 if error != nil {
-                    self.alerts(message: error!)
+                    self.alerts(title: "Error", message: error!)
                 } else {
                     print("it worked")
                 }
@@ -76,7 +76,7 @@ class CreateEventVC: UIViewController {
         } else {
             DataService.ds.editEvent(eventId: self.event.eventId, name: name.text!, location: location.text!, eventDate: eventDate!, completion:{ (error) in
                 if error != nil {
-                    self.alerts(message: error!)
+                    self.alerts(title: "Error", message: error!)
                 } else {
                     print("it worked")
                 }

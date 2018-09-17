@@ -102,7 +102,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
         if self.favs == nil {
             DataService.ds.createFavs(petId: CURRENT_PET_ID, userId: USER_ID, food: food!, drink: drink!, toy: toy!, sleepingNook: sleepingNook!, activity: activity!, hidingSpot: hidingSpot!, feastingTime: feastingTime!, other: other!, completion: { (error) in
                 if error != nil {
-                    self.alerts(message: error!)
+                    self.alerts(title: "Error", message: error!)
                     
                 } else {
                     print("it worked")
@@ -112,7 +112,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
         } else {
             DataService.ds.editFavs(petId: CURRENT_PET_ID, food: food!, drink: drink!, toy: toy!, sleepingNook: sleepingNook!, activity: activity!, hidingSpot: hidingSpot!, feastingTime: feastingTime!, other: other!, completion:{ (error) in
                 if error != nil {
-                    self.alerts(message: error!)
+                    self.alerts(title: "Error", message: error!)
                 } else {
                     print("it worked")
                 }

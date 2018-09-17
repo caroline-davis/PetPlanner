@@ -104,7 +104,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         if self.health == nil {
             DataService.ds.createHealth(petId: CURRENT_PET_ID, userId: USER_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, lastVetVisit: lastVetVisit!, completion: { (error) in
                 if error != nil {
-                    self.alerts(message: error!)
+                    self.alerts(title: "Error", message: error!)
                     
                 } else {
                     print("it worked")
@@ -114,7 +114,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         } else {
             DataService.ds.editHealth(petId: CURRENT_PET_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, lastVetVisit: lastVetVisit!, completion:{ (error) in
                 if error != nil {
-                    self.alerts(message: error!)
+                    self.alerts(title: "Error", message: error!)
                 } else {
                     print("it worked")
                 }

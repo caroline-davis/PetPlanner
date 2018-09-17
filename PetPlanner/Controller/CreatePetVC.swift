@@ -131,7 +131,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         // so that when we come back to edit we don't create a new pet
         
         guard case let name = nameField.text, name != "" else {
-            self.alerts(message: "Please provide your pet's name")
+            self.alerts(title: "Error", message: "Please provide your pet's name")
             return
         }
         
@@ -155,7 +155,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
             completion: { (error, petId) in
                 
                 if error != nil {
-                    self.alerts(message: error!)
+                    self.alerts(title: "Error", message: error!)
                 } else {
                     self.goToPetProfileVC(petId: petId)
                 }
