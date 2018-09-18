@@ -24,6 +24,7 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         collection.delegate = self
         collection.dataSource = self
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +51,7 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCell {
             let pet = self.collectionViewData[indexPath.row]
             
+            cell.img(collectionView: collection)
             cell.configure(petImage: pet)
             
             return cell
@@ -64,6 +66,7 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
          let pet = self.collectionViewData[indexPath.row]
          let photo = pet.photo
          let imageId = pet.imageId
+        
         // get the photoId and save it so we can open it in the next window
         let vc = storyboard?.instantiateViewController(withIdentifier: "ViewPhotoVC") as! ViewPhotoVC
         vc.petPhoto = photo

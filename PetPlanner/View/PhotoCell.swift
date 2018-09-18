@@ -17,8 +17,7 @@ class PhotoCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        photo.contentMode = .scaleAspectFit
-        
+        photo.contentMode = .scaleAspectFill
         
     }
     
@@ -33,5 +32,12 @@ class PhotoCell: UICollectionViewCell {
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
             })
+    }
+    
+    func img(collectionView: UICollectionView) {
+        // Set up Collection View
+        let width = photo.frame.size.width
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width:width, height:width)
     }
 }

@@ -18,6 +18,7 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var name: UILabel!
     
     var tableViewData = [PetEvents]()
+    var pet: PetProfile!
     
     
     override func viewDidLoad() {
@@ -30,8 +31,6 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.rowHeight = 90
         
         // tableView.rowHeight = UITableViewAutomaticDimension
-    
-        
         
     }
     
@@ -40,10 +39,21 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(false)
             
-            DataService.ds.getAllEvents { (events) in
-                self.tableViewData = events
-                self.tableView.reloadData()
+            DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in
+                self.pet = petProfile
+              //  self.loadingActivityIndicator.isHidden = false
+              //  self.loadingActivityIndicator.startAnimating()
+                DataService.ds.getAllEvents { (events) in
+                    self.tableViewData = events
+                    self.tableView.reloadData()
+                }
+                
+                DispatchQueue.main.async {
+                    self.name.text = "\(self.pet.name.capitalized)'s Events"
+                    
+                }
             }
+            
             
         //    self.activityIndicator.isHidden = false
          //   self.activityIndicator.startAnimating()
