@@ -13,6 +13,9 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var name: SquareTxtFld!
     @IBOutlet weak var location: SquareTxtFld!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var saveBtn: CurvedBtn!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var eventDate: Date!
     var petEvent: PetEvents!
@@ -24,6 +27,8 @@ class CreateEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator.isHidden = true
         
         if eventId != nil {
             DataService.ds.getEvent(petId: CURRENT_PET_ID, eventId: eventId) { (petEvent) in
@@ -52,16 +57,21 @@ class CreateEventVC: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         
+        saveBtnDisabled(save: saveBtn, activityIndicator: activityIndicator)
+        
         guard case let date = eventDate, date != nil else {
             self.alerts(title: "Error", message: "Please select a date and time")
+             saveBtnEnabled(save: saveBtn, activityIndicator: activityIndicator)
             return
         }
         guard case let eventName = name.text, eventName != "" else {
             self.alerts(title: "Error", message: "Please enter an event name")
+            saveBtnEnabled(save: saveBtn, activityIndicator: activityIndicator)
             return
         }
         guard case let locationName = location.text, locationName != "" else {
             self.alerts(title: "Error", message: "Please enter a location")
+             saveBtnEnabled(save: saveBtn, activityIndicator: activityIndicator)
             return
         }
         
@@ -72,6 +82,7 @@ class CreateEventVC: UIViewController {
                 } else {
                     print("it worked")
                 }
+                saveBtnEnabled(save: self.saveBtn, activityIndicator: self.activityIndicator)
             })
         } else {
             DataService.ds.editEvent(eventId: self.event.eventId, name: name.text!, location: location.text!, eventDate: eventDate!, completion:{ (error) in
@@ -80,6 +91,7 @@ class CreateEventVC: UIViewController {
                 } else {
                     print("it worked")
                 }
+                saveBtnEnabled(save: self.saveBtn, activityIndicator: self.activityIndicator)
             })
         }
     }

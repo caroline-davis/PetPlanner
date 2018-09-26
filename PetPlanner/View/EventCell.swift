@@ -22,6 +22,8 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventTime: UILabel!
     @IBOutlet weak var eventLocation: UILabel!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -46,6 +48,9 @@ class EventCell: UITableViewCell {
         self.eventDate?.text = theDate
         self.eventTime?.text = theTime
         self.eventLocation?.text = petEvent.location.capitalized
+        
+        self.activityIndicator.isHidden = true
+        self.activityIndicator.stopAnimating()
         
     }
     

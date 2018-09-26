@@ -13,22 +13,23 @@ import SDWebImage
 class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-  //  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var name: UILabel!
     
+    @IBOutlet weak var profilePic: UIImageView!
     var tableViewData = [PetEvents]()
     var pet: PetProfile!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         tableView.delegate = self
         tableView.dataSource = self
         
         self.tableView.rowHeight = 90
+    
         
         // tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -41,8 +42,8 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in
                 self.pet = petProfile
-              //  self.loadingActivityIndicator.isHidden = false
-              //  self.loadingActivityIndicator.startAnimating()
+                self.activityIndicator.isHidden = false
+                self.activityIndicator.startAnimating()
                 DataService.ds.getAllEvents { (events) in
                     self.tableViewData = events
                     self.tableView.reloadData()
@@ -52,6 +53,12 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.name.text = "\(self.pet.name.capitalized)'s Events"
                     
                 }
+                
+                self.profilePic.sd_setImage(with: URL(string: self.pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
+                    
+                    self.activityIndicator.isHidden = true
+                    self.activityIndicator.stopAnimating()
+                })
             }
             
             
