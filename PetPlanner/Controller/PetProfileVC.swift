@@ -22,13 +22,26 @@ class PetProfileVC: UIViewController  {
     @IBOutlet weak var checklist: UIButton!
     
     var petId: String!
-    
     var pet: PetProfile!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //  _ = navigationController?.popToRootViewController(animated: true)
+        
         CURRENT_PET_ID = petId
+        
+        // hides the standard back button
+        self.navigationItem.setHidesBackButton(true, animated:true)
+        
+        // sets the button to go back to the home screen
+        let homeButton = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(homePage))
+        self.navigationItem.leftBarButtonItem = homeButton
+        
+        // sets the button to export the pet info as pdf
+        let pdfButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(exportPetInfo))
+        
+        pdfButton.image = UIImage(named: "exportButton")
+        self.navigationItem.rightBarButtonItem = pdfButton
         
     }
     
@@ -54,6 +67,19 @@ class PetProfileVC: UIViewController  {
                 self.dob.text = self.pet.dob
             }
         }
+    }
+    
+    @objc func homePage() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @objc func exportPetInfo() {
+        
+        // TO DO: Export info for pet for a PDF format
+        
+        // code for the pdf export then below to send/save
+        // self.present(activityViewController, animated: true, completion: nil)
     }
     
     

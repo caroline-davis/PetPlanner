@@ -83,6 +83,7 @@ class CreateEventVC: UIViewController {
                     print("it worked")
                 }
                 saveBtnEnabled(save: self.saveBtn, activityIndicator: self.activityIndicator)
+                self.navigationController?.popViewController(animated: true)
             })
         } else {
             DataService.ds.editEvent(eventId: self.event.eventId, name: name.text!, location: location.text!, eventDate: eventDate!, completion:{ (error) in

@@ -115,7 +115,7 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
         let smallSquare = CGSize(width: 30, height: 30)
         let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
-        button.setBackgroundImage(UIImage(named: "ViewPetsButton"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "searchButton"), for: .normal)
         button.addTarget(self, action: #selector(getDirections), for: .touchUpInside)
         pinView?.leftCalloutAccessoryView = button
         

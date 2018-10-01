@@ -60,23 +60,9 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.activityIndicator.stopAnimating()
                 })
             }
-            
-            
-        //    self.activityIndicator.isHidden = false
-         //   self.activityIndicator.startAnimating()
-            
-    // do a getpetEVENts data in dataservice and put it here
-
-            //    self.activityIndicator.isHidden = true
-            //    self.activityIndicator.stopAnimating()
-            
-            
-            
-            
         }
         
-        
-        
+
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return tableViewData.count
         }
