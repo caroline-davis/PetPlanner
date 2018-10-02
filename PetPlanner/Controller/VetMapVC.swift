@@ -43,7 +43,7 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let span = MKCoordinateSpan.init(latitudeDelta: 0.05, longitudeDelta: 0.05)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             
             // the animated does the zoom to the users location
@@ -58,7 +58,7 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     func updateSearchResults(region: MKCoordinateRegion) {
         
-        let request = MKLocalSearchRequest()
+        let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = "vet"
         request.region = region
         let search = MKLocalSearch(request: request)

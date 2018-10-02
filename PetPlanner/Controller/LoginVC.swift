@@ -9,7 +9,8 @@
 import UIKit
 import SwiftKeychainWrapper
 import Firebase
-
+import FacebookCore
+import FacebookLogin
 
 class LoginVC: UIViewController, UITextFieldDelegate {
     
@@ -17,6 +18,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var toggleSignIn: UISegmentedControl!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var facebookBtn: CircularBtn!
     
     var userEmailAndPasswords = [[String: String]]()
     var alreadySignedUp = true
@@ -30,7 +32,58 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func signInWithFacebook(_ sender: Any) {
+        
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+        
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [ReadPermission.publicProfile], viewController : self) { loginResult in
+            
 
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+                self.alerts(title: "Error", message: error.localizedDescription)
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+            case .cancelled:
+                print("User cancelled login")
+                self.alerts(title: "Error", message: "User has cancelled login")
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+            case .success( _, _, let accessToken):
+                print("Logged in")
+                // User succesfully logged in. Contains granted, declined permissions and access token.
+                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+              self.firebaseAuth(credential)
+            
+            }
+        }
+    }
+    
+    // link the fb log in with firebase authentication
+    func firebaseAuth(_ credential: AuthCredential) {
+        
+        
+     
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if (error != nil) {
+                print("CAROL: Unable to autheticate with firebase - \(error!)")
+                self.alerts(title: "Error", message: "Sorry we are unable to authenticate you, please try again")
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+            } else {
+                print("Carol: Successfully authenticated with firebase")
+                self.completeSignIn(user: user!)
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+                
+                
+            }
+        }
+    }
+    
     
     @IBAction func signInWithEmail(_ sender: UIButton) {
         

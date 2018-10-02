@@ -11,8 +11,8 @@ import UIKit
 extension UIViewController {
     
     func alerts(title: String, message: String) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-    alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+    alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
     self.present(alert, animated: true, completion: nil)
     
     }

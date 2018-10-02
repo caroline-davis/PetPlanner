@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
           FirebaseApp.configure()
@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = mainStoryboard.instantiateViewController(withIdentifier:"NavController") as! UINavigationController
             self.window!.rootViewController = controller
-            
         }
         
         return true

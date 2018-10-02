@@ -37,9 +37,12 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     
     
-    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             photo.image = image
             
             // the unique id
@@ -49,7 +52,7 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
             let metaData = StorageMetadata()
             metaData.contentType = "image/jpg"
             
-            let imageData = UIImageJPEGRepresentation(image, 0.0)!
+            let imageData = image.jpegData(compressionQuality: 0.0)!
             
             DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
                 if let error = error {
@@ -60,7 +63,7 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
                     let downloadURL = metaData?.downloadURL()?.absoluteString
                     
                     let thumb = image.resizeWithPercent(percentage: 0.1)!
-                    let thumbImageData = UIImageJPEGRepresentation(thumb, 0.0)!
+                    let thumbImageData = thumb.jpegData(compressionQuality: 0.0)!
                     
                     DataService.ds.STORAGE_BASE.child("pets").child("thumbs").child(imageId).putData(thumbImageData, metadata: metaData) { (metaData, error) in
                         if let error = error {
@@ -93,3 +96,13 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

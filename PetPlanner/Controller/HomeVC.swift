@@ -21,7 +21,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func twitter(_sender: AnyObject) {
-       if let url = NSURL(string: "https://www.twitter.com/cherrytopstudio"){ UIApplication.shared.open(url as URL, options: [:], completionHandler: nil) }
+       if let url = NSURL(string: "https://www.twitter.com/cherrytopstudio"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil) }
         
     }
     
@@ -53,3 +53,8 @@ class HomeVC: UIViewController {
 
 
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}
