@@ -11,10 +11,10 @@ import UIKit
 extension UIViewController {
     
     func alerts(title: String, message: String) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-    alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
-    self.present(alert, animated: true, completion: nil)
-    
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
     }
 }
 
@@ -81,3 +81,8 @@ func convertToString(originalDate: Date) -> String {
     return convertedString
 }
 
+func errorCheck () {
+    
+    // TO DO: check out errors incase of no internet or weird anomolies.
+    
+}

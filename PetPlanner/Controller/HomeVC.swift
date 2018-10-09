@@ -14,17 +14,33 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var twitterButton: UIBarButtonItem!
+    @IBOutlet weak var addPet: ImgAndTxtBtn!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+         activityIndicator.isHidden = true
+         activityIndicator.stopAnimating()
+    }
+    
+
     
     @IBAction func twitter(_sender: AnyObject) {
        if let url = NSURL(string: "https://www.twitter.com/cherrytopstudio"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil) }
         
     }
     
+    @IBAction func createAPetProfile(_ sender: Any) {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
     
     
     @IBAction func logout(_ sender: AnyObject) {
@@ -38,17 +54,9 @@ class HomeVC: UIViewController {
         self.present(vc, animated: false, completion: nil)
         
     }
-    
-    
-    
-    
-    
+
     
 }
-
-
-
-
 
 
 

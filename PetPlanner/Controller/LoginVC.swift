@@ -132,11 +132,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         // let keychainResult =
         _ = KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
-        
+        USER_ID = user.uid
         //  Perfom segue to go to the home screen
         let controller = self.storyboard?.instantiateViewController(withIdentifier:"NavController") as! UINavigationController
         self.present(controller, animated: false, completion: nil)
-        
         
     }
     
@@ -162,7 +161,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
     
     
 }

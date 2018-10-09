@@ -18,25 +18,18 @@ class PetCell: UITableViewCell {
     @IBOutlet weak var sex: UILabel!
     @IBOutlet weak var idTag: UILabel!
     
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-    
             name.textColor = WHITE_COLOR
             species.textColor = WHITE_COLOR
             dob.textColor = WHITE_COLOR
             sex.textColor = WHITE_COLOR
             idTag.textColor = WHITE_COLOR
-
-
-       
     }
     
-
-
     func configure(pet: PetProfile) {
   
         self.activityIndicator.isHidden = false
@@ -50,7 +43,6 @@ class PetCell: UITableViewCell {
         
         self.profilePic.sd_setImage(with: URL(string: pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
             
-            
             self.activityIndicator.isHidden = true
             self.activityIndicator.stopAnimating()
         })
@@ -61,7 +53,6 @@ class PetCell: UITableViewCell {
         
      //   contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(10, 10, 10, 10))
     }
-    
-    
+  
 }
 

@@ -64,15 +64,15 @@ class DataService {
             "species": species,
             "userId": USER_ID
         ]) { (error, result) in
-         
+            
             if error != nil {
                 completion("\(error?.localizedDescription.capitalized ?? "Broken")", petId)
             } else {
                 completion(nil, petId)
             }
-
+            
         }
-
+        
     }
     
     
@@ -97,12 +97,12 @@ class DataService {
     func getPhotos(petId: String, completion: @escaping (Array<PetImage>)-> ()) {
         
         DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
-        let photoDict = snapshot.value as? Dictionary <String, AnyObject>
-           
+            let photoDict = snapshot.value as? Dictionary <String, AnyObject>
+            
             if photoDict != nil {
                 let values = Array(photoDict!.values)
                 let photos = values.map({ (item) -> PetImage in
-                let petId = item["petId"] as! String
+                    let petId = item["petId"] as! String
                     return PetImage(petId: petId, imageData: item as! Dictionary<String, AnyObject>)
                 })
                 
@@ -115,37 +115,30 @@ class DataService {
         
     }
     
-  
-    func getAllPets(completion: @escaping (Array<PetProfile>)->()) {
-        
-        DB_BASE.child("pets").queryOrdered(byChild: "userId").queryEqual(toValue: USER_ID).observeSingleEvent(of: .value, with: { (snapshot) in
     
-           
+    func getAllPets(completion: @escaping (Array<PetProfile>?)->(Void)) {
+        DB_BASE.child("pets").queryOrdered(byChild: "userId").queryEqual(toValue: USER_ID).observeSingleEvent(of: .value, with: { (snapshot) in
+            
             let dict = snapshot.value as? Dictionary <String, AnyObject>
             
             // To get JSON data as array to loop through - it removes the keys from outer layer of dict
-            
+            var pets: [PetProfile]?
             if dict != nil {
-            
-            let values = Array(dict!.values)
-        
-            // .map calls a function for each item in array
-            let pets = values.map({ (item) -> PetProfile in
-                let petId = item["petId"] as! String
-                return PetProfile(petId: petId, profileData: item as! Dictionary<String, AnyObject>)
                 
-            })
-            
-            completion(pets)
-            } else {
-                print("no pets")
-                  
+                let values = Array(dict!.values)
+                
+                // .map calls a function for each item in array
+                pets = values.map({ (item) -> PetProfile in
+                    let petId = item["petId"] as! String
+                    return PetProfile(petId: petId, profileData: item as! Dictionary<String, AnyObject>)
+                })
             }
+            completion(pets)
+            // if array is empty, function on view controller will fire after this func is called
         })
-    
     }
     
-// Add the completition handler for firebase like the edithealth one
+    // Add the completition handler for firebase like the edithealth one
     func editPet(petId: String, dob: String, name: String, idTag: String, sex: String, species: String, profileImage: String) {
         
         DB_BASE.child("pets").child(petId).updateChildValues(["name": name, "dob": dob, "idTag": idTag, "sex": sex, "species": species, "profileImage": profileImage])
@@ -312,7 +305,7 @@ class DataService {
             "name": name,
             "location": location,
             "eventDate": String(eventDate.description)
-        ])
+            ])
         { (error, result) in
             if error != nil {
                 completion("\(error?.localizedDescription.capitalized ?? "Broken")")
@@ -346,8 +339,9 @@ class DataService {
         })
         
     }
-
     
-
+    
+    
 }
+
 

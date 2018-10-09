@@ -93,6 +93,7 @@ class CreateEventVC: UIViewController {
                     print("it worked")
                 }
                 saveBtnEnabled(save: self.saveBtn, activityIndicator: self.activityIndicator)
+                self.navigationController?.popViewController(animated: true)
             })
         }
     }

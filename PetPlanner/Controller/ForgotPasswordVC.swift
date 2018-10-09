@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ForgotPasswordVC: UIViewController {
+class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailField.delegate = self
         
     }
     
@@ -36,6 +38,12 @@ class ForgotPasswordVC: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         self.present(vc, animated: false, completion: nil)
         
+    }
+    
+    // when enter is pressed keyboard is dismissed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 

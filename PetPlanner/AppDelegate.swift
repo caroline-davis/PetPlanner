@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Perform the segue straight to home screen and skip login if user already signed in
         // This eliminates the flash of the login screen
         if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
+            USER_ID = KeychainWrapper.standard.string(forKey: KEY_UID)!
+            
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = mainStoryboard.instantiateViewController(withIdentifier:"NavController") as! UINavigationController
             self.window!.rootViewController = controller
