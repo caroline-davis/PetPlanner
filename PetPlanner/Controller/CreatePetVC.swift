@@ -165,7 +165,14 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         })
         } else {
             // if edit is clicked, the values update and save on firebase
-            DataService.ds.editPet(petId: petId, dob: dob!, name: name!, idTag: idTag!, sex: sex!, species: species!, profileImage: image!)
+            DataService.ds.editPet(petId: petId, dob: dob!, name: name!, idTag: idTag!, sex: sex!, species: species!, profileImage: image!, completion: { (error) in
+                
+                    if error != nil {
+                        self.alerts(title: "Error", message: error!)
+                    } else {
+                        print("it worked")
+                    }
+            })
             self.goToPetProfileVC(petId: petId)
         }
     }

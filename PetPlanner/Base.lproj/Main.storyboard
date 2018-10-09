@@ -283,11 +283,12 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="viewPetsProfiles:" destination="h4d-f6-qwl" eventType="touchUpInside" id="1VI-Lu-2A6"/>
                                             <segue destination="oTb-HX-RE3" kind="show" identifier="ToViewPetVC" id="qmh-CG-ZCd"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LOy-uy-6hh">
-                                        <rect key="frame" x="155" y="258" width="20" height="20"/>
+                                        <rect key="frame" x="155" y="304" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -316,6 +317,7 @@
                         <outlet property="addPet" destination="yyI-S2-iuh" id="vZi-aS-KJF"/>
                         <outlet property="logoutButton" destination="EPM-ae-xQm" id="FK1-o7-Xhf"/>
                         <outlet property="twitterButton" destination="IDe-Ye-gcv" id="IV0-qi-QvI"/>
+                        <outlet property="viewPets" destination="iz4-nr-6yE" id="twF-2c-Fcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPT-PS-Xlb" userLabel="First Responder" sceneMemberID="firstResponder"/>

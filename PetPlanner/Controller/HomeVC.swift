@@ -15,6 +15,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var twitterButton: UIBarButtonItem!
     @IBOutlet weak var addPet: ImgAndTxtBtn!
+    @IBOutlet weak var viewPets: ImgAndTxtBtn!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -42,6 +43,10 @@ class HomeVC: UIViewController {
         activityIndicator.startAnimating()
     }
     
+    @IBAction func viewPetsProfiles(_ sender: Any) {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
     
     @IBAction func logout(_ sender: AnyObject) {
         DataService.ds.logout(uid: KEY_UID)
