@@ -104,7 +104,7 @@ class DataService {
                 let photos = values.map({ (item) -> PetImage in
                     let petId = item["petId"] as! String
                     return PetImage(petId: petId, imageData: item as! Dictionary<String, AnyObject>)
-                })
+                }).sorted(by: { $0.imageId < $1.imageId })
                 
                 completion(photos)
             } else {
@@ -131,7 +131,7 @@ class DataService {
                 pets = values.map({ (item) -> PetProfile in
                     let petId = item["petId"] as! String
                     return PetProfile(petId: petId, profileData: item as! Dictionary<String, AnyObject>)
-                })
+                }).sorted(by: { $0.petId < $1.petId })
             }
             completion(pets)
             // if array is empty, function on view controller will fire after this func is called

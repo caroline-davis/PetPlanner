@@ -59,11 +59,7 @@ class HomeVC: UIViewController {
         self.present(vc, animated: false, completion: nil)
         
     }
-
-    
 }
-
-
 
 
 

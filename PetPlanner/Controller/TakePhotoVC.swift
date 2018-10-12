@@ -62,22 +62,14 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
                     let downloadURL = metaData?.downloadURL()?.absoluteString
                     
-                    let thumb = image.resizeWithPercent(percentage: 0.1)!
-                    let thumbImageData = thumb.jpegData(compressionQuality: 0.0)!
-                    
-                    DataService.ds.STORAGE_BASE.child("pets").child("thumbs").child(imageId).putData(thumbImageData, metadata: metaData) { (metaData, error) in
-                        if let error = error {
-                            print(error.localizedDescription)
-                            return
-                        } else {
-                            let thumbDownloadURL = metaData?.downloadURL()?.absoluteString
-                            //store downloadURL at database
-                            DataService.ds.DB_BASE.child("photos").child(imageId).setValue(["photo": downloadURL as Any, "thumb": thumbDownloadURL as Any, "userId": USER_ID, "petId": CURRENT_PET_ID, "imageId": imageId]) {
-                                
-                                print("finished")
-                            }
-                        }
-                        
+                    DataService.ds.DB_BASE.child("photos").child(imageId).setValue([
+                        "photo": downloadURL,
+                        "userId": USER_ID,
+                        "petId": CURRENT_PET_ID,
+                        "imageId": imageId
+                    ]) { (data, error) in
+                        print(data, error)
+                        print("finished")
                     }
                 }
             }
