@@ -59,6 +59,19 @@ extension UIImage {
     }
 }
 
+// for the screenshot of the data for pet export
+extension UIView {
+    func toImage() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
+        
+        drawHierarchy(in: bounds, afterScreenUpdates: true)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}
+
 
 // Convert String to Date
 func convertToDate(originalString: String) -> Date {
@@ -85,3 +98,4 @@ func errorCheck () {
     // TO DO: check out errors incase of no internet or weird anomolies.
     
 }
+

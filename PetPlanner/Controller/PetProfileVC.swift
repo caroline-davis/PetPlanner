@@ -78,8 +78,9 @@ class PetProfileVC: UIViewController  {
         
         // TO DO: Export info for pet for a PDF format
         
-        // code for the pdf export then below to send/save
-        // self.present(activityViewController, animated: true, completion: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ExportPetVC") as! ExportPetVC
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     
@@ -99,6 +100,10 @@ class PetProfileVC: UIViewController  {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "FavsListVC") as! FavsListVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+  
   
     
 }
+
+

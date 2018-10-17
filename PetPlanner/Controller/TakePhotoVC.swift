@@ -68,7 +68,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                         "petId": CURRENT_PET_ID,
                         "imageId": imageId
                     ]) { (data, error) in
-                        print(data, error)
+                        print(data ?? "broken", error)
                         print("finished")
                     }
                 }
