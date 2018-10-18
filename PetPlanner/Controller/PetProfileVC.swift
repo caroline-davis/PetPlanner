@@ -42,6 +42,7 @@ class PetProfileVC: UIViewController  {
         
         pdfButton.image = UIImage(named: "exportButton")
         self.navigationItem.rightBarButtonItem = pdfButton
+
         
     }
     
@@ -78,7 +79,7 @@ class PetProfileVC: UIViewController  {
         
         // TO DO: Export info for pet for a PDF format
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ExportPetVC") as! ExportPetVC
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ExportVC") as! ExportVC
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

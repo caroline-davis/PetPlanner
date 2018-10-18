@@ -59,7 +59,7 @@ extension UIImage {
     }
 }
 
-// for the screenshot of the data for pet export
+// export the petview
 extension UIView {
     func toImage() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
