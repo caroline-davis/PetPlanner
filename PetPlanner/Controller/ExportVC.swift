@@ -39,7 +39,6 @@ class ExportVC: UIViewController {
                      "Location": "The Vet Man"]
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,7 +75,6 @@ class ExportVC: UIViewController {
             if success || error == nil {
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
-                
                 print("Carol: success")
        
             }
@@ -117,22 +115,30 @@ class ExportVC: UIViewController {
             return activities(facts: next, combinedFacts: result)
         }
         if results != "" {
-            DispatchQueue.main.async {
-              self.info.text = results
+            DataService.ds.getPet(petId: petId) { (petProfile) in
+                self.pet = petProfile
                 
-                // put the image and name bit here.
+                // gets image from firebase using sdwebimage
+                self.profilePic.sd_setImage(with: URL(string: self.pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { profilePic, error, cacheType, URL in
+                    
+                })
                 
-              completion(true)
+                DispatchQueue.main.async {
+                    self.info.text = results
+                    self.petName.text = self.pet.name.capitalized
+                    
+                    completion(true)
+                }
             }
-        } else {
-            print ("oops error land")
         }
-
+        
     }
     
     
     
 }
+
+
 
 //func exportPetProfile() {
 //

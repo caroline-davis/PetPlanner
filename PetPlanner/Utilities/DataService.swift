@@ -335,10 +335,11 @@ class DataService {
                 let values = Array(dict!.values)
                 
                 // .map calls a function for each item in array
+                // sorts the events by date. earliest date is at the top
                 let events = values.map({ (item) -> PetEvents in
                     let petId = item["petId"] as! String
                     return PetEvents(petId: petId, eventsData: item as! Dictionary<String, AnyObject>)
-                })
+                }).sorted(by: { $0.eventDate < $1.eventDate })
                 
                 completion(events)
             } else {
@@ -347,8 +348,7 @@ class DataService {
         })
         
     }
-    
-    
+
     
 }
 
