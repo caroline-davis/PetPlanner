@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import SDWebImage
 
 class ExportVC: UIViewController {
@@ -15,6 +16,7 @@ class ExportVC: UIViewController {
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var exportView: UIView!
     @IBOutlet weak var info: UITextView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var petId: String!
     var pet: PetProfile!
@@ -41,6 +43,8 @@ class ExportVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityIndicator.isHidden = true
+        
         CURRENT_PET_ID = petId
         
         let petDictionaries: [[String: String]] = [
@@ -58,14 +62,37 @@ class ExportVC: UIViewController {
     
     func exportPetProfile() {
         
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
         // Assign a UIImage version of my UIView as a printing iten
         let newImage = self.exportView.toImage()
+       
+        let activityViewController = UIActivityViewController(activityItems: [newImage], applicationActivities: nil)
+        self.present(activityViewController, animated: true, completion: nil)
         
-        let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [newImage], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        present(activityViewController, animated: true, completion: nil)
+        activityViewController.completionWithItemsHandler = { activity, success, items, error in
+    
+            if success || error == nil {
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+                
+                print("Carol: success")
+       
+            }
+            else if (error != nil){
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+                self.alerts(title: "Error", message: "This was unable to be completed at this time.")
+            }
+            // once tasks are done, the view will go back to the pets profile screen
+            self.navigationController?.popViewController(animated: true)
+        }
+        
     }
     
+   
+
     
     func activities(facts: [String: String], combinedFacts: String) -> String {
         let results = facts.reduce(combinedFacts) { result, next  in
@@ -107,5 +134,13 @@ class ExportVC: UIViewController {
     
 }
 
+//func exportPetProfile() {
 //
-//  print("CAROL: \(next.value) and \(String(describing: lookup[next.key])) and \(next.key)")
+//    // Assign a UIImage version of my UIView as a printing iten
+//    let newImage = self.exportView.toImage()
+//
+//    let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [newImage], applicationActivities: nil)
+//    activityViewController.popoverPresentationController?.sourceView = self.view
+//    present(activityViewController, animated: true, completion: nil)
+//}
+//    

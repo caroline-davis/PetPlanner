@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateEventVC: UIViewController {
+class CreateEventVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var name: SquareTxtFld!
     @IBOutlet weak var location: SquareTxtFld!
@@ -27,6 +27,10 @@ class CreateEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        name.delegate = self
+        location.delegate = self
+        
         
         activityIndicator.isHidden = true
         
@@ -98,5 +102,11 @@ class CreateEventVC: UIViewController {
         }
     }
     
+    // when enter is pressed keyboard is dismissed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
     
 }
