@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ExportVC: UIViewController {
 
@@ -15,26 +16,32 @@ class ExportVC: UIViewController {
     @IBOutlet weak var exportView: UIView!
     @IBOutlet weak var info: UITextView!
     
-    var petBasics = ["Sex" : "Male",
-                     "DOB" : "11/10/1989",
-                     "Spayed/Neutered" : "",
-                     "ID" : "82398HG7"]
-    var petFavs = ["Food" : "Tuna",
-                   "Drink" : "Milk",
-                   "Toy" : "",
-                   "Sleeping Nook" : "Stairs"]
-    var petHealth = ["Breed" : "Persian",
-                     "Allergies" : "Hair",
-                     "Vaccinated" : "",
-                     "Vet" : ""]
-    var petEvents = ["Name": "Nail Trim",
-                     "Date" : "15/10/2018",
+    var petId: String!
+    var pet: PetProfile!
+    
+    var petBasics = ["Sex": "Male",
+                     "DOB": "11/10/1989",
+                     "Spayed/Neutered": "",
+                     "ID": "82398HG7"]
+    var petFavs = ["Food": "Tuna",
+                   "Drink": "Milk",
+                   "Toy": "",
+                   "sleepingNook": "Stairs"]
+    var petHealth = ["breed": "Persian",
+                     "allergies": "Hair",
+                     "Vaccinated": "",
+                     "Vet": "vet guy"]
+    var petEvents = ["name": "Nail Trim",
+                     "Date": "15/10/2018",
                      "Time": "5pm",
-                     "Location" : "The Vet Man"]
+                     "Location": "The Vet Man"]
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CURRENT_PET_ID = petId
         
         let petDictionaries: [[String: String]] = [
             petBasics,
@@ -46,11 +53,8 @@ class ExportVC: UIViewController {
             if success {
                 self.exportPetProfile()
             }
-            
         })
-        
     }
-    
     
     func exportPetProfile() {
         
@@ -62,15 +66,22 @@ class ExportVC: UIViewController {
         present(activityViewController, animated: true, completion: nil)
     }
     
+    
     func activities(facts: [String: String], combinedFacts: String) -> String {
         let results = facts.reduce(combinedFacts) { result, next  in
+      
             if (next.value != "") {
-                return (result + next.key + ": " + next.value + "\n")
+                // if the firebase key is in the constant dictionary, display the value
+                if let formattedKey = lookup[next.key] {
+                    print("CAROL:\(formattedKey)next key:\(next.key)")
+                    return (result + formattedKey + ": " + next.value + "\n")
+                }
             }
             return result
         }
         return results + "\n"
     }
+    
     
     // add a completion handler to know when to pop up export screen
     func petInfo(allFacts: [[String: String]], completion: @escaping (_ success: Bool) -> Void) {
@@ -81,6 +92,9 @@ class ExportVC: UIViewController {
         if results != "" {
             DispatchQueue.main.async {
               self.info.text = results
+                
+                // put the image and name bit here.
+                
               completion(true)
             }
         } else {
@@ -92,3 +106,6 @@ class ExportVC: UIViewController {
     
     
 }
+
+//
+//  print("CAROL: \(next.value) and \(String(describing: lookup[next.key])) and \(next.key)")

@@ -27,3 +27,33 @@ let PINK_COLOR = UIColor(red:0.71, green:0.31, blue:0.78, alpha:1.0)
 let BLUE_COLOR = UIColor(red:0.25, green:0.22, blue:0.66, alpha:1.0)
 let BLACK_COLOR = UIColor(red:0.09, green:0.09, blue:0.09, alpha:1.0)
 
+
+// Change key from firebase key to something for readable
+var lookup = [
+    "dob": "Date Of Birth",
+    "species": "Species",
+    "sex": "Sex",
+    "idTag": "Identification Number",
+    
+    "allergies": "Allergies",
+    "breed": "Breed",
+    "lastVetVisit": "Last Vet Visit",
+    "medications": "Medications",
+    "vaccinations": "Vaccinations",
+    "vet": "Vet",
+    "weight": "Weight",
+    "spayedOrNeutered": "Spayed or Neutered",
+    
+    "activity": "Activity",
+    "drink": "Drink",
+    "feastingTime": "Feasting Time",
+    "food": "Food",
+    "hidingSpot": "Hiding Spot",
+    "sleepingNook": "Sleeping Nook",
+    "toy": "Toy",
+    "other": "Other",
+    
+    "name": "Event Name",
+    "eventDate": "Event Date and Time",
+    "location": "Location"
+]

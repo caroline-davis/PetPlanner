@@ -73,13 +73,7 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         vc.imageId = imageId
         self.navigationController?.pushViewController(vc, animated: false)
 
-        
     }
-    
-    func delete(at indexPath: [IndexPath]) {
-        
-    }
-    
     
 
 }
