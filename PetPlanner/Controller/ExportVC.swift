@@ -11,7 +11,7 @@ import Firebase
 import SDWebImage
 
 class ExportVC: UIViewController {
-
+    
     @IBOutlet weak var petName: UILabel!
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var exportView: UIView!
@@ -21,48 +21,56 @@ class ExportVC: UIViewController {
     var petId: String!
     var pet: PetProfile!
     
-    var petBasics = ["Sex": "Male",
-                     "DOB": "11/10/1989",
-                     "Spayed/Neutered": "",
-                     "ID": "82398HG7"]
-    var petFavs = ["Food": "Tuna",
-                   "Drink": "Milk",
-                   "Toy": "",
-                   "sleepingNook": "Stairs"]
-    var petHealth = ["breed": "Persian",
-                     "allergies": "Hair",
-                     "Vaccinated": "",
-                     "Vet": "vet guy"]
-    var petEvents = ["name": "Nail Trim",
-                     "Date": "15/10/2018",
-                     "Time": "5pm",
-                     "Location": "The Vet Man"]
-    
-    
+    var basics = [String: String]()
+    var health = [String: String]()
+    var favs = [String: String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         
         CURRENT_PET_ID = petId
         
-        let petDictionaries: [[String: String]] = [
-            petBasics,
-            petFavs,
-            petHealth
-        ]
-        
-        petInfo(allFacts: petDictionaries, completion: { success  in
-            if success {
-                self.exportPetProfile()
-            }
-        })
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+       
+        // gets info from firebase and puts it into the petdictionaries
+        DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in
+            self.basics = petProfile?.toDict() ?? ["empty": "empty"]
+            
+            DataService.ds.getHealth(petId: CURRENT_PET_ID) { (petHealth) in
+                self.health = petHealth?.toDict() ?? ["empty": "empty"]
+                
+                DataService.ds.getFavs(petId: CURRENT_PET_ID) { (petFavs) in
+                    self.favs = petFavs?.toDict() ?? ["empty": "empty"]
+                    
+                    let petDictionaries: [[String: String]] = [
+                        self.basics,
+                        self.health,
+                        self.favs
+                    ]
+                    
+                    self.petInfo(allFacts: petDictionaries, completion: { success  in
+                        if success {
+                            self.exportPetProfile()
+                        } else {
+                            self.alerts(title: "Error", message: "The export could not be completed at this time.")
+                        }
+                    })
+                }
+            }
+        }
+        
+    }
+    
+ 
     
     func exportPetProfile() {
         
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
         
         // Assign a UIImage version of my UIView as a printing iten
         let newImage = self.exportView.toImage()
@@ -86,11 +94,8 @@ class ExportVC: UIViewController {
             // once tasks are done, the view will go back to the pets profile screen
             self.navigationController?.popViewController(animated: true)
         }
-        
     }
     
-   
-
     
     func activities(facts: [String: String], combinedFacts: String) -> String {
         let results = facts.reduce(combinedFacts) { result, next  in
@@ -122,7 +127,7 @@ class ExportVC: UIViewController {
                 self.profilePic.sd_setImage(with: URL(string: self.pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { profilePic, error, cacheType, URL in
                     
                 })
-                
+                // displayed the image and pet name on the exporter
                 DispatchQueue.main.async {
                     self.info.text = results
                     self.petName.text = self.pet.name.capitalized
@@ -138,15 +143,3 @@ class ExportVC: UIViewController {
     
 }
 
-
-
-//func exportPetProfile() {
-//
-//    // Assign a UIImage version of my UIView as a printing iten
-//    let newImage = self.exportView.toImage()
-//
-//    let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [newImage], applicationActivities: nil)
-//    activityViewController.popoverPresentationController?.sourceView = self.view
-//    present(activityViewController, animated: true, completion: nil)
-//}
-//    

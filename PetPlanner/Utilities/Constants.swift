@@ -52,8 +52,5 @@ var lookup = [
     "sleepingNook": "Sleeping Nook",
     "toy": "Toy",
     "other": "Other",
-    
-    "name": "Event Name",
-    "eventDate": "Event Date and Time",
-    "location": "Location"
+
 ]

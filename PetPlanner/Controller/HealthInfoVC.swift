@@ -88,6 +88,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
        @IBAction func saveHealth(_ sender: Any) {
         
         saveBtnDisabled(save: save, activityIndicator: activityIndicator)
+
     
         let breed = breedField.text?.capitalized
         let weight = weightField.text?.capitalized

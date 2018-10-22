@@ -77,7 +77,6 @@ class PetEvents {
         }
         _eventsRef = DataService.ds.DB_BASE.child("events").child(_petId).child(eventId)
     }
-    
 
     
 }

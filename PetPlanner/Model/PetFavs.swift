@@ -13,7 +13,6 @@ class PetFavs {
     
     private var _food: String!
     private var _drink: String!
-    private var _vaccinations: String!
     private var _sleepingNook: String!
     private var _activity: String!
     private var _hidingSpot: String!
@@ -29,9 +28,6 @@ class PetFavs {
     }
     var drink: String {
         return _drink
-    }
-    var vaccinations: String {
-        return _vaccinations
     }
     var sleepingNook: String {
         return _sleepingNook
@@ -55,7 +51,7 @@ class PetFavs {
         return _petId
     }
     
-    init (food: String, drink: String, vaccinations: String, sleepingNook: String, friend: String, activity: String, hidingSpot: String, feastingTime: String, toy: String, Other: String) {
+    init (food: String, drink: String, sleepingNook: String, friend: String, activity: String, hidingSpot: String, feastingTime: String, toy: String, Other: String) {
         self._food = food
         self._drink = drink
         self._sleepingNook = sleepingNook
@@ -96,5 +92,21 @@ class PetFavs {
         }
         _favsRef = DataService.ds.DB_BASE.child("favs").child(_petId)
     }
+    
+     // for the extraction of info for the export pet file
+    func toDict() -> [String: String] {
+        var dict = [String: String]()
+        
+        dict["food"] = self._food
+        dict["drink"] = self._drink
+        dict["sleepingNook"] = self._sleepingNook
+        dict["activity"] = self._activity
+        dict["hidingSpot"] = self._hidingSpot
+        dict["feastingTime"] = self._feastingTime
+        dict["toy"] = self._toy
+        dict["other"] = self._other
+        return dict
+    }
+
     
 }
