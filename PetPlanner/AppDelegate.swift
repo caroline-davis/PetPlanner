@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 import Firebase
 import SwiftKeychainWrapper
 
@@ -21,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
           FirebaseApp.configure()
+        
+        // gets the keyboard working so its easy to input forms
+        IQKeyboardManager.shared.enable = true
         
         // Perform the segue straight to home screen and skip login if user already signed in
         // This eliminates the flash of the login screen

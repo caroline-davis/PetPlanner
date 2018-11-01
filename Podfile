@@ -19,5 +19,7 @@ pod 'SDWebImage', '~> 4.0'
 pod 'FacebookCore'
 pod 'FacebookLogin'
 
+pod 'IQKeyboardManagerSwift'
+
 
 end

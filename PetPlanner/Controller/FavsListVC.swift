@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 class FavsListVC: UIViewController, UITextFieldDelegate {
     
@@ -27,6 +28,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var hidingSpotField: SquareTxtFld!
     @IBOutlet weak var feastingTimeField: SquareTxtFld!
     @IBOutlet weak var otherField: SquareTxtFld!
+    
     
 
     override func viewDidLoad() {
@@ -80,8 +82,13 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+       
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
     
     
     @IBAction func saveFavs(_ sender: Any) {
@@ -123,12 +130,15 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
         
     }
     
+    
+    
   
     // when enter is pressed keyboard is dismissed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+  
 
 
 }

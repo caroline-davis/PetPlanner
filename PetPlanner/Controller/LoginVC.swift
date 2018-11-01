@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import IQKeyboardManagerSwift
 import Firebase
 import FacebookCore
 import FacebookLogin
@@ -23,15 +24,23 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     var userEmailAndPasswords = [[String: String]]()
     var alreadySignedUp = true
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         emailField.delegate = self
         passwordField.delegate = self
         activityIndicator.isHidden = true
-        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+
+    }
+    
+
+ 
     @IBAction func signInWithFacebook(_ sender: Any) {
         
         self.activityIndicator.isHidden = false
@@ -156,12 +165,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
     }
     
+ 
+    
     // when enter is pressed keyboard is dismissed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
-    
+
 }
 

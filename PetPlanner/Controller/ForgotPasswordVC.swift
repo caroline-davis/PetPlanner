@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,8 @@ class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
         emailField.delegate = self
         
     }
+    
+   
     
     @IBAction func resetPassword(_ sender: Any) {
         DataService.ds.forgotPassword(email: emailField.text!, completion: { error in

@@ -9,6 +9,7 @@ import AVFoundation
 import UIKit
 import Firebase
 import SDWebImage
+import IQKeyboardManagerSwift
 
 class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

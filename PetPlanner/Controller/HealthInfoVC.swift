@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 class HealthInfoVC: UIViewController, UITextFieldDelegate {
     
