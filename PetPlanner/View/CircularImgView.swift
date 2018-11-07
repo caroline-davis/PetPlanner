@@ -15,8 +15,10 @@ class CircularImgView: UIImageView {
         
             colourSwap()
             borderWidth()
+        
             layer.cornerRadius = self.frame.width / 2
             layer.masksToBounds = true
+        
 
     }
     

@@ -24,6 +24,8 @@ class CircularBtn: UIButton {
         layer.cornerRadius = self.frame.width / 2
         layer.borderWidth = 2
         layer.borderColor = WHITE_COLOR.cgColor
+    
     }
 
 }
+
