@@ -37,6 +37,8 @@ class ExportVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        
        
         // gets info from firebase and puts it into the petdictionaries
         DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in

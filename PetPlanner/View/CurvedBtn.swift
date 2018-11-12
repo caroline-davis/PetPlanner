@@ -11,6 +11,7 @@ import UIKit
 class CurvedBtn: UIButton {
 
     override func awakeFromNib() {
+         super.awakeFromNib()
         
         layer.cornerRadius = 15
         layer.shadowColor = BLACK_COLOR.cgColor

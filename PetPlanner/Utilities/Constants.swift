@@ -30,10 +30,10 @@ let BLACK_COLOR = UIColor(red:0.09, green:0.09, blue:0.09, alpha:1.0)
 
 // Change key from firebase key to something for readable
 var lookup = [
-    "dob": "Date Of Birth",
+    "dob": "Date of Birth",
     "species": "Species",
     "sex": "Sex",
-    "idTag": "Identification Number",
+    "idTag": "ID Number",
     
     "allergies": "Allergies",
     "breed": "Breed",
