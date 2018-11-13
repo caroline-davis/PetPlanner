@@ -15,10 +15,7 @@ class ImgAndTxtBtn: UIButton {
         
         imageView?.contentMode = .scaleAspectFit
     
-        layer.shadowColor = BLACK_COLOR.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowRadius = 2.0
-        layer.shadowOffset = CGSize(width: 0.8, height: 2.0)
+       
 
       // aligns button to the left instead of centre
         self.contentHorizontalAlignment = .left
@@ -30,8 +27,13 @@ class ImgAndTxtBtn: UIButton {
     func cornerCurves() {
         if (self.viewWithTag(1) != nil) {
             layer.cornerRadius = 0
+            
         } else {
             layer.cornerRadius = 4
+            layer.shadowColor = BLACK_COLOR.cgColor
+            layer.shadowOpacity = 0.5
+            layer.shadowRadius = 2.0
+            layer.shadowOffset = CGSize(width: 0.8, height: 2.0)
         }
     }
 
