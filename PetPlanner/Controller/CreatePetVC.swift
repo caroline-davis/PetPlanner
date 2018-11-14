@@ -13,6 +13,7 @@ import IQKeyboardManagerSwift
 
 class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var dobField: UITextField!
     @IBOutlet weak var speciesField: UITextField!
@@ -33,6 +34,8 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityIndicator.isHidden = true
+        
         nameField.delegate = self
         dobField.delegate = self
         speciesField.delegate = self
@@ -40,11 +43,18 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         idTagField.delegate = self
         
         imagePicker = UIImagePickerController()
+        
         // makes it so the user can move the image to the square they want it cropped at
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
-   
-        activityIndicator.isHidden = true
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        loadingActivityIndicator.isHidden = false
+        loadingActivityIndicator.startAnimating()
         
         // if the user clicks edit on the viewpets page - this will open the screen with that same petId for the user to edit
         if petId != nil {
@@ -53,10 +63,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                 
                 // gets image from firebase using sdwebimage
                 self.profilePic.sd_setImage(with: URL(string: self.pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
-                    
                 })
-                
-    
                 
                 self.profileImage = self.pet.profileImage
                 
@@ -66,14 +73,18 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                     self.speciesField.text = self.pet.species
                     self.sexField.text = self.pet.sex
                     self.idTagField.text = self.pet.idTag
-                    
                 }
-                
             }
         }
-        
+ 
     }
-    
+ 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        loadingActivityIndicator.isHidden = true
+        loadingActivityIndicator.stopAnimating()
+    }
+
     
     @IBAction func addProfilePic(_ sender: AnyObject) {
         present(imagePicker, animated: true, completion: nil)
@@ -100,8 +111,6 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                 // safety to tell code what type of file the image is
                 let metaData = StorageMetadata()
                 metaData.contentType = "image/jpeg"
-            
-                
                 
                 DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
                     if error != nil {
@@ -128,14 +137,15 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     }
     
     
-    
-    
     @IBAction func saveProfile() {
-        // TODO: Determine if this pet exists or not already
+        // Determine if this pet exists or not already
         // so that when we come back to edit we don't create a new pet
+        
+        saveBtnDisabled(save: save, activityIndicator: activityIndicator)
         
         guard case let name = nameField.text, name != "" else {
             self.alerts(title: "Error", message: "Please provide your pet's name")
+            saveBtnEnabled(save: save, activityIndicator: activityIndicator)
             return
         }
         
@@ -161,6 +171,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                 if error != nil {
                     self.alerts(title: "Error", message: error!)
                 } else {
+                    saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
                     self.goToPetProfileVC(petId: petId)
                 }
         })
@@ -173,6 +184,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                     } else {
                         print("it worked")
                     }
+                 saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
             })
             self.goToPetProfileVC(petId: petId)
         }
