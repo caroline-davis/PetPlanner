@@ -9,11 +9,13 @@
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
+import MessageUI
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var twitterButton: UIBarButtonItem!
+    @IBOutlet weak var emailButton: UIBarButtonItem!
     @IBOutlet weak var addPet: ImgAndTxtBtn!
     @IBOutlet weak var viewPets: ImgAndTxtBtn!
     
@@ -37,6 +39,26 @@ class HomeVC: UIViewController {
        if let url = NSURL(string: "https://www.twitter.com/cherrytopstudio"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil) }
         
     }
+    
+    @IBAction func email(_sender: AnyObject) {
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["hello@cherrytopstudio.com"])
+            mail.setSubject("Pet Planner App")
+            present(mail, animated: true)
+        } else {
+           alerts(title: "Error", message: "Unable to send mail")
+        }
+        
+    }
+    
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
     
     @IBAction func createAPetProfile(_ sender: Any) {
         activityIndicator.isHidden = false

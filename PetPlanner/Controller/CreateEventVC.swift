@@ -108,6 +108,16 @@ class CreateEventVC: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    // if text it more than 30 the user will write on the last character
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if range.location > 29 {
+            textField.text?.removeLast()
+        }
+        
+        return true
+    }
 
     
 }
