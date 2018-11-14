@@ -203,7 +203,14 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         return true
     }
     
+    // puts curser at the end of the text for the editing
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let endPosition = textField.endOfDocument
+        textField.selectedTextRange = textField.textRange(from: endPosition, to: endPosition)
+    }
+    
 }
+
 
 
 // Helper function inserted by Swift 4.2 migrator.
@@ -215,3 +222,6 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
 	return input.rawValue
 }
+
+
+

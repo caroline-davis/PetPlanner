@@ -41,3 +41,5 @@ class PhotoCell: UICollectionViewCell {
         layout.itemSize = CGSize(width:width, height:width)
     }
 }
+
+

@@ -75,5 +75,6 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
 
     }
     
+ 
 
 }
