@@ -119,7 +119,7 @@ class CreateEventVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // puts curser at the end of the text for the editing
+    // puts cursor at the end of the text for the editing
     func textFieldDidBeginEditing(_ textField: UITextField) {
         let endPosition = textField.endOfDocument
         textField.selectedTextRange = textField.textRange(from: endPosition, to: endPosition)
