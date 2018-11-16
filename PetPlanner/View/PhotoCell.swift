@@ -27,11 +27,15 @@ class PhotoCell: UICollectionViewCell {
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
         
+        
             self.photo.sd_setImage(with: URL(string: petImage.photo), placeholderImage: nil, options: [.continueInBackground, .scaleDownLargeImages], completed: { (profilePic, error, cacheType, URL) in
                 
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
+                
+            
             })
+       
     }
     
     func img(collectionView: UICollectionView) {

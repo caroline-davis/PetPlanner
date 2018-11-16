@@ -31,8 +31,6 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.rowHeight = 90
     
         
-        // tableView.rowHeight = UITableViewAutomaticDimension
-        
     }
     
         
@@ -143,9 +141,6 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print(indexPath.row)
         }
         
-        
     }
-    
-
 
 }

@@ -11,9 +11,9 @@ import SDWebImage
 
 class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
    
-    
     var collectionViewData = [PetImage]()
-
+    
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var collection: UICollectionView!
     
@@ -27,13 +27,18 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
         DataService.ds.getPhotos(petId: CURRENT_PET_ID) { (petImage) in
             self.collectionViewData = petImage
             self.collection.reloadData()
-            
         }
         
     }
@@ -43,10 +48,12 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionViewData.count
+        
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCell {
             let pet = self.collectionViewData[indexPath.row]
@@ -56,6 +63,7 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             
             return cell
         } else {
+            
             return UICollectionViewCell()
         }
     }
@@ -74,6 +82,7 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         self.navigationController?.pushViewController(vc, animated: false)
 
     }
+    
     
  
 

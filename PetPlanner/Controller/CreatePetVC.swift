@@ -65,9 +65,9 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                 self.profilePic.sd_setImage(with: URL(string: self.pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
                 })
                 
-                self.profileImage = self.pet.profileImage
-                
                 DispatchQueue.main.async {
+                    self.profileImage = self.pet.profileImage
+                    
                     self.nameField.text = self.pet.name
                     self.dobField.text = self.pet.dob
                     self.speciesField.text = self.pet.species
@@ -92,6 +92,7 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     
     // standard func for profile pic
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
 // Local variable inserted by Swift 4.2 migrator.
 let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
