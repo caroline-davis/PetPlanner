@@ -13,10 +13,14 @@ class CurvedLbl: UILabel {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        layer.cornerRadius = 15
+      
+        layer.cornerRadius = frame.size.height / 2.0
         layer.borderColor = PINK_COLOR.cgColor
         layer.borderWidth = 3.0
         layer.masksToBounds = true
     
     }
 }
+
+
+

@@ -103,6 +103,7 @@
 		F1ACAB7F20F725580038B4A4 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
 		F1ACAB8120F7267E0038B4A4 /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		F1ACAB8320F73B140038B4A4 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		F1C6C324219E893D00D68EFD /* PetPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PetPlanner.entitlements; sourceTree = "<group>"; };
 		F1C795482036A4BE0059E803 /* CircularBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBtn.swift; sourceTree = "<group>"; };
 		F1EDE53F2075E5BD009C978D /* VetMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetMapVC.swift; sourceTree = "<group>"; };
 		F1FBD7C92010211E00CC1874 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -172,6 +173,7 @@
 		F1771F2920101B860060AB76 /* PetPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				F1C6C324219E893D00D68EFD /* PetPlanner.entitlements */,
 				F11B55CA2016BF8000E5F708 /* Utilities */,
 				F1771F2A20101B860060AB76 /* AppDelegate.swift */,
 				F1FBD7CB2010215E00CC1874 /* Model */,
@@ -284,6 +286,11 @@
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -567,6 +574,7 @@
 			baseConfigurationReference = 2F694CCBF7399E136C711470 /* Pods-PetPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PetPlanner/PetPlanner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UNXUT4D3C;
@@ -589,6 +597,7 @@
 			baseConfigurationReference = C76881DACA0E78229F95F44C /* Pods-PetPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PetPlanner/PetPlanner.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UNXUT4D3C;
