@@ -21,6 +21,10 @@ class HomeVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // to do:
+    // if upgrade has not been bought leave button and link it to the appstore
+    // if upgrade has been bought, hide and disable button.
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
