@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class PetProfileVC: UIViewController  {
+class PetProfileVC: UIViewController, UIGestureRecognizerDelegate  {
     
     @IBOutlet weak var profilePic: CircularImgView!
     @IBOutlet weak var name: UILabel!
@@ -27,6 +27,7 @@ class PetProfileVC: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         CURRENT_PET_ID = petId
         
@@ -76,8 +77,6 @@ class PetProfileVC: UIViewController  {
     
     @objc func exportPetInfo() {
         
-        // TO DO: Export info for pet for a PDF format
-        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ExportVC") as! ExportVC
         vc.petId = petId
         self.navigationController?.pushViewController(vc, animated: false)
@@ -102,7 +101,16 @@ class PetProfileVC: UIViewController  {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-  
+    @IBAction func editProfile(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreatePetVC") as! CreatePetVC
+        vc.petId = petId
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
+    }
+    
   
     
 }

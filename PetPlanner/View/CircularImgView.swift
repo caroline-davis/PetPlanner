@@ -19,7 +19,6 @@ class CircularImgView: UIImageView {
             layer.cornerRadius = frame.size.width / 2
              layer.masksToBounds = true
         
-
     }
     
     func colourSwap() {
