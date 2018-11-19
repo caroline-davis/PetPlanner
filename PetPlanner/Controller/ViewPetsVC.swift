@@ -15,6 +15,8 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var counter = 0
+    
     
     var tableViewData = [PetProfile]()
     
@@ -32,9 +34,6 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         self.tableView.rowHeight = 100
         
-
-        //  tableView.rowHeight = UITableViewAutomaticDimension
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,8 +43,10 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.activityIndicator.startAnimating()
         
         DataService.ds.getAllPets { (pets) in
-            if pets == nil {
+            if pets == nil && self.counter == 0 {
                 self.noPets()
+            } else if pets == nil && self.counter != 0 {
+                self.navigationController?.popViewController(animated: true)
             } else {
                 self.tableViewData = pets!
                 self.tableView.reloadData()
@@ -56,6 +57,8 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func noPets() {
+        
+        counter += 1
         let alert = UIAlertController(title: "Error", message: "You have no pets! Please add a pet", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreatePetVC") as! CreatePetVC
@@ -141,3 +144,17 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 }
 
 
+
+
+//
+//DataService.ds.getAllPets { (pets) in
+//    if pets == nil && self.counter == 0 {
+//        self.noPets()
+//    } else {
+//        self.tableViewData = pets!
+//        self.tableView.reloadData()
+//        self.activityIndicator.isHidden = true
+//        self.activityIndicator.stopAnimating()
+//    }
+//}
+//}
