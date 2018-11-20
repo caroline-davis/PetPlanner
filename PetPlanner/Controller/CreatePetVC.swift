@@ -48,14 +48,6 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        loadingActivityIndicator.isHidden = false
-        loadingActivityIndicator.startAnimating()
-        
         // if the user clicks edit on the viewpets page - this will open the screen with that same petId for the user to edit
         if petId != nil {
             DataService.ds.getPet(petId: petId) { (petProfile) in
@@ -76,6 +68,16 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                 }
             }
         }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        loadingActivityIndicator.isHidden = false
+        loadingActivityIndicator.startAnimating()
+        
+
  
     }
  
@@ -223,6 +225,4 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
 	return input.rawValue
 }
-
-
 

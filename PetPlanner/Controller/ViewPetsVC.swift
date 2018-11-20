@@ -45,7 +45,7 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         DataService.ds.getAllPets { (pets) in
             if pets == nil && self.counter == 0 {
                 self.noPets()
-            } else if pets == nil && self.counter != 0 {
+            } else if self.counter != 0 {
                 self.navigationController?.popViewController(animated: true)
             } else {
                 self.tableViewData = pets!
@@ -144,17 +144,3 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 }
 
 
-
-
-//
-//DataService.ds.getAllPets { (pets) in
-//    if pets == nil && self.counter == 0 {
-//        self.noPets()
-//    } else {
-//        self.tableViewData = pets!
-//        self.tableView.reloadData()
-//        self.activityIndicator.isHidden = true
-//        self.activityIndicator.stopAnimating()
-//    }
-//}
-//}

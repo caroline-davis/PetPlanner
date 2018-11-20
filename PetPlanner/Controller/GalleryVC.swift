@@ -35,10 +35,14 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
+      //  loadingActivityIndicator.isHidden = false
+     //   loadingActivityIndicator.startAnimating()
         
         DataService.ds.getPhotos(petId: CURRENT_PET_ID) { (petImage) in
             self.collectionViewData = petImage
             self.collection.reloadData()
+      //      self.loadingActivityIndicator.isHidden = true
+       //     self.loadingActivityIndicator.stopAnimating()
         }
         
     }
