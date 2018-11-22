@@ -503,7 +503,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWK-ue-ggd" id="7Cx-jn-cMm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YCm-bj-sZ3">
@@ -600,6 +600,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2va-SF-ZLt" customClass="ImgAndTxtBtn" customModule="PetPlanner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="200.66666666666666" width="414" height="99.999999999999972"/>
+                                <color key="backgroundColor" red="0.71372549019999998" green="0.30980392159999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Kfe-AZ-jS1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Add a pet" image="addButton">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAPetProfile:" destination="h4d-f6-qwl" eventType="touchUpInside" id="4f1-Mf-oVY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GBo-Zf-grE" customClass="ImgAndTxtBtn" customModule="PetPlanner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="301.66666666666669" width="414" height="100"/>
+                                <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="IhZ-kj-aeD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="17"/>
+                                <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="lockedButton">
+                                    <string key="title">Upgrade to paid version 
+ to add multiple pets</string>
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewPetsProfiles:" destination="h4d-f6-qwl" eventType="touchUpInside" id="Mg3-FM-S3G"/>
+                                </connections>
+                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6u9-bS-9S9">
                                 <rect key="frame" x="197" y="390" width="20" height="20"/>
                             </activityIndicatorView>
@@ -608,24 +642,32 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wxd-PS-OUz" secondAttribute="trailing" id="9BW-rc-K3T"/>
                             <constraint firstItem="6u9-bS-9S9" firstAttribute="centerX" secondItem="FvT-9I-UVK" secondAttribute="centerX" id="Evq-d9-Uua"/>
+                            <constraint firstItem="2va-SF-ZLt" firstAttribute="trailing" secondItem="FvT-9I-UVK" secondAttribute="trailing" id="JdT-An-fkq"/>
+                            <constraint firstItem="GBo-Zf-grE" firstAttribute="trailing" secondItem="FvT-9I-UVK" secondAttribute="trailing" id="M8g-Wn-1mt"/>
                             <constraint firstAttribute="bottom" secondItem="wxd-PS-OUz" secondAttribute="bottom" id="MGs-3H-Umv"/>
                             <constraint firstItem="6u9-bS-9S9" firstAttribute="centerY" secondItem="FvT-9I-UVK" secondAttribute="centerY" id="UJ5-yQ-283"/>
                             <constraint firstItem="wxd-PS-OUz" firstAttribute="leading" secondItem="72S-ty-Syz" secondAttribute="leading" id="WTW-Ve-ATa"/>
                             <constraint firstItem="wxd-PS-OUz" firstAttribute="top" secondItem="oOS-PS-rhF" secondAttribute="bottom" constant="1" id="WgJ-H7-cKV"/>
                             <constraint firstItem="oOS-PS-rhF" firstAttribute="top" secondItem="FvT-9I-UVK" secondAttribute="top" id="ZnO-IH-pih"/>
                             <constraint firstItem="oOS-PS-rhF" firstAttribute="leading" secondItem="FvT-9I-UVK" secondAttribute="leading" id="chj-s3-Qjh"/>
+                            <constraint firstItem="GBo-Zf-grE" firstAttribute="leading" secondItem="72S-ty-Syz" secondAttribute="leading" id="d9N-41-0mO"/>
+                            <constraint firstItem="2va-SF-ZLt" firstAttribute="top" secondItem="oOS-PS-rhF" secondAttribute="bottom" constant="1" id="rHp-gH-yxF"/>
+                            <constraint firstItem="GBo-Zf-grE" firstAttribute="top" secondItem="2va-SF-ZLt" secondAttribute="bottom" constant="1" id="tq5-2N-ghA"/>
                             <constraint firstItem="oOS-PS-rhF" firstAttribute="trailing" secondItem="FvT-9I-UVK" secondAttribute="trailing" id="wmX-8m-g69"/>
+                            <constraint firstItem="2va-SF-ZLt" firstAttribute="leading" secondItem="FvT-9I-UVK" secondAttribute="leading" id="xQN-cx-QbA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FvT-9I-UVK"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="6u9-bS-9S9" id="JRS-f8-k7W"/>
+                        <outlet property="addPet" destination="2va-SF-ZLt" id="uZX-WY-M4H"/>
+                        <outlet property="paidVersion" destination="GBo-Zf-grE" id="tJ6-qb-Otl"/>
                         <outlet property="tableView" destination="wxd-PS-OUz" id="WbY-S4-tmh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cst-kW-v6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108.695652173913" y="233.1521739130435"/>
+            <point key="canvasLocation" x="2107.2463768115945" y="233.1521739130435"/>
         </scene>
         <!--Health InfoVC-->
         <scene sceneID="Fm0-3i-Fvc">
@@ -2070,6 +2112,7 @@
         <image name="checklistButton" width="90" height="90"/>
         <image name="editButton" width="38" height="38"/>
         <image name="galleryPinkButton" width="31" height="28"/>
+        <image name="lockedButton" width="70" height="70"/>
         <image name="mail" width="26" height="18"/>
         <image name="photoButton" width="90" height="90"/>
         <image name="searchButton" width="70" height="70"/>
