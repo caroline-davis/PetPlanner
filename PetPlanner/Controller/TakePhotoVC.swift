@@ -11,10 +11,12 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 
-class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITabBarControllerDelegate {
     
     @IBOutlet weak var photo: UIImageView!
     var imagePickerController : UIImagePickerController!
+  
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,8 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .camera
+        
+        tabBarController?.delegate = self
         
     }
     
@@ -38,10 +42,13 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        // TODO: start loading indicator
+        
+        
 // Local variable inserted by Swift 4.2 migrator.
 let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
-        
         if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             photo.image = image
             
@@ -74,19 +81,26 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                 }
             }
         }
+        print("dismissed")
         dismiss(animated: true, completion: nil)
         // puts the display back to the tab 0 which is gallery to view the pic in the gallery
         tabBarController?.selectedIndex = 0
+      
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
         // puts the display back to the tab 0 which is gallery
-        tabBarController?.selectedIndex = 0
+      tabBarController?.selectedIndex = 0
     }
     
     
+    
+
+    
+    
 }
+
 
 
 // Helper function inserted by Swift 4.2 migrator.

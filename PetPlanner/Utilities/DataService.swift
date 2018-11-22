@@ -95,6 +95,7 @@ class DataService {
     }
     
     func getPhotos(petId: String, completion: @escaping (Array<PetImage>)-> ()) {
+
         
         DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
             let photoDict = snapshot.value as? Dictionary <String, AnyObject>
@@ -107,7 +108,9 @@ class DataService {
                 }).sorted(by: { $0.imageId < $1.imageId })
                 
                 completion(photos)
+
             } else {
+             completion([PetImage]())
                 print("no photos")
                 
             }

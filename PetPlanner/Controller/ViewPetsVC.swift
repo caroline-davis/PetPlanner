@@ -105,6 +105,8 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+    //    TO DO: If after deleting a pet the pets are at nil. do the pop up to make a pet again.
+        
         let pet = self.tableViewData[indexPath.row]
         let petId = pet.petId
         
@@ -114,6 +116,11 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             self.tableViewData.remove(at: indexPath.row)
             self.tableView.reloadData()
+            
+            // if after deletion there are 0 pets, call the no pets func and segue to create a pet
+            if self.tableViewData.count == 0 {
+                self.noPets()
+            }
             
             // removes the data from firebase
             DataService.ds.DB_BASE.child("pets").child(petId).removeValue()

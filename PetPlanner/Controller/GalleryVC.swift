@@ -24,40 +24,32 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         collection.delegate = self
         collection.dataSource = self
         
+        loadingActivityIndicator.isHidden = false
+        loadingActivityIndicator.startAnimating()
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(false)
-        
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-      //  loadingActivityIndicator.isHidden = false
-     //   loadingActivityIndicator.startAnimating()
         
         DataService.ds.getPhotos(petId: CURRENT_PET_ID) { (petImage) in
+            //TODO: stop loading indicator
+           
+                self.loadingActivityIndicator.isHidden = true
+                self.loadingActivityIndicator.stopAnimating()
+            
             self.collectionViewData = petImage
             self.collection.reloadData()
-      //      self.loadingActivityIndicator.isHidden = true
-       //     self.loadingActivityIndicator.stopAnimating()
         }
         
     }
+
         
     
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionViewData.count
-        
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCell {
             let pet = self.collectionViewData[indexPath.row]
