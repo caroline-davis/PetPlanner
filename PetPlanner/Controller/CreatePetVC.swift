@@ -34,30 +34,33 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.isHidden = true
+        DispatchQueue.main.async {
+            self.activityIndicator.isHidden = true
         
-        nameField.delegate = self
-        dobField.delegate = self
-        speciesField.delegate = self
-        sexField.delegate = self
-        idTagField.delegate = self
+            self.nameField.delegate = self
+            self.dobField.delegate = self
+            self.speciesField.delegate = self
+            self.sexField.delegate = self
+            self.idTagField.delegate = self
         
-        imagePicker = UIImagePickerController()
+            self.imagePicker = UIImagePickerController()
         
         // makes it so the user can move the image to the square they want it cropped at
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.delegate = self
+        }
         
         // if the user clicks edit on the viewpets page - this will open the screen with that same petId for the user to edit
         if petId != nil {
             DataService.ds.getPet(petId: petId) { (petProfile) in
                 self.pet = petProfile
                 
+                DispatchQueue.main.async {
                 // gets image from firebase using sdwebimage
                 self.profilePic.sd_setImage(with: URL(string: self.pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
                 })
                 
-                DispatchQueue.main.async {
+    
                     self.profileImage = self.pet.profileImage
                     
                     self.nameField.text = self.pet.name
@@ -77,7 +80,6 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         loadingActivityIndicator.isHidden = false
         loadingActivityIndicator.startAnimating()
         
-
  
     }
  

@@ -21,26 +21,21 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableViewData = [PetProfile]()
     
-    // TO DO: If user has paid for the account they get all the pets in the tableview
-    // IF they have not paid - they get 1 pet and the next cell should read "Upgrade to paid version to add multiple pets"
-    // and have the lock picture as the profilePicture.
-    // if they click that lock they go to the appstore blah to upgrade
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // need to do a check - prob a call to apple to see if user has paid or not to set the paidversion bool to true or false
+    // TO DO: need to do a check - prob a call to apple to see if user has paid or not to set the paidversion bool to true or false
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        self.tableView.rowHeight = 100
-        
-        addPet.isHidden = true
-        addPet.isEnabled = false
-        paidVersion.isHidden = true
-        paidVersion.isEnabled = false
+        DispatchQueue.main.async {
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
+            self.tableView.rowHeight = 100
+            
+            self.addPet.isHidden = true
+            self.addPet.isEnabled = false
+            self.paidVersion.isHidden = true
+            self.paidVersion.isEnabled = false
+        }
         
     }
     
@@ -163,6 +158,21 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print(indexPath.row)
         }
     }
+    
+    @IBAction func addPet(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreatePetVC") as! CreatePetVC
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
+    }
+    
+    @IBAction func upgradeApp(_ sender: Any) {
+        
+        // go to app store :D
+    }
+    
 }
 
 

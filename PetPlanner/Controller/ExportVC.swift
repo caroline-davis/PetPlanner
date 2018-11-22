@@ -28,9 +28,6 @@ class ExportVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
-        
         CURRENT_PET_ID = petId
         
     }
@@ -38,7 +35,8 @@ class ExportVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
        
         // gets info from firebase and puts it into the petdictionaries
         DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in

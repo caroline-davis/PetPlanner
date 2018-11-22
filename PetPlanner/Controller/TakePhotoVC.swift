@@ -21,12 +21,13 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .camera
+        DispatchQueue.main.async {
+            self.imagePickerController = UIImagePickerController()
+            self.imagePickerController.delegate = self
+            self.imagePickerController.sourceType = .camera
         
-        tabBarController?.delegate = self
-        
+        self.tabBarController?.delegate = self
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

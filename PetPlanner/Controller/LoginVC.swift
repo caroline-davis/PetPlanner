@@ -25,17 +25,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     var alreadySignedUp = true
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         emailField.delegate = self
         passwordField.delegate = self
         activityIndicator.isHidden = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
 
     }
     

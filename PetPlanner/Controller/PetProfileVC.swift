@@ -30,19 +30,20 @@ class PetProfileVC: UIViewController, UIGestureRecognizerDelegate  {
         
         
         CURRENT_PET_ID = petId
-        
+        DispatchQueue.main.async {
         // hides the standard back button
         self.navigationItem.setHidesBackButton(true, animated:true)
         
         // sets the button to go back to the home screen
-        let homeButton = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(homePage))
+            let homeButton = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(self.homePage))
         self.navigationItem.leftBarButtonItem = homeButton
         
         // sets the button to export the pet info as pdf
-        let pdfButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(exportPetInfo))
+            let pdfButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(self.exportPetInfo))
         
         pdfButton.image = UIImage(named: "exportButton")
         self.navigationItem.rightBarButtonItem = pdfButton
+        }
 
     }
     
