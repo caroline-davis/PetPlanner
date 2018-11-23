@@ -15,18 +15,21 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     @IBOutlet weak var photo: UIImageView!
     var imagePickerController : UIImagePickerController!
-  
+    var loadingActivityIndicator: UIActivityIndicatorView!
+
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         DispatchQueue.main.async {
+            
             self.imagePickerController = UIImagePickerController()
             self.imagePickerController.delegate = self
             self.imagePickerController.sourceType = .camera
         
-        self.tabBarController?.delegate = self
+            self.tabBarController?.delegate = self
+            
         }
     }
     
@@ -36,6 +39,15 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
         photo.isHidden = true
         DispatchQueue.main.async {
             self.parent?.present(self.imagePickerController, animated: true, completion: nil)
+            
+            if (self.loadingActivityIndicator == nil) {
+                self.loadingActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.white)
+                self.loadingActivityIndicator.center = self.imagePickerController.view.center
+                
+                self.imagePickerController.view.addSubview(self.loadingActivityIndicator)
+                self.imagePickerController.view.bringSubviewToFront(self.loadingActivityIndicator)
+            }
+           
         }
         
     }
@@ -44,8 +56,10 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        // TODO: start loading indicator
-        
+        DispatchQueue.main.async {
+            self.loadingActivityIndicator.isHidden = false
+            self.loadingActivityIndicator.startAnimating()
+        }
         
 // Local variable inserted by Swift 4.2 migrator.
 let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
@@ -76,17 +90,18 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                         "petId": CURRENT_PET_ID,
                         "imageId": imageId
                     ]) { (data, error) in
-                        print(data ?? "broken", error)
-                        print("finished")
+                        DispatchQueue.main.async {
+                            self.loadingActivityIndicator.isHidden = true
+                            self.loadingActivityIndicator.stopAnimating()
+                        }
+                        // if error or complete the user goes back to other screen
+                        self.dismiss(animated: true, completion: nil)
+                        // puts the display back to the tab 0 which is gallery to view the pic in the gallery
+                        self.tabBarController?.selectedIndex = 0
                     }
                 }
             }
         }
-        print("dismissed")
-        dismiss(animated: true, completion: nil)
-        // puts the display back to the tab 0 which is gallery to view the pic in the gallery
-        tabBarController?.selectedIndex = 0
-      
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

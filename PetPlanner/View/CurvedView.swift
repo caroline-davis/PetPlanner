@@ -18,8 +18,6 @@ class CurvedView: UIView {
         layer.shadowOpacity = 0.4
         layer.shadowRadius = 1.5
         layer.shadowOffset = CGSize(width: 0.8, height: 2.0)
-        
-        
+  
     }
-
 }

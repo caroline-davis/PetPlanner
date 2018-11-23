@@ -14,17 +14,14 @@ class CircularBtn: UIButton {
         super.awakeFromNib()
         
         imageView?.contentMode = .scaleAspectFit
-        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         // makes the button 100% round
         layer.cornerRadius = self.frame.width / 2
         
         border()
-    
     }
     
     func border() {
@@ -33,6 +30,5 @@ class CircularBtn: UIButton {
             layer.borderColor = WHITE_COLOR.cgColor
         }
     }
-
 }
 

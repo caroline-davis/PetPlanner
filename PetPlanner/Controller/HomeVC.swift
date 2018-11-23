@@ -22,8 +22,7 @@ class HomeVC: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var upgrade: CurvedBtn!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,15 +78,11 @@ class HomeVC: UIViewController, MFMailComposeViewControllerDelegate {
         DataService.ds.logout(uid: KEY_UID)
         
         print("CAROL:ITS LOGGED OUT")
-        
         //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        
         self.present(vc, animated: false, completion: nil)
-        
     }
 }
-
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {

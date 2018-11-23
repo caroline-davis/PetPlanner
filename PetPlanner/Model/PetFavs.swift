@@ -106,7 +106,5 @@ class PetFavs {
         dict["toy"] = self._toy
         dict["other"] = self._other
         return dict
-    }
-
-    
+    }  
 }

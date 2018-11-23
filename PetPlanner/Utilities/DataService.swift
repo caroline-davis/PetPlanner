@@ -10,7 +10,6 @@ import Foundation
 import Firebase
 import SwiftKeychainWrapper
 
-
 class DataService {
     
     static let ds = DataService()
@@ -19,7 +18,6 @@ class DataService {
     // this contains the URL of the root of the database and storagebase(this is taken from GoogleService.plist file)
     let DB_BASE = Database.database().reference()
     let STORAGE_BASE = Storage.storage().reference()
-    
     
     func logout(uid: String) {
         
@@ -70,14 +68,11 @@ class DataService {
             } else {
                 completion(nil, petId)
             }
-            
         }
-        
     }
     
     
     func getPet(petId: String, completion: @escaping (PetProfile?)->()) {
-        
         DB_BASE.child("pets").child(petId).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? Dictionary <String, AnyObject>
@@ -91,13 +86,12 @@ class DataService {
         }) { (error) in
             print(error.localizedDescription)
         }
-        
     }
     
     func getPhotos(petId: String, completion: @escaping (Array<PetImage>)-> ()) {
-
+          DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
         
-        DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
+     //   DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
             let photoDict = snapshot.value as? Dictionary <String, AnyObject>
             
             if photoDict != nil {
@@ -106,16 +100,12 @@ class DataService {
                     let petId = item["petId"] as! String
                     return PetImage(petId: petId, imageData: item as! Dictionary<String, AnyObject>)
                 }).sorted(by: { $0.imageId < $1.imageId })
-                
                 completion(photos)
-
             } else {
              completion([PetImage]())
                 print("no photos")
-                
             }
         })
-        
     }
     
     
@@ -127,9 +117,7 @@ class DataService {
             // To get JSON data as array to loop through - it removes the keys from outer layer of dict
             var pets: [PetProfile]?
             if dict != nil {
-                
                 let values = Array(dict!.values)
-                
                 // .map calls a function for each item in array
                 pets = values.map({ (item) -> PetProfile in
                     let petId = item["petId"] as! String
@@ -171,7 +159,6 @@ class DataService {
         }) { (error) in
             print(error.localizedDescription)
         }
-        
     }
     
     func createHealth(petId: String, userId: String, breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String, lastVetVisit: String, completion: @escaping (String?)->()) {
@@ -228,7 +215,6 @@ class DataService {
         }) { (error) in
             print(error.localizedDescription)
         }
-        
     }
     
     func createFavs(petId: String, userId: String, food: String, drink: String, toy: String, sleepingNook: String, activity: String, hidingSpot: String, feastingTime: String, other: String, completion: @escaping (String?)->()) {
@@ -264,12 +250,10 @@ class DataService {
             } else {
                 completion(nil)
             }
-            
         }
     }
     
     func getEvent(petId: String, eventId: String, completion: @escaping (PetEvents?)->()) {
-        
         DB_BASE.child("events").child(CURRENT_PET_ID).child(eventId).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? Dictionary <String, AnyObject>
@@ -282,7 +266,6 @@ class DataService {
         }) { (error) in
             print(error.localizedDescription)
         }
-        
     }
     
     func createEvent(
@@ -292,7 +275,6 @@ class DataService {
         completion: @escaping (String?, _ petId: String)->()) {
         
         let eventId = generateId()
-        
         
         DB_BASE.child("events").child(CURRENT_PET_ID).child(eventId).setValue([
             "petId": CURRENT_PET_ID,
@@ -329,11 +311,9 @@ class DataService {
     func getAllEvents(completion: @escaping (Array<PetEvents>)->()) {
         
         DB_BASE.child("events").child(CURRENT_PET_ID).observeSingleEvent(of: .value, with: { (snapshot) in
-            
             let dict = snapshot.value as? Dictionary <String, AnyObject>
             
             // To get JSON data as array to loop through - it removes the keys from outer layer of dict
-            
             if dict != nil {
                 let values = Array(dict!.values)
                 
@@ -349,10 +329,7 @@ class DataService {
                 print("no events")
             }
         })
-        
     }
-
-    
 }
 
 

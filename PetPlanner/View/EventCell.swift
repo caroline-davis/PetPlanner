@@ -31,7 +31,6 @@ class EventCell: UITableViewCell {
         eventDate.textColor = WHITE_COLOR
         eventTime.textColor = WHITE_COLOR
         eventLocation.textColor = WHITE_COLOR
-   
     }
     
     func configure(petEvent: PetEvents) {
@@ -53,13 +52,4 @@ class EventCell: UITableViewCell {
         self.activityIndicator.stopAnimating()
         
     }
-    
-    
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

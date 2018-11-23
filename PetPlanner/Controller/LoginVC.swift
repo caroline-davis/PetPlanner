@@ -31,11 +31,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         emailField.delegate = self
         passwordField.delegate = self
         activityIndicator.isHidden = true
-
     }
     
-
- 
     @IBAction func signInWithFacebook(_ sender: Any) {
         
         self.activityIndicator.isHidden = false
@@ -44,7 +41,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         let loginManager = LoginManager()
         loginManager.logIn(readPermissions: [ReadPermission.publicProfile], viewController : self) { loginResult in
             
-
             switch loginResult {
             case .failed(let error):
                 print(error)
@@ -60,8 +56,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 print("Logged in")
                 // User succesfully logged in. Contains granted, declined permissions and access token.
                 let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
-              self.firebaseAuth(credential)
-            
+                self.firebaseAuth(credential)
             }
         }
     }
@@ -79,10 +74,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             } else {
                 print("Carol: Successfully authenticated with firebase")
                 self.completeSignIn(user: user!)
-
+                
             }
         }
-
+        
     }
     
     
@@ -159,13 +154,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
     }
     
- 
     
     // when enter is pressed keyboard is dismissed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
 }
 

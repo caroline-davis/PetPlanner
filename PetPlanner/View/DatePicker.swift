@@ -10,12 +10,8 @@ import UIKit
 
 class DatePicker: UIDatePicker {
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.setValue(UIColor.white, forKeyPath: "textColor")
     }
-
-    
 }

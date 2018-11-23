@@ -19,5 +19,4 @@ class SquareBtn: UIButton {
         layer.shadowRadius = 2.0
         layer.shadowOffset = CGSize(width: 0.8, height: 2.0)
     }
-
 }

@@ -9,16 +9,15 @@
 import UIKit
 
 class CircularImgView: UIImageView {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-            colourSwap()
-            borderWidth()
+        colourSwap()
+        borderWidth()
         
-            layer.cornerRadius = frame.size.width / 2
-             layer.masksToBounds = true
-        
+        layer.cornerRadius = frame.size.width / 2
+        layer.masksToBounds = true
     }
     
     func colourSwap() {
@@ -36,7 +35,4 @@ class CircularImgView: UIImageView {
             layer.borderWidth = 6
         }
     }
- 
-    
-
 }

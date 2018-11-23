@@ -24,24 +24,18 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         collection.delegate = self
         collection.dataSource = self
         
-        loadingActivityIndicator.isHidden = false
-        loadingActivityIndicator.startAnimating()
-        
+        self.loadingActivityIndicator.isHidden = false
+        self.loadingActivityIndicator.startAnimating()
         
         DataService.ds.getPhotos(petId: CURRENT_PET_ID) { (petImage) in
-            //TODO: stop loading indicator
-           
-                self.loadingActivityIndicator.isHidden = true
-                self.loadingActivityIndicator.stopAnimating()
+            self.loadingActivityIndicator.isHidden = true
+            self.loadingActivityIndicator.stopAnimating()
             
             self.collectionViewData = petImage
             self.collection.reloadData()
         }
         
     }
-
-        
-    
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

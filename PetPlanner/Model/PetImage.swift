@@ -26,7 +26,6 @@ class PetImage {
         return _photo
     }
     
-    
     var userId: String {
         return _userId
     }

@@ -11,22 +11,18 @@ import UIKit
 import FirebaseDatabase
 import SwiftKeychainWrapper
 
-
 let KEY_UID = "uid"
 var USER_ID = ""
 let DEFAULT_PROFLE_IMAGE = "https://firebasestorage.googleapis.com/v0/b/petplanner252.appspot.com/o/pets%2Fprofile-picture.png?alt=media"
 var CURRENT_PET_ID: String!
 
-
 var ref: DatabaseReference!
-
 
 // Colours
 let WHITE_COLOR = UIColor.white
 let PINK_COLOR = UIColor(red:0.71, green:0.31, blue:0.78, alpha:1.0)
 let BLUE_COLOR = UIColor(red:0.25, green:0.22, blue:0.66, alpha:1.0)
 let BLACK_COLOR = UIColor(red:0.09, green:0.09, blue:0.09, alpha:1.0)
-
 
 // Change key from firebase key to something for readable
 var lookup = [
@@ -52,5 +48,4 @@ var lookup = [
     "sleepingNook": "Sleeping Nook",
     "toy": "Toy",
     "other": "Other",
-
 ]

@@ -21,7 +21,6 @@ class PetProfile {
     private var _petId: String!
     private var _profileRef: DatabaseReference!
     
-   
     var profileImage: String {
         return _profileImage
     }
@@ -88,8 +87,6 @@ class PetProfile {
       
         return dict
     }
-    
-    
 }
 
 

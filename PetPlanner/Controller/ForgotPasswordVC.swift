@@ -20,9 +20,6 @@ class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
           emailField.delegate = self
     }
 
-    
-   
-    
     @IBAction func resetPassword(_ sender: Any) {
         DataService.ds.forgotPassword(email: emailField.text!, completion: { error in
             print("here")
@@ -32,7 +29,6 @@ class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
             } else {
                 self.alerts(title: "Success", message: "Please check your email to update your password")
             }
-            
         })
     }
 
@@ -50,7 +46,6 @@ class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
-
 }
 
 

@@ -52,7 +52,6 @@ class PetEvents {
         self._eventDate = convertToDate(originalString: eventDate)
         self._userId = userId
         self._eventId = eventId
-        
     }
     
     init(petId: String, eventsData: Dictionary <String, AnyObject>)  {
@@ -77,6 +76,4 @@ class PetEvents {
         }
         _eventsRef = DataService.ds.DB_BASE.child("events").child(_petId).child(eventId)
     }
-
-    
 }

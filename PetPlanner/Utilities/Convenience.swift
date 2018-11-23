@@ -17,7 +17,6 @@ extension UIViewController {
     }
 }
 
-
 func saveBtnEnabled(save: UIButton, activityIndicator: UIActivityIndicatorView) {
     save.isUserInteractionEnabled = true
     activityIndicator.isHidden = true
@@ -31,7 +30,6 @@ func saveBtnDisabled(save: UIButton, activityIndicator: UIActivityIndicatorView)
     activityIndicator.isHidden = false
     activityIndicator.startAnimating()
 }
-
 
 extension UIImage {
     func resizeWithPercent(percentage: CGFloat) -> UIImage? {
@@ -72,7 +70,6 @@ extension UIView {
     }
 }
 
-
 // Convert String to Date
 func convertToDate(originalString: String) -> Date {
     let dateFormatter = DateFormatter()
@@ -81,7 +78,6 @@ func convertToDate(originalString: String) -> Date {
     let convertedDate: Date = dateFormatter.date(from: originalString)!
     return convertedDate
 }
-
 
 /// Convert Date to String
 func convertToString(originalDate: Date) -> String {

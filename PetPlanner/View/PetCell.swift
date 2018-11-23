@@ -9,7 +9,6 @@
 import UIKit
 
 class PetCell: UITableViewCell {
-    
 
     @IBOutlet weak var profilePic: CircularImgView!
     @IBOutlet weak var name: UILabel!
@@ -47,12 +46,5 @@ class PetCell: UITableViewCell {
             self.activityIndicator.stopAnimating()
         })
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-     //   contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(10, 10, 10, 10))
-    }
-  
 }
 
