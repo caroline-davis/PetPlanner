@@ -60,6 +60,8 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.paidVersion.isHidden = true
                 self.paidVersion.isEnabled = false
             } else if pets != nil && self.paid == false {
+                self.paidVersion.tag = 2
+                print("HELLO: \(self.paidVersion.tag)")
                 self.addPet.isHidden = true
                 self.addPet.isEnabled = false
                 self.paidVersion.isHidden = false
