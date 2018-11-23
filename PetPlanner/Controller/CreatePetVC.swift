@@ -91,6 +91,9 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
 
     
     @IBAction func addProfilePic(_ sender: AnyObject) {
+        loadingActivityIndicator.isHidden = false
+        loadingActivityIndicator.startAnimating()
+        
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -138,6 +141,9 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             print("CAROL: A valid image wasnt selected")
             saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
         }
+        loadingActivityIndicator.isHidden = true
+        loadingActivityIndicator.stopAnimating()
+        
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
