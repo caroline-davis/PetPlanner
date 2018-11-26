@@ -13,6 +13,7 @@
 		F128E146203D36B600444DEE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F128E145203D36B600444DEE /* DataService.swift */; };
 		F128E148203E818F00444DEE /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F128E147203E818F00444DEE /* ForgotPasswordVC.swift */; };
 		F128E14A203E8F5400444DEE /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F128E149203E8F5400444DEE /* CurvedView.swift */; };
+		F13F89E921ABBC7E0088B88F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F89E821ABBC7E0088B88F /* Reachability.swift */; };
 		F140C184203A5AC70085B70E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F140C183203A5AC70085B70E /* GoogleService-Info.plist */; };
 		F142DA60203675BD00569FAA /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */; };
 		F142DA61203675BD00569FAA /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */; };
@@ -64,6 +65,7 @@
 		F128E145203D36B600444DEE /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		F128E147203E818F00444DEE /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		F128E149203E8F5400444DEE /* CurvedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
+		F13F89E821ABBC7E0088B88F /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F140C183203A5AC70085B70E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				F11B55CB2016BF9200E5F708 /* Constants.swift */,
 				F14EA3AC203A8DCA0017B682 /* Convenience.swift */,
+				F13F89E821ABBC7E0088B88F /* Reachability.swift */,
 				F128E145203D36B600444DEE /* DataService.swift */,
 			);
 			path = Utilities;
@@ -412,6 +415,7 @@
 				F128E148203E818F00444DEE /* ForgotPasswordVC.swift in Sources */,
 				F1FBD7CA2010211E00CC1874 /* HomeVC.swift in Sources */,
 				F199C2EC2043975200092E9B /* CircularImgView.swift in Sources */,
+				F13F89E921ABBC7E0088B88F /* Reachability.swift in Sources */,
 				F18355482075D336005F47D8 /* HealthInfoVC.swift in Sources */,
 				F1771F2B20101B860060AB76 /* AppDelegate.swift in Sources */,
 				F1778ED5203FED3A002C75FC /* ImgAndTxtBtn.swift in Sources */,
@@ -583,7 +587,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PetPlanner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinedavis.PetPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -607,7 +611,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PetPlanner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinedavis.PetPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";

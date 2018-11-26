@@ -35,6 +35,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInWithFacebook(_ sender: Any) {
         
+        if Reachability.isConnectedToNetwork(){
+            print("Internet Connection Available!")
+        }else{
+            alerts(title: "Error", message: "This app needs an internet connection to run")
+            print("Internet Connection not Available!")
+        }
+        
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
         
@@ -82,6 +89,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func signInWithEmail(_ sender: UIButton) {
+        
+        if Reachability.isConnectedToNetwork(){
+            print("Internet Connection Available!")
+        }else{
+            alerts(title: "Error", message: "This app needs an internet connection to run")
+            print("Internet Connection not Available!")
+        }
         
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
