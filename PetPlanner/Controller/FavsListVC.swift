@@ -122,7 +122,6 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
                 saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
             })
         }
- 
     }
     
 

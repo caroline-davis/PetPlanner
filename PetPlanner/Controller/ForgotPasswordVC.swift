@@ -21,7 +21,6 @@ class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
 
     @IBAction func resetPassword(_ sender: Any) {
         DataService.ds.forgotPassword(email: emailField.text!, completion: { error in
-            print("here")
             if error != nil {
                 
                 self.alerts(title: "Error", message: "\(error?.localizedDescription.capitalized ?? "Error Occurred")")

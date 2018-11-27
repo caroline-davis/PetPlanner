@@ -83,7 +83,6 @@ class ExportVC: UIViewController {
             if success || error == nil {
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
-       
             }
             else if (error != nil){
                 self.activityIndicator.isHidden = true
@@ -102,7 +101,6 @@ class ExportVC: UIViewController {
             if (next.value != "") {
                 // if the firebase key is in the constant dictionary, display the value
                 if let formattedKey = lookup[next.key] {
-                    print("CAROL:\(formattedKey)next key:\(next.key)")
                     return (result + formattedKey + ": " + next.value + "\n")
                 }
             }
@@ -137,8 +135,6 @@ class ExportVC: UIViewController {
         }
         
     }
-    
-    
-    
+     
 }
 

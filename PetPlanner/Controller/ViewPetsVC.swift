@@ -61,7 +61,7 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.paidVersion.isEnabled = false
             } else if pets != nil && self.paid == false {
                 self.paidVersion.tag = 2
-                print("HELLO: \(self.paidVersion.tag)")
+                
                 self.addPet.isHidden = true
                 self.addPet.isEnabled = false
                 self.paidVersion.isHidden = false
@@ -69,6 +69,7 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.tableViewData = pets!
                 self.tableView.reloadData()
             } else {
+                
                 self.addPet.isHidden = false
                 self.addPet.isEnabled = true
                 self.paidVersion.isHidden = false
@@ -90,7 +91,6 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath) as? PetCell {
             let pet = self.tableViewData[indexPath.row]
             cell.tag = indexPath.row
-            
             
             cell.configure(pet: pet)
             
@@ -120,6 +120,12 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let petId = pet.petId
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+
+        // so button lines up with upgrade button
+            if self.paid == false {
+                self.addPet.tag = 2
+            }
+            
             // delete item at indexPath
             self.tableViewData.remove(at: indexPath.row)
             self.tableView.reloadData()
@@ -149,10 +155,8 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if (indexPath.row % 2 == 0) {
             cell.backgroundColor = PINK_COLOR
-            print(indexPath.row)
         } else {
             cell.backgroundColor = BLUE_COLOR
-            print(indexPath.row)
         }
     }
     

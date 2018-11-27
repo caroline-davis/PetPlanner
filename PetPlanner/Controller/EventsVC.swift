@@ -132,10 +132,8 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if (indexPath.row % 2 == 0) {
             cell.backgroundColor = PINK_COLOR
-            print(indexPath.row)
         } else {
             cell.backgroundColor = BLUE_COLOR
-            print(indexPath.row)
         }
         
     }
