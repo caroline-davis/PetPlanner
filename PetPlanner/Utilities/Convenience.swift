@@ -89,8 +89,3 @@ func convertToString(originalDate: Date) -> String {
     return convertedString
 }
 
-func errorCheck () {
-
-    // errors
-}
-

@@ -16,10 +16,8 @@
 		F13F89E921ABBC7E0088B88F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F89E821ABBC7E0088B88F /* Reachability.swift */; };
 		F140C184203A5AC70085B70E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F140C183203A5AC70085B70E /* GoogleService-Info.plist */; };
 		F142DA60203675BD00569FAA /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */; };
-		F142DA61203675BD00569FAA /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */; };
 		F142DA62203675BD00569FAA /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5E203675BD00569FAA /* SourceSansPro-Regular.ttf */; };
 		F142DA63203675BD00569FAA /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA5F203675BD00569FAA /* SourceSansPro-Bold.ttf */; };
-		F142DA652036760B00569FAA /* SourceSerifPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F142DA642036760B00569FAA /* SourceSerifPro-Regular.ttf */; };
 		F142DA672036877300569FAA /* CurvedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA662036877300569FAA /* CurvedBtn.swift */; };
 		F142DA692036978A00569FAA /* SquareTxtFld.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA682036978A00569FAA /* SquareTxtFld.swift */; };
 		F142DA6B20369B2C00569FAA /* SquareBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142DA6A20369B2C00569FAA /* SquareBtn.swift */; };
@@ -68,10 +66,8 @@
 		F13F89E821ABBC7E0088B88F /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F140C183203A5AC70085B70E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
-		F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
 		F142DA5E203675BD00569FAA /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		F142DA5F203675BD00569FAA /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
-		F142DA642036760B00569FAA /* SourceSerifPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSerifPro-Regular.ttf"; sourceTree = "<group>"; };
 		F142DA662036877300569FAA /* CurvedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedBtn.swift; sourceTree = "<group>"; };
 		F142DA682036978A00569FAA /* SquareTxtFld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTxtFld.swift; sourceTree = "<group>"; };
 		F142DA6A20369B2C00569FAA /* SquareBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBtn.swift; sourceTree = "<group>"; };
@@ -146,11 +142,9 @@
 		F142DA5B203675AD00569FAA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F142DA5D203675BD00569FAA /* SourceSansPro-Black.ttf */,
 				F142DA5F203675BD00569FAA /* SourceSansPro-Bold.ttf */,
 				F142DA5E203675BD00569FAA /* SourceSansPro-Regular.ttf */,
 				F142DA5C203675BD00569FAA /* SourceSansPro-SemiBold.ttf */,
-				F142DA642036760B00569FAA /* SourceSerifPro-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -325,8 +319,6 @@
 				F140C184203A5AC70085B70E /* GoogleService-Info.plist in Resources */,
 				F142DA62203675BD00569FAA /* SourceSansPro-Regular.ttf in Resources */,
 				F1771F3220101B860060AB76 /* Assets.xcassets in Resources */,
-				F142DA61203675BD00569FAA /* SourceSansPro-Black.ttf in Resources */,
-				F142DA652036760B00569FAA /* SourceSerifPro-Regular.ttf in Resources */,
 				F1771F3020101B860060AB76 /* Main.storyboard in Resources */,
 				F142DA63203675BD00569FAA /* SourceSansPro-Bold.ttf in Resources */,
 			);
