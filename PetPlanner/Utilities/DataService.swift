@@ -23,12 +23,12 @@ class DataService {
         
         // remove saved user id key
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-        print("CAROL: ID removed from keychain \(keychainResult)")
+        print("ID removed from keychain \(keychainResult)")
         
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
-            print ("CAROL: Error signing out: %@", signOutError)
+            print ("Error signing out: %@", signOutError)
         }
     }
     
@@ -70,7 +70,7 @@ class DataService {
             }
         }
     }
-    
+
     
     func getPet(petId: String, completion: @escaping (PetProfile?)->()) {
         DB_BASE.child("pets").child(petId).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -90,8 +90,7 @@ class DataService {
     
     func getPhotos(petId: String, completion: @escaping (Array<PetImage>)-> ()) {
           DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
-        
-     //   DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
+            
             let photoDict = snapshot.value as? Dictionary <String, AnyObject>
             
             if photoDict != nil {
@@ -103,7 +102,6 @@ class DataService {
                 completion(photos)
             } else {
              completion([PetImage]())
-                print("no photos")
             }
         })
     }
@@ -125,7 +123,6 @@ class DataService {
                 }).sorted(by: { $0.petId < $1.petId })
             }
             completion(pets)
-            // if array is empty, function on view controller will fire after this func is called
         })
     }
     
@@ -326,7 +323,7 @@ class DataService {
                 
                 completion(events)
             } else {
-                print("no events")
+                completion([])
             }
         })
     }

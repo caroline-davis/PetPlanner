@@ -13,7 +13,6 @@ class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         

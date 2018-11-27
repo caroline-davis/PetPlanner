@@ -24,13 +24,12 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.delegate = self
-        tableView.dataSource = self
+        DispatchQueue.main.async {
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
         
-        self.tableView.rowHeight = 90
-    
-        
+            self.tableView.rowHeight = 90
+        }
     }
     
         
@@ -105,7 +104,6 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
                 // delete item at indexPath
-                print("delete tapped")
                 
                 self.tableViewData.remove(at: indexPath.row)
                 self.tableView.reloadData()
@@ -118,7 +116,6 @@ class EventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             delete.backgroundColor = .red
             
             let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
-                print("edit tapped")
                 
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateEventVC") as! CreateEventVC
                vc.eventId = event.eventId

@@ -83,7 +83,6 @@ class ExportVC: UIViewController {
             if success || error == nil {
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
-                print("Carol: success")
        
             }
             else if (error != nil){

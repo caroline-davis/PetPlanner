@@ -76,11 +76,9 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         loadingActivityIndicator.isHidden = false
         loadingActivityIndicator.startAnimating()
-        
- 
+
     }
  
     override func viewDidAppear(_ animated: Bool) {
@@ -103,10 +101,8 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
 // Local variable inserted by Swift 4.2 migrator.
 let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
-        
         saveBtnDisabled(save: self.save, activityIndicator: self.activityIndicator)
-        print("CAROL: button disabled")
-        
+
         if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
             profilePic.image = image
             
@@ -122,23 +118,17 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                 
                 DataService.ds.STORAGE_BASE.child("pets").child(imageId).putData(imageData, metadata: metaData) { (metaData, error) in
                     if error != nil {
-                        print("CAROL: Unable to upload image to firebase storage", error!)
-                        
                         saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
-                        print("CAROL: button enabled - it didnt work")
                     } else {
-                        print("CAROL: Successfully uploaded image to firebase storage")
                         let downloadURL = metaData?.downloadURL()?.absoluteString
                         if let url = downloadURL {
                             self.profileImage = url
                             saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
-                            print("CAROL: button enabled - it worked")
                         }
                     }
                 }
             }
         } else {
-            print("CAROL: A valid image wasnt selected")
             saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
         }
         loadingActivityIndicator.isHidden = true
@@ -192,8 +182,6 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                 
                     if error != nil {
                         self.alerts(title: "Error", message: error!)
-                    } else {
-                        print("it worked")
                     }
                  saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
             })
@@ -219,10 +207,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         let endPosition = textField.endOfDocument
         textField.selectedTextRange = textField.textRange(from: endPosition, to: endPosition)
     }
-    
 }
-
-
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {

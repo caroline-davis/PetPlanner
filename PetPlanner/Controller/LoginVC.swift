@@ -76,10 +76,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         Auth.auth().signIn(with: credential) { (user, error) in
             if (error != nil) {
-                print("CAROL: Unable to autheticate with firebase - \(error!)")
                 self.alerts(title: "Error", message: "Sorry we are unable to authenticate you, please try again")
             } else {
-                print("Carol: Successfully authenticated with firebase")
                 self.completeSignIn(user: user!)
                 
             }
@@ -113,7 +111,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         self.activityIndicator.isHidden = true
                         self.activityIndicator.stopAnimating()
                     } else {
-                        
                         self.completeSignIn(user: user!)
                     }
                 }
@@ -141,7 +138,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     func completeSignIn(user: UserInfo) {
         
-        
         // let keychainResult =
         _ = KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
         USER_ID = user.uid
@@ -165,9 +161,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier:"ForgotPasswordVC") as! ForgotPasswordVC
         self.present(vc, animated: false, completion: nil)
-        
     }
-    
     
     // when enter is pressed keyboard is dismissed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

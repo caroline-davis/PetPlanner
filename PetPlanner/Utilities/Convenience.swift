@@ -90,8 +90,7 @@ func convertToString(originalDate: Date) -> String {
 }
 
 func errorCheck () {
-    
-    // TO DO: check out errors incase of no internet or weird anomolies.
-    
+
+    // errors
 }
 

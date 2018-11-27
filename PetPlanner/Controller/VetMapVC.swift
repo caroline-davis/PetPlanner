@@ -17,17 +17,8 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var selectedPin:MKPlacemark? = nil
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        
-        self.activityIndicator.isHidden = false
-        self.activityIndicator.startAnimating()
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -35,6 +26,14 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+    }
+    
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.requestLocation()

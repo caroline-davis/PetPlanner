@@ -116,19 +116,15 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-    //    TO DO: If after deleting a pet the pets are at nil. do the pop up to make a pet again.
-        
         let pet = self.tableViewData[indexPath.row]
         let petId = pet.petId
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             // delete item at indexPath
-            print("delete tapped")
-            
             self.tableViewData.remove(at: indexPath.row)
             self.tableView.reloadData()
             
-            // if after deletion there are 0 pets, call the no pets func and segue to create a pet
+            // if after deletion there are 0 pets, sets the add pet button back
             if self.tableViewData.count == 0 {
                 self.addPet.isHidden = false
                 self.addPet.isEnabled = true
@@ -140,7 +136,6 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         delete.backgroundColor = .red
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
-            print("edit tapped")
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreatePetVC") as! CreatePetVC
             vc.petId = petId

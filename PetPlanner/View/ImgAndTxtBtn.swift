@@ -29,6 +29,7 @@ class ImgAndTxtBtn: UIButton {
             layer.shadowOffset = CGSize(width: 0.8, height: 2.0)
         } else {
             layer.cornerRadius = 0
+         //   self.contentEdgeInsets = UIEdgeInsets(top: 44, left: 0, bottom: 44, right: 44)
         }
     }
 }

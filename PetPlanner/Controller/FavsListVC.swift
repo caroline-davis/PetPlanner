@@ -18,7 +18,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var save: CurvedBtn!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-      @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var foodField: SquareTxtFld!
     @IBOutlet weak var drinkField: SquareTxtFld!
@@ -30,20 +30,22 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var otherField: SquareTxtFld!
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        foodField.delegate = self
-        drinkField.delegate = self
-        toyField.delegate = self
-        sleepingNookField.delegate = self
-        activityField.delegate = self
-        hidingSpotField.delegate = self
-        feastingTimeField.delegate = self
-        otherField.delegate = self
-
-       activityIndicator.isHidden = true
+        DispatchQueue.main.async {
+            
+            self.foodField.delegate = self
+            self.drinkField.delegate = self
+            self.toyField.delegate = self
+            self.sleepingNookField.delegate = self
+            self.activityField.delegate = self
+            self.hidingSpotField.delegate = self
+            self.feastingTimeField.delegate = self
+            self.otherField.delegate = self
+            
+            self.activityIndicator.isHidden = true
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -104,15 +106,11 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
         let other = otherField.text?.capitalized
         
         
-        
         // if there is no info yet...
         if self.favs == nil {
             DataService.ds.createFavs(petId: CURRENT_PET_ID, userId: USER_ID, food: food!, drink: drink!, toy: toy!, sleepingNook: sleepingNook!, activity: activity!, hidingSpot: hidingSpot!, feastingTime: feastingTime!, other: other!, completion: { (error) in
                 if error != nil {
                     self.alerts(title: "Error", message: error!)
-                    
-                } else {
-                    print("it worked")
                 }
                 saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
             })
@@ -120,19 +118,14 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
             DataService.ds.editFavs(petId: CURRENT_PET_ID, food: food!, drink: drink!, toy: toy!, sleepingNook: sleepingNook!, activity: activity!, hidingSpot: hidingSpot!, feastingTime: feastingTime!, other: other!, completion:{ (error) in
                 if error != nil {
                     self.alerts(title: "Error", message: error!)
-                } else {
-                    print("it worked")
                 }
                 saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
             })
         }
-        
-        
+ 
     }
     
-    
-    
-  
+
     // when enter is pressed keyboard is dismissed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -151,9 +144,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
         if range.location > 29 {
             textField.text?.removeLast()
         }
-        
         return true
     }
-
 
 }

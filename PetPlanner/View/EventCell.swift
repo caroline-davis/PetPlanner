@@ -9,13 +9,8 @@
 import UIKit
 
 class EventCell: UITableViewCell {
-    
-    // we need to get the petid and fill in all the info for the current pet from EVENTS
-    // we need to also get the petid and get the string to put the image for the profile picture
-    
-    // in the future we will get all the petIds associated with 1 userID and also put them here
-    // we will also put an alarm here with a bool and do a push notification to the user when the event is near
 
+    // in the future we will also put an alarm here with a bool and do a push notification to the user when the event is near
 
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventDate: UILabel!

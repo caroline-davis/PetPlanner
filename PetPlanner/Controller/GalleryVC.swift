@@ -21,8 +21,9 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collection.delegate = self
-        collection.dataSource = self
+         DispatchQueue.main.async {
+            self.collection.delegate = self
+            self.collection.dataSource = self
         
         self.loadingActivityIndicator.isHidden = false
         self.loadingActivityIndicator.startAnimating()
@@ -34,7 +35,7 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             self.collectionViewData = petImage
             self.collection.reloadData()
         }
-        
+        }
     }
 
     

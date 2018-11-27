@@ -16,8 +16,6 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     @IBOutlet weak var photo: UIImageView!
     var imagePickerController : UIImagePickerController!
     var loadingActivityIndicator: UIActivityIndicatorView!
-
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +34,10 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        photo.isHidden = true
+       // photo.isHidden = true
         DispatchQueue.main.async {
+            self.photo.isHidden = true
+            
             self.parent?.present(self.imagePickerController, animated: true, completion: nil)
             
             if (self.loadingActivityIndicator == nil) {

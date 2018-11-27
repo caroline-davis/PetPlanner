@@ -20,12 +20,6 @@ class ViewPhotoVC: UIViewController {
     var petPhoto: String!
     var imageId: String!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         

@@ -18,6 +18,7 @@ class CircularBtn: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         // makes the button 100% round
         layer.cornerRadius = self.frame.width / 2
         

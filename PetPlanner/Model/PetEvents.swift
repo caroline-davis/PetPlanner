@@ -9,7 +9,6 @@
 import Foundation
 import Firebase
 
-
 class PetEvents {
     
     private var _petId: String!
@@ -39,7 +38,6 @@ class PetEvents {
     var eventId : String {
         return _eventId
     }
-
     var eventsRef: DatabaseReference {
         return _eventsRef
     }
@@ -64,7 +62,6 @@ class PetEvents {
             self._location = location
         }
         if let eventDate = eventsData["eventDate"] as? String {
-            print("weird")
             self._eventDate = convertToDate(originalString: eventDate)
             
         }

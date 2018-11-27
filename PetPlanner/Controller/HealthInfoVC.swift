@@ -33,18 +33,19 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        breedField.delegate = self
-        weightField.delegate = self
-        vaccinationsField.delegate = self
-        allergiesField.delegate = self
-        medicationsField.delegate = self
-        spayedOrNeuteredField.delegate = self
-        vetField.delegate = self
-        lastVetVisitField.delegate = self
+         DispatchQueue.main.async {
+            self.breedField.delegate = self
+            self.weightField.delegate = self
+            self.vaccinationsField.delegate = self
+            self.allergiesField.delegate = self
+            self.medicationsField.delegate = self
+            self.spayedOrNeuteredField.delegate = self
+            self.vetField.delegate = self
+            self.lastVetVisitField.delegate = self
         
-        activityIndicator.isHidden = true
+            self.activityIndicator.isHidden = true
         
-        
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,13 +85,11 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         }
         
     }
-    
-    
+
        @IBAction func saveHealth(_ sender: Any) {
         
         saveBtnDisabled(save: save, activityIndicator: activityIndicator)
 
-    
         let breed = breedField.text?.capitalized
         let weight = weightField.text?.capitalized
         let vaccinations = vaccinationsField.text?.capitalized
@@ -107,9 +106,6 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
             DataService.ds.createHealth(petId: CURRENT_PET_ID, userId: USER_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, lastVetVisit: lastVetVisit!, completion: { (error) in
                 if error != nil {
                     self.alerts(title: "Error", message: error!)
-                    
-                } else {
-                    print("it worked")
                 }
                 saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
                 })
@@ -117,13 +113,10 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
             DataService.ds.editHealth(petId: CURRENT_PET_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, lastVetVisit: lastVetVisit!, completion:{ (error) in
                 if error != nil {
                     self.alerts(title: "Error", message: error!)
-                } else {
-                    print("it worked")
                 }
                 saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
             })
         }
-        
     }
         
     
@@ -146,11 +139,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         if range.location > 35 {
             textField.text?.removeLast()
         }
-        
         return true
     }
-  
-
-
 
 }

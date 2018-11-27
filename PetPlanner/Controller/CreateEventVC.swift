@@ -84,8 +84,6 @@ class CreateEventVC: UIViewController, UITextFieldDelegate {
             DataService.ds.createEvent(name: name.text!, location: location.text!, eventDate: eventDate!, completion: { (error, petId) in
                 if error != nil {
                     self.alerts(title: "Error", message: error!)
-                } else {
-                    print("it worked")
                 }
                 saveBtnEnabled(save: self.saveBtn, activityIndicator: self.activityIndicator)
                 self.navigationController?.popViewController(animated: true)
@@ -94,8 +92,6 @@ class CreateEventVC: UIViewController, UITextFieldDelegate {
             DataService.ds.editEvent(eventId: self.event.eventId, name: name.text!, location: location.text!, eventDate: eventDate!, completion:{ (error) in
                 if error != nil {
                     self.alerts(title: "Error", message: error!)
-                } else {
-                    print("it worked")
                 }
                 saveBtnEnabled(save: self.saveBtn, activityIndicator: self.activityIndicator)
                 self.navigationController?.popViewController(animated: true)
