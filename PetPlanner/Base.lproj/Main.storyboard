@@ -819,7 +819,7 @@
                                         <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="11"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="35" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Find a Vet" backgroundImage="vetPinkNoTextButton">
-                                            <color key="titleColor" red="0.70980392156862748" green="0.32941176470588235" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.71372549019999998" green="0.30980392159999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="DNW-CQ-kKL" kind="show" identifier="ToVetMapVC" id="y8M-xq-R7o"/>
@@ -1303,7 +1303,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="l38-BV-TFK">
                                         <rect key="frame" x="0.0" y="28.5" width="320" height="38"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="30"/>
-                                        <color key="textColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.71372549019999998" green="0.30980392159999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1377,7 +1377,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byU-lE-Ipc" customClass="CurvedBtn" customModule="PetPlanner" customModuleProvider="target">
                                 <rect key="frame" x="58" y="501" width="204" height="34"/>
-                                <color key="backgroundColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.71372549019999998" green="0.30980392159999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Ssb-mM-Ajn"/>
                                 </constraints>
@@ -2084,7 +2084,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.72549019609999998" green="0.34901960780000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.71372549019999998" green="0.30980392159999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="oRJ-jC-XfR" kind="relationship" relationship="viewControllers" id="sMv-Cb-Yhu"/>
@@ -2131,7 +2131,7 @@
         <image name="photoButton" width="90" height="90"/>
         <image name="searchButton" width="70" height="70"/>
         <image name="trash" width="22" height="28"/>
-        <image name="triangle" width="375" height="392"/>
+        <image name="triangle" width="375" height="390"/>
         <image name="upload" width="22" height="28"/>
         <image name="vetButton" width="90" height="90"/>
         <image name="vetPinkNoTextButton" width="70" height="71"/>
