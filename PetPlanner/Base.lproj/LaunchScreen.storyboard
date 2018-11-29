@@ -4,15 +4,11 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SourceSansPro-Bold.ttf">
-            <string>SourceSansPro-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -22,32 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5PV-BN-Coe">
-                                <rect key="frame" x="19" y="34" width="337.5" height="241"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle" translatesAutoresizingMaskIntoConstraints="NO" id="tY3-CC-CvA">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All your pets in one place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sAI-n8-B5G">
-                                <rect key="frame" x="78.5" y="279" width="218.5" height="25.5"/>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birdy" translatesAutoresizingMaskIntoConstraints="NO" id="cAA-De-aX8">
-                                <rect key="frame" x="84.5" y="360.5" width="206" height="206.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PP" translatesAutoresizingMaskIntoConstraints="NO" id="Ghi-cr-WdD">
+                                <rect key="frame" x="94" y="243" width="187.5" height="201"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="cAA-De-aX8" secondAttribute="height" multiplier="1:1" id="Fdv-M2-jMx"/>
+                                    <constraint firstAttribute="width" secondItem="Ghi-cr-WdD" secondAttribute="height" multiplier="125:134" id="ax1-qs-iCe"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cAA-De-aX8" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.55" id="OT8-Ln-QjC"/>
-                            <constraint firstItem="sAI-n8-B5G" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.85" id="X6R-KZ-rBY"/>
-                            <constraint firstItem="5PV-BN-Coe" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.9" id="bPF-gp-pR0"/>
-                            <constraint firstItem="5PV-BN-Coe" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.45" id="l4p-4g-SwG"/>
-                            <constraint firstItem="cAA-De-aX8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s0k-BS-xPy"/>
-                            <constraint firstItem="cAA-De-aX8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.35" id="vPM-Ns-mne"/>
-                            <constraint firstItem="sAI-n8-B5G" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wKl-x5-VLQ"/>
-                            <constraint firstItem="5PV-BN-Coe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xXQ-EA-8Tx"/>
+                            <constraint firstItem="Ghi-cr-WdD" firstAttribute="width" secondItem="tY3-CC-CvA" secondAttribute="width" multiplier="0.5" id="Anf-yM-pNv"/>
+                            <constraint firstItem="tY3-CC-CvA" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.7" id="M4B-gm-Bbh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tY3-CC-CvA" secondAttribute="bottom" id="V05-jE-1xI"/>
+                            <constraint firstItem="tY3-CC-CvA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ygz-M6-fQj"/>
+                            <constraint firstItem="Ghi-cr-WdD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dDb-4N-ITZ"/>
+                            <constraint firstItem="Ghi-cr-WdD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="pYm-bI-TXb"/>
+                            <constraint firstItem="tY3-CC-CvA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zSD-2T-vzj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -58,7 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="509" height="241"/>
-        <image name="birdy" width="462" height="462"/>
+        <image name="PP" width="376" height="402"/>
+        <image name="triangle" width="375" height="390"/>
     </resources>
 </document>
