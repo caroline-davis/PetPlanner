@@ -50,7 +50,7 @@ class PetHealth {
     var petId: String {
         return _petId
     }
-
+    
     
     init (breed: String, weight: String, vaccinations: String, allergies: String, medications: String, spayedOrNeutered: String, vet: String, lastVetVisit: String) {
         self._breed = breed
@@ -65,7 +65,7 @@ class PetHealth {
     
     init(petId: String, healthData: Dictionary <String, AnyObject>)  {
         self._petId = petId
-
+        
         if let breed = healthData["breed"] as? String {
             self._breed = breed
         }
@@ -91,9 +91,9 @@ class PetHealth {
             self._lastVetVisit = lastVetVisit
         }
         _healthRef = DataService.ds.DB_BASE.child("health").child(_petId)
-        }
+    }
     
-     // for the extraction of info for the export pet file
+    // for the extraction of info for the export pet file
     func toDict() -> [String: String] {
         var dict = [String: String]()
         
@@ -107,6 +107,6 @@ class PetHealth {
         dict["lastVetVisit"] = self._lastVetVisit
         return dict
     }
-
+    
 }
 

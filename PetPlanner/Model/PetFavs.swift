@@ -93,7 +93,7 @@ class PetFavs {
         _favsRef = DataService.ds.DB_BASE.child("favs").child(_petId)
     }
     
-     // for the extraction of info for the export pet file
+    // for the extraction of info for the export pet file
     func toDict() -> [String: String] {
         var dict = [String: String]()
         

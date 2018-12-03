@@ -16,13 +16,11 @@ class ImgAndTxtBtn: UIButton {
         
         // aligns button to the left instead of centre
         self.contentHorizontalAlignment = .left
-        // have also added insets to the button on storyboard
-       
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-         cornerCurves()
+        cornerCurves()
         
     }
     
@@ -35,10 +33,6 @@ class ImgAndTxtBtn: UIButton {
             layer.shadowOffset = CGSize(width: 0.8, height: 2.0)
         } else if (self.tag == 1) {
             layer.cornerRadius = 0
-        } else if (self.tag == 2) {
-            layer.cornerRadius = 0
-            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
-            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         }
     }
 }

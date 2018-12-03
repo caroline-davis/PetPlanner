@@ -19,29 +19,17 @@ class HomeVC: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var addPet: ImgAndTxtBtn!
     @IBOutlet weak var viewPets: ImgAndTxtBtn!
     
-    @IBOutlet weak var upgrade: CurvedBtn!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // to do:
-        // if upgrade has not been bought leave button and link it to the appstore
-        // if upgrade has been bought, hide and disable button.
-        // potentially take this info across to view pets to show/hide button
-
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-         activityIndicator.isHidden = true
-         activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
     }
     
-
+    
     @IBAction func twitter(_sender: AnyObject) {
-       if let url = NSURL(string: "https://www.twitter.com/cherrytopstudio"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil) }
+        if let url = NSURL(string: "https://www.twitter.com/cherrytopstudio"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil) }
         
     }
     
@@ -54,7 +42,7 @@ class HomeVC: UIViewController, MFMailComposeViewControllerDelegate {
             mail.setSubject("Pet Planner App")
             present(mail, animated: true)
         } else {
-           alerts(title: "Error", message: "Unable to send mail")
+            alerts(title: "Error", message: "Unable to send mail")
         }
     }
     
@@ -76,7 +64,7 @@ class HomeVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBAction func logout(_ sender: AnyObject) {
         DataService.ds.logout(uid: KEY_UID)
-    
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         self.present(vc, animated: false, completion: nil)
     }
@@ -84,5 +72,5 @@ class HomeVC: UIViewController, MFMailComposeViewControllerDelegate {
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

@@ -17,7 +17,7 @@ class PetImage {
     
     private var _petId: String!
     private var _imageRef: DatabaseReference!
-
+    
     var imageId: String {
         return _imageId
     }
@@ -38,13 +38,13 @@ class PetImage {
         self._imageId = imageId
         self._photo = photo
         self._userId = userId
-    
+        
     }
     
     init(petId: String, imageData: Dictionary <String, AnyObject>)  {
-
+        
         self._petId = petId
-
+        
         if let imageId = imageData["imageId"] as? String {
             self._imageId = imageId
         }
@@ -54,7 +54,7 @@ class PetImage {
         if let userId = imageData["userId"] as? String {
             self._userId = userId
         }
-    
-    _imageRef = DataService.ds.DB_BASE.child("photos").child(_imageId)
+        
+        _imageRef = DataService.ds.DB_BASE.child("photos").child(_imageId)
     }
 }

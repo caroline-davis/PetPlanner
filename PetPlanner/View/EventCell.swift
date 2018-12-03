@@ -9,9 +9,9 @@
 import UIKit
 
 class EventCell: UITableViewCell {
-
+    
     // in the future we will also put an alarm here with a bool and do a push notification to the user when the event is near
-
+    
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
@@ -35,7 +35,7 @@ class EventCell: UITableViewCell {
         
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm:ss"
-
+        
         let theDate = dateFormatter.string(from: petEvent.eventDate)
         let theTime = timeFormatter.string(from: petEvent.eventDate)
         

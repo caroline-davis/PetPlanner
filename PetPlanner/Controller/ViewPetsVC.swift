@@ -13,18 +13,13 @@ import SDWebImage
 class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var addPet: ImgAndTxtBtn!
-    @IBOutlet weak var paidVersion: ImgAndTxtBtn!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    var paid = false
     
     var tableViewData = [PetProfile]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    // TO DO: need to do a check - prob a call to apple to see if user has paid or not to set the paidversion bool to true or false
         
         DispatchQueue.main.async {
             self.tableView.delegate = self
@@ -33,13 +28,11 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             self.addPet.isHidden = true
             self.addPet.isEnabled = false
-            self.paidVersion.isHidden = true
-            self.paidVersion.isEnabled = false
         }
         
     }
     
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
@@ -47,33 +40,14 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.activityIndicator.startAnimating()
         
         DataService.ds.getAllPets { (pets) in
-            if pets != nil && self.paid == true {
+            if pets != nil {
                 self.addPet.isHidden = true
                 self.addPet.isEnabled = false
-                self.paidVersion.isHidden = true
-                self.paidVersion.isEnabled = false
                 self.tableViewData = pets!
                 self.tableView.reloadData()
-            } else if pets == nil && self.paid == true {
+            } else if pets == nil {
                 self.addPet.isHidden = false
                 self.addPet.isEnabled = true
-                self.paidVersion.isHidden = true
-                self.paidVersion.isEnabled = false
-            } else if pets != nil && self.paid == false {
-                self.paidVersion.tag = 2
-                
-                self.addPet.isHidden = true
-                self.addPet.isEnabled = false
-                self.paidVersion.isHidden = false
-                self.paidVersion.isEnabled = true
-                self.tableViewData = pets!
-                self.tableView.reloadData()
-            } else {
-                
-                self.addPet.isHidden = false
-                self.addPet.isEnabled = true
-                self.paidVersion.isHidden = false
-                self.paidVersion.isEnabled = true
             }
             self.activityIndicator.isHidden = true
             self.activityIndicator.stopAnimating()
@@ -120,11 +94,7 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let petId = pet.petId
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-
-        // so button lines up with upgrade button
-            if self.paid == false {
-                self.addPet.tag = 2
-            }
+            
             
             // delete item at indexPath
             self.tableViewData.remove(at: indexPath.row)
@@ -169,10 +139,6 @@ class ViewPetsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    @IBAction func upgradeApp(_ sender: Any) {
-        
-        // go to app store :D
-    }
     
 }
 

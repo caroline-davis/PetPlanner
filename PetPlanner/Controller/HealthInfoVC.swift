@@ -33,7 +33,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         DispatchQueue.main.async {
+        DispatchQueue.main.async {
             self.breedField.delegate = self
             self.weightField.delegate = self
             self.vaccinationsField.delegate = self
@@ -42,9 +42,8 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
             self.spayedOrNeuteredField.delegate = self
             self.vetField.delegate = self
             self.lastVetVisitField.delegate = self
-        
+            
             self.activityIndicator.isHidden = true
-        
         }
     }
     
@@ -56,7 +55,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
             self.loadingActivityIndicator.isHidden = false
             self.loadingActivityIndicator.startAnimating()
             
-        
+            
             DataService.ds.getHealth(petId: CURRENT_PET_ID) { (petHealth) in
                 self.health = petHealth
                 
@@ -74,22 +73,22 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
                     self.loadingActivityIndicator.isHidden = true
                     self.loadingActivityIndicator.stopAnimating()
                 }
-          self.loadingActivityIndicator.isHidden = true
-                 self.loadingActivityIndicator.stopAnimating()
-     
-        DispatchQueue.main.async {
-            self.name.text = "\(self.pet.name.capitalized)'s Health"
-            
+                self.loadingActivityIndicator.isHidden = true
+                self.loadingActivityIndicator.stopAnimating()
+                
+                DispatchQueue.main.async {
+                    self.name.text = "\(self.pet.name.capitalized)'s Health"
+                    
                 }
             }
         }
         
     }
-
-       @IBAction func saveHealth(_ sender: Any) {
+    
+    @IBAction func saveHealth(_ sender: Any) {
         
         saveBtnDisabled(save: save, activityIndicator: activityIndicator)
-
+        
         let breed = breedField.text?.capitalized
         let weight = weightField.text?.capitalized
         let vaccinations = vaccinationsField.text?.capitalized
@@ -98,9 +97,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         let spayedOrNeutered = spayedOrNeuteredField.text?.capitalized
         let vet = vetField.text?.capitalized
         let lastVetVisit = lastVetVisitField.text?.capitalized
-        
-        
-
+    
         // if there is no info yet...
         if self.health == nil {
             DataService.ds.createHealth(petId: CURRENT_PET_ID, userId: USER_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, lastVetVisit: lastVetVisit!, completion: { (error) in
@@ -108,7 +105,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
                     self.alerts(title: "Error", message: error!)
                 }
                 saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
-                })
+            })
         } else {
             DataService.ds.editHealth(petId: CURRENT_PET_ID, breed: breed!, weight: weight!, vaccinations: vaccinations!, allergies: allergies!, medications: medications!, spayedOrNeutered: spayedOrNeutered!, vet: vet!, lastVetVisit: lastVetVisit!, completion:{ (error) in
                 if error != nil {
@@ -118,8 +115,7 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
             })
         }
     }
-        
-    
+
     
     // when enter is pressed keyboard is dismissed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -141,5 +137,5 @@ class HealthInfoVC: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-
+    
 }

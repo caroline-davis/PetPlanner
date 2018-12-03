@@ -10,34 +10,31 @@ import UIKit
 import SDWebImage
 
 class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-   
+    
     var collectionViewData = [PetImage]()
     
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
-    
     @IBOutlet weak var collection: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         DispatchQueue.main.async {
+        DispatchQueue.main.async {
             self.collection.delegate = self
             self.collection.dataSource = self
-        
-        self.loadingActivityIndicator.isHidden = false
-        self.loadingActivityIndicator.startAnimating()
-        
-        DataService.ds.getPhotos(petId: CURRENT_PET_ID) { (petImage) in
-            self.loadingActivityIndicator.isHidden = true
-            self.loadingActivityIndicator.stopAnimating()
             
-            self.collectionViewData = petImage
-            self.collection.reloadData()
-        }
+            self.loadingActivityIndicator.isHidden = false
+            self.loadingActivityIndicator.startAnimating()
+            
+            DataService.ds.getPhotos(petId: CURRENT_PET_ID) { (petImage) in
+                self.loadingActivityIndicator.isHidden = true
+                self.loadingActivityIndicator.stopAnimating()
+                
+                self.collectionViewData = petImage
+                self.collection.reloadData()
+            }
         }
     }
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionViewData.count
@@ -58,23 +55,20 @@ class GalleryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             return UICollectionViewCell()
         }
     }
+    
 
-    
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         let pet = self.collectionViewData[indexPath.row]
-         let photo = pet.photo
-         let imageId = pet.imageId
+        let pet = self.collectionViewData[indexPath.row]
+        let photo = pet.photo
+        let imageId = pet.imageId
         
         // get the photoId and save it so we can open it in the next window
         let vc = storyboard?.instantiateViewController(withIdentifier: "ViewPhotoVC") as! ViewPhotoVC
         vc.petPhoto = photo
         vc.imageId = imageId
         self.navigationController?.pushViewController(vc, animated: false)
-
+        
     }
     
     
- 
-
 }

@@ -70,7 +70,7 @@ class DataService {
             }
         }
     }
-
+    
     
     func getPet(petId: String, completion: @escaping (PetProfile?)->()) {
         DB_BASE.child("pets").child(petId).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -89,7 +89,7 @@ class DataService {
     }
     
     func getPhotos(petId: String, completion: @escaping (Array<PetImage>)-> ()) {
-          DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
+        DB_BASE.child("photos").queryOrdered(byChild: "petId").queryEqual(toValue: petId).observe(DataEventType.value, with: { (snapshot) in
             
             let photoDict = snapshot.value as? Dictionary <String, AnyObject>
             
@@ -101,7 +101,7 @@ class DataService {
                 }).sorted(by: { $0.imageId < $1.imageId })
                 completion(photos)
             } else {
-             completion([PetImage]())
+                completion([PetImage]())
             }
         })
     }

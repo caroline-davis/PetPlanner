@@ -9,7 +9,7 @@
 import UIKit
 
 class PetCell: UITableViewCell {
-
+    
     @IBOutlet weak var profilePic: CircularImgView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var species: UILabel!
@@ -22,15 +22,15 @@ class PetCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-            name.textColor = WHITE_COLOR
-            species.textColor = WHITE_COLOR
-            dob.textColor = WHITE_COLOR
-            sex.textColor = WHITE_COLOR
-            idTag.textColor = WHITE_COLOR
+        name.textColor = WHITE_COLOR
+        species.textColor = WHITE_COLOR
+        dob.textColor = WHITE_COLOR
+        sex.textColor = WHITE_COLOR
+        idTag.textColor = WHITE_COLOR
     }
     
     func configure(pet: PetProfile) {
-  
+        
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
         

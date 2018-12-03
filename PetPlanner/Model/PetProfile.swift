@@ -65,7 +65,7 @@ class PetProfile {
             self._dob = dob
         }
         if let species = profileData["species"] as? String {
-           self._species = species
+            self._species = species
         }
         if let sex = profileData["sex"] as? String {
             self._sex = sex
@@ -79,12 +79,12 @@ class PetProfile {
     // for the extraction of info for the export pet file
     func toDict() -> [String: String] {
         var dict = [String: String]()
-
+        
         dict["dob"] = self._dob
         dict["species"] = self._species
         dict["sex"] = self._sex
         dict["idTag"] = self._idTag
-      
+        
         return dict
     }
 }

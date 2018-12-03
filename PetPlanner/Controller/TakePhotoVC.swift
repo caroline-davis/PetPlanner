@@ -25,7 +25,7 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
             self.imagePickerController = UIImagePickerController()
             self.imagePickerController.delegate = self
             self.imagePickerController.sourceType = .camera
-        
+            
             self.tabBarController?.delegate = self
             
         }
@@ -34,7 +34,7 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-       // photo.isHidden = true
+        // photo.isHidden = true
         DispatchQueue.main.async {
             self.photo.isHidden = true
             
@@ -47,7 +47,7 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
                 self.imagePickerController.view.addSubview(self.loadingActivityIndicator)
                 self.imagePickerController.view.bringSubviewToFront(self.loadingActivityIndicator)
             }
-           
+            
         }
         
     }
@@ -61,9 +61,9 @@ class TakePhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
             self.loadingActivityIndicator.startAnimating()
         }
         
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
         if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             photo.image = image
             
@@ -81,7 +81,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                     print(error.localizedDescription)
                     return
                 } else {
-
+                    
                     let downloadURL = metaData?.downloadURL()?.absoluteString
                     
                     DataService.ds.DB_BASE.child("photos").child(imageId).setValue([
@@ -107,24 +107,19 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
         // puts the display back to the tab 0 which is gallery
-      tabBarController?.selectedIndex = 0
+        tabBarController?.selectedIndex = 0
     }
-    
-    
-    
-
-    
-    
+  
 }
 
 
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
+    return input.rawValue
 }

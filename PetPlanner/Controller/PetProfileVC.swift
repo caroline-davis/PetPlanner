@@ -24,27 +24,25 @@ class PetProfileVC: UIViewController, UIGestureRecognizerDelegate  {
     var petId: String!
     var pet: PetProfile!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         CURRENT_PET_ID = petId
         DispatchQueue.main.async {
-        // hides the standard back button
-        self.navigationItem.setHidesBackButton(true, animated:true)
-        
-        // sets the button to go back to the home screen
+            // hides the standard back button
+            self.navigationItem.setHidesBackButton(true, animated:true)
+            
+            // sets the button to go back to the home screen
             let homeButton = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(self.homePage))
-        self.navigationItem.leftBarButtonItem = homeButton
-        
-        // sets the button to export the pet info as pdf
+            self.navigationItem.leftBarButtonItem = homeButton
+            
+            // sets the button to export the pet info as pdf
             let pdfButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(self.exportPetInfo))
-        
-        pdfButton.image = UIImage(named: "exportButton")
-        self.navigationItem.rightBarButtonItem = pdfButton
+            
+            pdfButton.image = UIImage(named: "exportButton")
+            self.navigationItem.rightBarButtonItem = pdfButton
         }
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +88,7 @@ class PetProfileVC: UIViewController, UIGestureRecognizerDelegate  {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-   
+    
     @IBAction func toHealthInfoVC(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "HealthInfoVC") as! HealthInfoVC
         self.navigationController?.pushViewController(vc, animated: true)
@@ -111,9 +109,7 @@ class PetProfileVC: UIViewController, UIGestureRecognizerDelegate  {
         activityIndicator.startAnimating()
         
     }
-    
-  
-    
+
 }
 
 

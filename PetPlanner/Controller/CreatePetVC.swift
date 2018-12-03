@@ -36,16 +36,16 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         
         DispatchQueue.main.async {
             self.activityIndicator.isHidden = true
-        
+            
             self.nameField.delegate = self
             self.dobField.delegate = self
             self.speciesField.delegate = self
             self.sexField.delegate = self
             self.idTagField.delegate = self
-        
+            
             self.imagePicker = UIImagePickerController()
-        
-        // makes it so the user can move the image to the square they want it cropped at
+            
+            // makes it so the user can move the image to the square they want it cropped at
             self.imagePicker.allowsEditing = true
             self.imagePicker.delegate = self
         }
@@ -56,11 +56,9 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
                 self.pet = petProfile
                 
                 DispatchQueue.main.async {
-                // gets image from firebase using sdwebimage
-                self.profilePic.sd_setImage(with: URL(string: self.pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
-                })
-                
-    
+                    // gets image from firebase using sdwebimage
+                    self.profilePic.sd_setImage(with: URL(string: self.pet.profileImage), placeholderImage: #imageLiteral(resourceName: "ProfilePicturev3"), options: [.continueInBackground, .progressiveDownload], completed: { (profilePic, error, cacheType, URL) in
+                    })
                     self.profileImage = self.pet.profileImage
                     
                     self.nameField.text = self.pet.name
@@ -78,15 +76,14 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
         super.viewWillAppear(true)
         loadingActivityIndicator.isHidden = false
         loadingActivityIndicator.startAnimating()
-
+        
     }
- 
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         loadingActivityIndicator.isHidden = true
         loadingActivityIndicator.stopAnimating()
     }
-
     
     @IBAction func addProfilePic(_ sender: AnyObject) {
         loadingActivityIndicator.isHidden = false
@@ -98,11 +95,11 @@ class CreatePetVC: UIViewController, UITextFieldDelegate,  UIImagePickerControll
     // standard func for profile pic
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
         saveBtnDisabled(save: self.save, activityIndicator: self.activityIndicator)
-
+        
         if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
             profilePic.image = image
             
@@ -159,36 +156,36 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         let image = self.profileImage != nil ? self.profileImage : DEFAULT_PROFLE_IMAGE
         
         if petId == nil {
-        
-        DataService.ds.createPet(
-            dob: dob!,
-            idTag: idTag!,
-            name: name!,
-            profileImage: image!,
-            sex: sex!,
-            species: species!,
-            completion: { (error, petId) in
-                
-                if error != nil {
-                    self.alerts(title: "Error", message: error!)
-                } else {
-                    saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
-                    self.goToPetProfileVC(petId: petId)
-                }
-        })
+            
+            DataService.ds.createPet(
+                dob: dob!,
+                idTag: idTag!,
+                name: name!,
+                profileImage: image!,
+                sex: sex!,
+                species: species!,
+                completion: { (error, petId) in
+                    
+                    if error != nil {
+                        self.alerts(title: "Error", message: error!)
+                    } else {
+                        saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
+                        self.goToPetProfileVC(petId: petId)
+                    }
+            })
         } else {
             // if edit is clicked, the values update and save on firebase
             DataService.ds.editPet(petId: petId, dob: dob!, name: name!, idTag: idTag!, sex: sex!, species: species!, profileImage: image!, completion: { (error) in
                 
-                    if error != nil {
-                        self.alerts(title: "Error", message: error!)
-                    }
-                 saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
+                if error != nil {
+                    self.alerts(title: "Error", message: error!)
+                }
+                saveBtnEnabled(save: self.save, activityIndicator: self.activityIndicator)
             })
             self.goToPetProfileVC(petId: petId)
         }
     }
-  
+    
     func goToPetProfileVC(petId: String) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PetProfileVC") as! PetProfileVC
         vc.petId = petId
@@ -211,11 +208,11 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
+    return input.rawValue
 }
 

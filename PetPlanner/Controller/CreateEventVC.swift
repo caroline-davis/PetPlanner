@@ -29,28 +29,27 @@ class CreateEventVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        name.delegate = self
-        location.delegate = self
-        
-        
-        activityIndicator.isHidden = true
+        DispatchQueue.main.async {
+            self.name.delegate = self
+            self.location.delegate = self
+            self.activityIndicator.isHidden = true
+        }
         
         if eventId != nil {
             DataService.ds.getEvent(petId: CURRENT_PET_ID, eventId: eventId) { (petEvent) in
                 self.event = petEvent
-                print(self.event)
-            
-            if petEvent != nil {
-                DispatchQueue.main.async {
-                    self.name.text = self.event.name
-                    self.location.text = self.event.location
-                    self.eventDate = self.event.eventDate
-                    self.datePicker.setDate(self.eventDate, animated: true)
+                
+                if petEvent != nil {
+                    DispatchQueue.main.async {
+                        self.name.text = self.event.name
+                        self.location.text = self.event.location
+                        self.eventDate = self.event.eventDate
+                        self.datePicker.setDate(self.eventDate, animated: true)
+                    }
                 }
+                
             }
-            
         }
-    }
     }
     
     
@@ -66,7 +65,7 @@ class CreateEventVC: UIViewController, UITextFieldDelegate {
         
         guard case let date = eventDate, date != nil else {
             self.alerts(title: "Error", message: "Please select a date and time")
-             saveBtnEnabled(save: saveBtn, activityIndicator: activityIndicator)
+            saveBtnEnabled(save: saveBtn, activityIndicator: activityIndicator)
             return
         }
         guard case let eventName = name.text, eventName != "" else {
@@ -76,7 +75,7 @@ class CreateEventVC: UIViewController, UITextFieldDelegate {
         }
         guard case let locationName = location.text, locationName != "" else {
             self.alerts(title: "Error", message: "Please enter a location")
-             saveBtnEnabled(save: saveBtn, activityIndicator: activityIndicator)
+            saveBtnEnabled(save: saveBtn, activityIndicator: activityIndicator)
             return
         }
         
@@ -120,6 +119,6 @@ class CreateEventVC: UIViewController, UITextFieldDelegate {
         let endPosition = textField.endOfDocument
         textField.selectedTextRange = textField.textRange(from: endPosition, to: endPosition)
     }
-
+    
     
 }

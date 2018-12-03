@@ -24,12 +24,11 @@ class ExportVC: UIViewController {
     var basics = [String: String]()
     var health = [String: String]()
     var favs = [String: String]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         CURRENT_PET_ID = petId
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +36,7 @@ class ExportVC: UIViewController {
         
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
-       
+        
         // gets info from firebase and puts it into the petdictionaries
         DataService.ds.getPet(petId: CURRENT_PET_ID) { (petProfile) in
             self.basics = petProfile?.toDict() ?? ["empty": "empty"]
@@ -67,19 +66,18 @@ class ExportVC: UIViewController {
         
     }
     
- 
-    
+
     func exportPetProfile() {
         
         
         // Assign a UIImage version of my UIView as a printing iten
         let newImage = self.exportView.toImage()
-       
+        
         let activityViewController = UIActivityViewController(activityItems: [newImage], applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
         
         activityViewController.completionWithItemsHandler = { activity, success, items, error in
-    
+            
             if success || error == nil {
                 self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
@@ -97,7 +95,7 @@ class ExportVC: UIViewController {
     
     func activities(facts: [String: String], combinedFacts: String) -> String {
         let results = facts.reduce(combinedFacts) { result, next  in
-      
+            
             if (next.value != "") {
                 // if the firebase key is in the constant dictionary, display the value
                 if let formattedKey = lookup[next.key] {
@@ -135,6 +133,6 @@ class ExportVC: UIViewController {
         }
         
     }
-     
+    
 }
 

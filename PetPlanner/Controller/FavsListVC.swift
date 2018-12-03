@@ -14,7 +14,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
     
     var pet: PetProfile!
     var favs: PetFavs!
-
+    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var save: CurvedBtn!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -28,8 +28,6 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var hidingSpotField: SquareTxtFld!
     @IBOutlet weak var feastingTimeField: SquareTxtFld!
     @IBOutlet weak var otherField: SquareTxtFld!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +45,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
             self.activityIndicator.isHidden = true
         }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
@@ -84,7 +82,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-       
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -124,7 +122,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-
+    
     // when enter is pressed keyboard is dismissed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -136,7 +134,7 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
         let endPosition = textField.endOfDocument
         textField.selectedTextRange = textField.textRange(from: endPosition, to: endPosition)
     }
-  
+    
     // if text it more than 30 the user will write on the last character
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -145,5 +143,5 @@ class FavsListVC: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-
+    
 }

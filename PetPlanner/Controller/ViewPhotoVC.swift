@@ -11,7 +11,7 @@ import Firebase
 import SDWebImage
 
 class ViewPhotoVC: UIViewController {
-
+    
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var send: UIBarButtonItem!
@@ -34,20 +34,18 @@ class ViewPhotoVC: UIViewController {
     @IBAction func shareImage(_ sender: Any) {
         
         let activityViewController = UIActivityViewController(activityItems: [photo.image!], applicationActivities: nil)
-        
         self.present(activityViewController, animated: true, completion: nil)
-        
     }
     
-
-
+    
+    
     @IBAction func deleteImage(_ sender: Any) {
         
         let alert = UIAlertController(title: "Warning", message: "Are you sure you want to delete this photo?", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             self.photo.isHidden = true
-          
+            
             // goes back to the gallery view controller
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
             self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true)
@@ -60,10 +58,7 @@ class ViewPhotoVC: UIViewController {
         }))
         
         present(alert, animated: true, completion: nil)
-       
-        
+  
     }
-    
-   
-
+ 
 }

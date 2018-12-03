@@ -33,7 +33,7 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         self.activityIndicator.startAnimating()
     }
     
-
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.requestLocation()
@@ -74,7 +74,7 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             self.activityIndicator.stopAnimating()
         }
         
-        
+
         func dropPin(placemark:MKPlacemark){
             // cache the pin
             selectedPin = placemark
@@ -86,8 +86,7 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                 let state = placemark.administrativeArea {
                 annotation.subtitle = "\(city) \(state)"
             }
-            mapView.addAnnotation(annotation)
-            
+            mapView.addAnnotation(annotation)   
         }
     }
     
@@ -99,7 +98,6 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             mapItem.openInMaps(launchOptions: launchOptions)
         }
     }
-    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
         if annotation is MKUserLocation {
@@ -120,7 +118,6 @@ class VetMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
         return pinView
     }
-    
     
 }
 
