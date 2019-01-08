@@ -2,7 +2,8 @@
 
 ## Description:
 An app that helps users keep track of all the information on their pets.
-Features: 
+
+Features:
 * Functionality to add multiple pets
 * Take and store photos
 * View and edit favourites including food, drinks, toys and sleeping areas
@@ -18,5 +19,6 @@ Wanting to create an app from scratch to finish using cocoapods and firebase.
 
 ## Use:
 * 1. git clone https://github.com/caroline-davis/PetPlanner.git
-* 2. Run `pod install` in project folder
-* 3. Open in XCode 10.
+* 2. Install [cocoapods](https://cocoapods.org/)
+* 3. Navigate to the PetPlanner project folder and run `pod install`
+* 4. Open the project workspace in Xcode 10.1
