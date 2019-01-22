@@ -44,8 +44,5 @@ Package.resolved
 # Pods
 Pods/
 
-# Firebase
-PetPlanner/GoogleService-Info.plist
-
 # Random Mac file
 .DS_Store
