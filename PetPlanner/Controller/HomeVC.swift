@@ -29,7 +29,7 @@ class HomeVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     
     @IBAction func twitter(_sender: AnyObject) {
-        if let url = NSURL(string: "https://www.twitter.com/cherrytopstudio"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil) }
+        if let url = NSURL(string: "https://www.twitter.com/petplannerapp"){ UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil) }
         
     }
     

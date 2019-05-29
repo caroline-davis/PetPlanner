@@ -16,8 +16,8 @@ pod 'Firebase/Database', '~> 4.8.1'
 pod 'SwiftKeychainWrapper', '~> 3.0'
 pod 'SDWebImage', '~> 4.0'
 
-pod 'FacebookCore'
-pod 'FacebookLogin'
+pod 'FacebookCore', '~> 0.5.0'
+pod 'FacebookLogin', '~> 0.5.0'
 
 pod 'IQKeyboardManagerSwift'
 
